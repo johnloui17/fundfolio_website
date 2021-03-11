@@ -12,6 +12,6 @@ const nextjsServer = next({
 })
 const nextjsHandle = nextjsServer.getRequestHandler()
 
-exports.nextjsFunc = https.onRequest((req, res) => {
+exports.fundfolioWebFunc = https.onRequest((req, res) => {
   return nextjsServer.prepare().then(() => nextjsHandle(req, res))
 })
