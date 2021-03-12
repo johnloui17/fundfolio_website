@@ -6,7 +6,6 @@ export const Container = styled.div`
   position: relative;
   padding: ${rem(120)} ${rem(150)};
   background: #0d0a1b;
-
   @media (max-width: 767px) {
     padding: ${rem(20)} ${rem(50)};
   }
@@ -34,6 +33,9 @@ export const Column = styled.div`
     font-weight: 500;
     margin: ${rem(24)} 0;
     opacity: 0.6;
+  }
+  @media (max-width: 767px) {
+    padding-bottom:60px
   }
 `;
 
@@ -71,5 +73,8 @@ export const Copyright = styled.div`
   justify-content: center;
   svg {
     margin: 0 5px;
+  }
+  @media (max-width: 767px) {
+    margin-top: ${rem(30)};
   }
 `;

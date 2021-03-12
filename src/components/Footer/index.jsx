@@ -49,11 +49,11 @@ const Footer = (props) => {
                     <FooterLink>about</FooterLink>
                 </Link>
                 <Link href="https://marketfeed.news/" >
-                    <FooterLink target={"_blank"}>career</FooterLink>
+                    <FooterLink target={"_blank"}>jobs</FooterLink>
                 </Link>
             </Column>
             <Column>
-                <SubHeading>more</SubHeading>
+                <SubHeading>resources</SubHeading>
                 <Link href="/#about" >
                     <FooterLink>disclaimer</FooterLink>
                 </Link>
