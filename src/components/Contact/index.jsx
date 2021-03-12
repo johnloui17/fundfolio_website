@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Container, ImageBackground, Heading} from './style';
+import {Container, ImageBackground, Heading,FormContainer} from './style';
 import Image from 'next/image'
 import Button from '../Button';
 import Input from '../Input';
@@ -65,14 +65,14 @@ const Contact = (props) => {
         <ImageBackground>
             <Image loader={gumletLoader} src="/location-bg.jpg" className="background" layout={'fill'}/>
         </ImageBackground>
-        <div style={{position: 'relative'}}>
+        <FormContainer >
             <Heading>contact us</Heading>
             <Input type={'text'} label="my name is" placeholder="your name" onChange={(e)=>setName(e.target.value)}/>
             <Input type="number" label="my phone number is" placeholder="your phone number" onChange={(e)=>setNumber(e.target.value)}/>
             <Input type="email" label="reach me at" placeholder="your@email.com" onChange={(e)=>setEmail(e.target.value)}/>
             <Input label="message" placeholder="type here" onChange={(e)=>setMessage(e.target.value)}/>
             <Button type="ghost"  onClick={()=>sentMail()}><Icons name="arrow" fill={"#fff"}/><span>Submit</span></Button>
-        </div>
+        </FormContainer>
       </Container>
     )
 }

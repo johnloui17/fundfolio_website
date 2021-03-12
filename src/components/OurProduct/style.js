@@ -11,7 +11,7 @@ export const Container = styled.div`
     padding: ${rem(20)} ${rem(150)};
   }
   @media (max-width: 767px) {
-    padding: ${rem(0)} ${rem(40)};
+    padding: ${rem(0)};
   }
 `;
 
@@ -20,6 +20,12 @@ export const Row = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 1024px) and (min-width: 768px) {
+    justify-content: center;
+  }
+  @media (max-width: 767px) {
+    justify-content: center;
+  }
 `;
 export const Heading = styled.div`
   color: rgba(256, 256, 256, 0.2);

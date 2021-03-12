@@ -1,0 +1,3 @@
+- add grid
+- add grid 
+- add placeholder image

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Container, Row, SocialIcon, Column, SubHeading, FooterLink, Copyright } from './style'
+import { Container, Row, SocialIcon, Column, SubHeading, FooterLink, Copyright,SocialRow } from './style'
 import Image from 'next/image'
 import Link from 'next/link'
 import Icons from '../Icons';
@@ -13,7 +13,7 @@ const Footer = (props) => {
                 <p className="desc">Kinfra Hi-Tech Park<br/>
                     HMT Colony, P.O, Kalamassery<br/>
                     Kochi, Kerala 683503</p>
-                <Row>
+                <SocialRow>
                     <SocialIcon href={"https://www.facebook.com/fundfolio.in"} target={"_blank"}>
                         <Image loader={gumletLoader} src={'/facebook.svg'} width={22} height={22}/>
                     </SocialIcon>
@@ -26,7 +26,7 @@ const Footer = (props) => {
                     <SocialIcon href={"https://www.youtube.com/channel/UC9CKy1ai9qI8p6_Oh0Qa3Rg"} target={"_blank"}>
                         <Image loader={gumletLoader} src={'/you-tube.svg'} width={22} height={22}/>
                     </SocialIcon>
-                </Row>
+                </SocialRow>
             </Column>
             <Column>
                 <SubHeading>products</SubHeading>
