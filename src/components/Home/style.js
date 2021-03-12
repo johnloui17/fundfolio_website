@@ -24,16 +24,19 @@ export const ContentWrapper = styled.div`
     align-items: center;
     padding-left: ${rem(150)};
     @media (max-width: 1024px) and (min-width: 768px) {
-        padding-left: ${rem(100)};
+        padding-left: ${rem(100, "tablet")};
+        padding-right: ${rem(100,"tablet")};
     }
     @media (max-width: 767px){
-        padding-left: ${rem(50)};
+        padding-left: ${rem(100, "mobile")};
+        padding-right: ${rem(100, "mobile")};
+        padding-top:${rem(300, "mobile")};
     }
 `;
 export const Content = styled.div`
     max-width: ${rem(725)};
     @media (max-width: 1024px) and (min-width: 768px) {
-        max-width: ${rem(500)};
+        max-width: ${rem(500,"tablet")};
     }
     @media (max-width: 767px){
         max-width: 100%;
@@ -45,10 +48,12 @@ export const Content = styled.div`
         font-family: 'gilroyheavy';
         color: #fff;
         @media (max-width: 1024px) and (min-width: 768px) {
-            font-size: ${rem(60)};
+            font-size: ${rem(80, "tablet")};
+            line-height: ${rem(90, "tablet")};
         }
         @media (max-width: 767px){
-            font-size: ${rem(40)};
+            font-size: ${rem(80, "mobile")};
+            line-height: ${rem(90, "mobile")};
         }
     }
     p{
@@ -62,6 +67,7 @@ export const Content = styled.div`
         }
         @media (max-width: 767px){
             font-size: ${rem(16)};
+            padding-right: ${rem(200,"mobile")};
         }
     }
 `;
