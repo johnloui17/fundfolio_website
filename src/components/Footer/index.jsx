@@ -10,9 +10,9 @@ const Footer = (props) => {
         <Row>
             <Column>
                 <Image loader={gumletLoader} src={"/fundfolio.svg"} width={114} height={20}/>
-                <p className="desc">Kinfra Hi-Tech Park<br/>
-                    HMT Colony, P.O, Kalamassery<br/>
-                    Kochi, Kerala 683503</p>
+                <p className="desc">kinfra hi-tech park<br/>
+                    kalamassery,kochi<br/>
+                    kerala 683503</p>
                 <SocialRow>
                     <SocialIcon href={"https://www.facebook.com/fundfolio.in"} target={"_blank"}>
                         <Image loader={gumletLoader} src={'/facebook.svg'} width={22} height={22}/>
@@ -30,40 +30,31 @@ const Footer = (props) => {
             </Column>
             <Column>
                 <SubHeading>products</SubHeading>
-                <Link href="https://fundfolio.in" >
+                <Link href={"https://fundfolio.in"} passHref={true} >
                     <FooterLink target={"_blank"}>fundfolio.in</FooterLink>
                 </Link>
-                <Link href="https://marketfeed.news/" >
+                <Link href="https://marketfeed.news/" passHref={true}>
                     <FooterLink target={"_blank"}>marketfeed.news</FooterLink>
                 </Link>
-                <Link href="https://marketfeed.app" >
+                <Link href="https://marketfeed.app" passHref={true}>
                     <FooterLink target={"_blank"}>marketfeed.app</FooterLink>
                 </Link>
-                <Link href="https://breakout.army/" >
+                <Link href="https://breakout.army/" passHref={true}>
                     <FooterLink target={"_blank"}>breakout</FooterLink>
                 </Link>
             </Column>
             <Column>
                 <SubHeading>company</SubHeading>
-                <Link href="/#about" >
+                <Link href="/#about" passHref={true}>
                     <FooterLink>about</FooterLink>
                 </Link>
-                <Link href="https://marketfeed.news/" >
-                    <FooterLink target={"_blank"}>jobs</FooterLink>
-                </Link>
-            </Column>
-            <Column>
-                <SubHeading>resources</SubHeading>
-                <Link href="/#about" >
+                <Link href="https://marketfeed.news/disclaimer/" passHref={true}>
                     <FooterLink>disclaimer</FooterLink>
                 </Link>
-                <Link href="https://marketfeed.news/" >
-                    <FooterLink target={"_blank"}>help & support</FooterLink>
-                </Link>
-                <Link href="https://marketfeed.news/" >
+                <Link href="https://marketfeed.news/privacy-policy/" passHref={true}>
                     <FooterLink target={"_blank"}>privacy policy</FooterLink>
                 </Link>
-                <Link href="https://marketfeed.news/" >
+                <Link href="https://marketfeed.news/terms-of-use/"passHref={true} >
                     <FooterLink target={"_blank"}>terms & conditions</FooterLink>
                 </Link>
             </Column>

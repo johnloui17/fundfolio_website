@@ -8,7 +8,7 @@ export const Container = styled.div`
   }
   background: transparent;
   color: #fff;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #6a6a77;
   margin-bottom: ${rem(48)};
   label {
     display: block;
@@ -22,7 +22,7 @@ export const Container = styled.div`
     border: none;
     font-size: 30px;
     font-weight: 500;
-    color: #fff;
+    color: #6a6a77;
     outline: none;
     font-family: "gilroymedium";
   }

@@ -8,13 +8,13 @@ export const Container = styled.div`
   background: #0d0a1b;
   @media (max-width: 767px) {
     padding: ${rem(20)} ${rem(50)};
+    padding-top: 160px;
   }
 `;
 export const Row = styled.div`
   display: flex;
-  justify-content: space-between;
   @media (max-width: 767px) {
-    flex-direction:column;
+    flex-direction: column;
   }
 `;
 export const SocialRow = styled.div`
@@ -24,6 +24,7 @@ export const SocialRow = styled.div`
 
 export const Column = styled.div`
   display: flex;
+  margin-right: 130px;
   flex-direction: column;
   align-items: flex-start;
   .desc {
@@ -35,7 +36,10 @@ export const Column = styled.div`
     opacity: 0.6;
   }
   @media (max-width: 767px) {
-    padding-bottom:60px
+    padding-bottom: 60px;
+  }
+  a {
+    text-decoration: none;
   }
 `;
 

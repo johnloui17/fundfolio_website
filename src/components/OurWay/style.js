@@ -1,23 +1,45 @@
 import styled from "styled-components";
 import { rem } from "../../utils/remConverter";
-
 export const Container = styled.div`
   width: 100vw;
   background: #0d0a1b;
   padding: ${rem(150)};
+  @media (max-width: 1024px) and (min-width: 768px) {
+    padding: ${rem(100)};
+  }
+  @media (max-width: 767px) {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top:160px;
+    padding-bottom:0px;
+  }
+  // @media (min-width: 1920px) {
+  //   padding: ${rem(150,"large")};
+  // }
 `;
-export const HoverNav = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0;
+export const HoverNav = styled.div`
   min-width: ${rem(350)};
   display: flex;
   flex-direction: column;
   @media (max-width: 1024px) and (min-width: 768px) {
-    flex-direction: row;
+    flex-direction: column;
   }
   @media (max-width: 767px) {
-    flex-direction: row;
+    min-width: 100%;
+    flex-direction: column;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 1024px) and (min-width: 768px) {
+      flex-direction: row;
+    }
+    @media (max-width: 767px) {
+      flex-direction: row;
+    }
   }
   li {
     color: #fff;
@@ -41,11 +63,13 @@ export const HoverNav = styled.ul`
       }
     }
     @media (max-width: 1024px) and (min-width: 768px) {
-      font-size: ${rem(40, "tablet")};
-      margin: ${rem(20, "tablet")};
+      font-size: ${rem(60, "tablet")};
+      margin: 0;
+      margin-right: ${rem(20, "tablet")};
+      padding-right: ${rem(60, "tablet")};
     }
     @media (max-width: 767px) {
-      font-size: ${rem(40, "mobile")};
+      font-size: ${rem(50, "mobile")};
       margin: ${rem(20, "tablet")};
     }
   }
@@ -56,33 +80,30 @@ export const HoverNav = styled.ul`
     background: linear-gradient(to right, #40eaf5, #504dff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: ${rem(80)};
+    font-size: ${rem(60)};
     font-family: "gilroybold";
-
     @media (max-width: 1024px) and (min-width: 768px) {
-      font-size: ${rem(40, "tablet")};
-      margin: ${rem(20, "tablet")};
+      font-size: ${rem(60, "tablet")};
+      padding-right: ${rem(60, "tablet")};
     }
     @media (max-width: 767px) {
-      font-size: ${rem(40, "mobile")};
+      font-size: ${rem(50, "mobile")};
       margin: ${rem(20, "mobile")};
     }
   }
 `;
-
 export const Row = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
-
   @media (max-width: 1024px) and (min-width: 768px) {
     flex-direction: column;
+    align-items: flex-start;
   }
   @media (max-width: 767px) {
     flex-direction: column;
   }
 `;
-
 export const Heading = styled.div`
   color: rgba(256, 256, 256, 0.2);
   font-size: ${rem(38)};
@@ -91,14 +112,16 @@ export const Heading = styled.div`
   margin-bottom: ${rem(40)};
   @media (max-width: 1024px) and (min-width: 768px) {
     font-size: ${rem(50, "tablet")};
-    padding-left: ${rem(100, "tablet")};
-    padding-right: ${rem(100,"tablet")};
+    font-family: "gilroybold";
   }
   @media (max-width: 767px) {
+    font-family: "gilroybold";
+    margin-bottom: ${rem(20)};
     font-size: ${rem(50, "mobile")};
+    padding-left: 50px;
+    padding-right: 50px;
   }
 `;
-
 export const DisplayCard = styled.div`
   width: ${rem(754)};
   height: ${rem(600)};
@@ -107,7 +130,7 @@ export const DisplayCard = styled.div`
     height: ${rem(500, "tablet")};
   }
   @media (max-width: 767px) {
-    width: ${rem(600, "mobile")};
+    width: ${rem(615, "mobile")};
     height: ${rem(650, "mobile")};
   }
   border-radius: ${rem(16)};
@@ -145,14 +168,12 @@ export const DisplayCard = styled.div`
       color: #86868c;
       font-weight: 500;
     }
-    
   }
   p.active {
     animation-delay: 0.5s;
     opacity: 1;
   }
 `;
-
 export const BackgroundIcon = styled.div`
   position: absolute;
   z-index: 0;
@@ -161,7 +182,7 @@ export const BackgroundIcon = styled.div`
   @media (max-width: 1024px) and (min-width: 768px) {
     width: ${rem(180, "tablet")};
     top: ${rem(130, "tablet")};
-    left: ${rem(20,"tablet")};
+    left: ${rem(20, "tablet")};
   }
   @media (max-width: 767px) {
     width: ${rem(120, "mobile")};

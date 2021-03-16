@@ -11,7 +11,10 @@ export const Container = styled.div`
     padding: ${rem(20)} ${rem(150)};
   }
   @media (max-width: 767px) {
-    padding: ${rem(0)};
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 160px;
+    padding-bottom:0px;
   }
 `;
 
@@ -34,4 +37,7 @@ export const Heading = styled.div`
   letter-spacing: 0.2px;
   margin-bottom: ${rem(40)};
   font-family: "gilroybold";
+  @media (max-width: 767px) {
+    font-size: ${rem(50, "mobile")};
+  }
 `;

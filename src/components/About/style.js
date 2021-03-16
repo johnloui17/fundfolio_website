@@ -11,7 +11,7 @@ export const Container = styled.div`
     padding-top: ${rem(150, "mobile")};
   }
   @media (max-width: 767px) {
-    padding: ${rem(0, "mobile")} ${rem(150, "mobile")};
+    padding-bottom: 0;
     padding-left: ${rem(100, "mobile")};
     padding-right: ${rem(100, "mobile")};
     padding-top: ${rem(150, "mobile")};
@@ -37,6 +37,7 @@ export const Heading = styled.div`
   font-family: "gilroybold";
   @media (max-width: 767px) {
     margin-bottom: ${rem(40, "mobile")};
+    font-size: ${rem(50, "mobile")};
   }
 `;
 

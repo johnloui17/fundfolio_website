@@ -9,7 +9,7 @@ export const Container = styled.div`
     transition: background 0.5s ease;
     position: fixed;
     top: 0;
-    z-index:1;
+    z-index:10;
     display: flex;
     align-items: center;
     justify-content: space-between;
