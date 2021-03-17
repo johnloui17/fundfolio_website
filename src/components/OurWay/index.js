@@ -20,7 +20,7 @@ const OurWay = (props) => {
       intervalId = setCurrentAttr(attributes[k % 3]);
       console.log(k);
       k++;
-    }, 5000);
+    }, 10000);
     return () => {
       clearInterval(intervalId);
     };

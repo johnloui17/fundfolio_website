@@ -3,8 +3,8 @@ import { rem } from "../../utils/remConverter";
 export const Container = styled.div`
   width: ${rem(360)};
   height: ${rem(384)};
-  position: relative;
   padding: ${rem(50)};
+  position: relative;
   margin-bottom: 20px;
   @media (max-width: 1024px) and (min-width: 768px) {
     width: ${rem(360)};
@@ -14,6 +14,21 @@ export const Container = styled.div`
     width: 100%;
     height: auto;
     padding-bottom: 50px;
+  }
+  @media (min-width: 1920px) {
+    width: ${rem(360, "large")};
+    height: ${rem(384, "large")};
+    padding: ${rem(50, "large")};
+  }
+  @media (min-width: 2560px) {
+    width: ${rem(360, "extraLarge")};
+    height: ${rem(384, "extraLarge")};
+    padding: ${rem(50, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    width: ${rem(360, "xxl")};
+    height: ${rem(384, "xxl")};
+    padding: ${rem(50, "xxl")};
   }
   .icon-wrapper {
     position: relative;
@@ -31,6 +46,18 @@ export const Container = styled.div`
           : "#6d5ec8"};
       transition: width 1s ease;
       position: absolute;
+      @media (min-width: 1920px) {
+        width: ${rem(20, "large")};
+        height: ${rem(2, "large")};
+      }
+      @media (min-width: 2560px) {
+        width: ${rem(20, "extraLarge")};
+        height: ${rem(2, "extraLarge")};
+      }
+      @media (min-width: 3840px) {
+        width: ${rem(20, "xxl")};
+        height: ${rem(2, "xxl")};
+      }
     }
     & > svg {
       transition: all 0.5s ease;
@@ -59,6 +86,18 @@ export const Container = styled.div`
     @media (max-width: 767px) {
       font-size: 40px;
     }
+    @media (min-width: 1920px) {
+      font-size: ${rem(60, "large")};
+      margin-top: ${rem(37, "large")};
+    }
+    @media (min-width: 2560px) {
+      font-size: ${rem(60, "extraLarge")};
+      margin-top: ${rem(37, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      font-size: ${rem(60, "xxl")};
+      margin-top: ${rem(37, "xxl")};
+    }
   }
 
   .desc {
@@ -78,6 +117,21 @@ export const Container = styled.div`
     @media (max-width: 767px) {
       font-size: 20px;
     }
+    @media (min-width: 1920px) {
+      width: ${rem(196, "large")};
+      font-size: ${rem(18, "large")};
+      margin-top: ${rem(7, "large")};
+    }
+    @media (min-width: 2560px) {
+      width: ${rem(196, "extraLarge")};
+      font-size: ${rem(18, "extraLarge")};
+      margin-top: ${rem(7, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      width: ${rem(196, "xxl")};
+      font-size: ${rem(18, "xxl")};
+      margin-top: ${rem(7, "xxl")};
+    }
   }
   .link {
     color: #131319;
@@ -87,7 +141,7 @@ export const Container = styled.div`
     visibility: hidden;
     transition: opacity 0.5s ease;
     position: absolute;
-    top: 170px;
+    top: ${rem(170)};
     text-decoration: none;
     transition-delay: 0.3s;
     margin-top: ${rem(32)};
@@ -122,6 +176,15 @@ export const Container = styled.div`
         visibility: visible;
         color: #f55240;
       }
+      @media (min-width: 1920px) {
+        margin-left: ${rem(12, "large")};
+      }
+      @media (min-width: 2560px) {
+        margin-left: ${rem(12, "extraLarge")};
+      }
+      @media (min-width: 3840px) {
+        margin-left: ${rem(12, "xxl")};
+      }
     }
     @media (max-width: 1024px) and (min-width: 768px) {
       opacity: 1;
@@ -135,6 +198,18 @@ export const Container = styled.div`
       position: relative;
       top: 20px;
       font-size: 20px;
+    }
+    @media (min-width: 1920px) {
+      margin-top: ${rem(32, "large")};
+      top: ${rem(170, "large")};
+    }
+    @media (min-width: 2560px) {
+      margin-top: ${rem(32, "extraLarge")};
+      top: ${rem(170, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      margin-top: ${rem(32, "xxl")};
+      top: ${rem(170, "xxl")};
     }
   }
 
@@ -163,6 +238,18 @@ export const Container = styled.div`
       width: 100%;
       height: auto;
     }
+    @media (min-width: 1920px) {
+      width: calc(100% - ${rem(24, "large")});
+      height: calc(100% - ${rem(24, "large")});
+    }
+    @media (min-width: 2560px) {
+      width: calc(100% - ${rem(24, "extraLarge")});
+      height: calc(100% - ${rem(24, "extraLarge")});
+    }
+    @media (min-width: 3840px) {
+      width: calc(100% - ${rem(24, "xxl")});
+      height: calc(100% - ${rem(24, "xxl")});\
+    }
   }
 
   &:before {
@@ -187,6 +274,18 @@ export const Container = styled.div`
       width: 100%;
       height: auto;
     }
+    @media (min-width: 1920px) {
+      width:  ${rem(360, "large")};
+      height: ${rem(384, "large")};
+    }
+    @media (min-width: 2560px) {
+      width:  ${rem(360, "extraLarge")};
+      height: ${rem(384, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      width:  ${rem(360, "xxl")};
+      height: ${rem(384, "xxl")};
+    }
   }
 
   &:hover:before {
@@ -205,6 +304,18 @@ export const Container = styled.div`
       width: 100%;
       height: auto;
       background-image: linear-gradient(-210deg, #201e2d, #120f20);
+    }
+    @media (min-width: 1920px) {
+      width:  ${rem(384, "large")};
+      height: ${rem(324, "large")};
+    }
+    @media (min-width: 2560px) {
+      width:  ${rem(384, "extraLarge")};
+      height: ${rem(324, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      width:  ${rem(384, "xxl")};
+      height: ${rem(324, "xxl")};
     }
   }
 
@@ -239,6 +350,18 @@ export const Container = styled.div`
       width: 100%;
       height: auto;
     }
+    @media (min-width: 1920px) {
+      width:  ${rem(360, "large")};
+      height: ${rem(300, "large")};
+    }
+    @media (min-width: 2560px) {
+      width:  ${rem(360, "extraLarge")};
+      height: ${rem(300, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      width:  ${rem(360, "xxl")};
+      height: ${rem(300, "xxl")};
+    }
   }
   &:hover > .icon-wrapper {
     transform: translate(${rem(0)}, ${rem(94)});
@@ -247,6 +370,15 @@ export const Container = styled.div`
     }
     @media (max-width: 767px) {
       transform: translate(0);
+    }
+    @media (min-width: 1920px) {
+      transform: translate(${rem(0)}, ${rem(94, "large")});
+    }
+    @media (min-width: 2560px) {
+      transform: translate(${rem(0)}, ${rem(94, "extraLarge")});
+    }
+    @media (min-width: 3840px) {
+      transform: translate(${rem(0)}, ${rem(94, "xxl")});
     }
   }
   &:hover > .icon-wrapper:before {
@@ -289,4 +421,3 @@ export const Container = styled.div`
     }
   }
 `;
-

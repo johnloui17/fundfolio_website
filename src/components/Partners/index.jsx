@@ -3,59 +3,122 @@ import { Container, Heading, Row, Column, ImageWrapper } from "./style";
 import Image from "next/image";
 import { gumletLoader } from "../../utils/gumletLoader";
 
+const height = 80;
+const width = 217;
+const scaledHeight = height * 2;
+const scaledWidth = width * 2;
 const Partners = (props) => {
+  const [device, setDevice] = useState("");
+  useEffect(() => {
+    if (window.innerWidth > 1920) setDevice("large");
+  }, []);
   return (
-    <Container id="our-way">
+    <Container id="partners">
       <Heading>our partners</Heading>
       <Row>
-        <Column className="column_1">
-          <Image
-            loader={gumletLoader}
-            src="/goldenPi.png"
-            width={217}
-            height={80}
-          />
-        </Column>
-        <Column className="column_2">
-          <Image
-            loader={gumletLoader}
-            src="/zerodha.png"
-            width={217}
-            height={80}
-          />
-        </Column>
-        <Column className="column_3">
-          <Image
-            loader={gumletLoader}
-            src="/upstock.png"
-            width={217}
-            height={80}
-          />
-        </Column>
-        <Column className="column_4">
-          <Image
-            loader={gumletLoader}
-            src="/tradingView.png"
-            width={217}
-            height={80}
-          />
-        </Column>
-        <Column className="column_5">
-          <Image
-            loader={gumletLoader}
-            src="/iifl.png"
-            width={217}
-            height={80}
-          />
-        </Column>
-        <Column className="column_6">
-          <Image
-            loader={gumletLoader}
-            src="/tickerTape.png"
-            width={217}
-            height={80}
-          />
-        </Column>
+        {device === "large" ? (
+          <>
+            <Column className="column_1">
+              <Image
+                loader={gumletLoader}
+                src="/goldenPi.png"
+                width={scaledWidth}
+                height={scaledHeight}
+              />
+            </Column>
+            <Column className="column_2">
+              <Image
+                loader={gumletLoader}
+                src="/zerodha.png"
+                width={scaledWidth}
+                height={scaledHeight}
+              />
+            </Column>
+            <Column className="column_3">
+              <Image
+                loader={gumletLoader}
+                src="/upstock.png"
+                width={scaledWidth}
+                height={scaledHeight}
+              />
+            </Column>
+            <Column className="column_4">
+              <Image
+                loader={gumletLoader}
+                src="/tradingView.png"
+                width={scaledWidth}
+                height={scaledHeight}
+              />
+            </Column>
+            <Column className="column_5">
+              <Image
+                loader={gumletLoader}
+                src="/iifl.png"
+                width={scaledWidth}
+                height={scaledHeight}
+              />
+            </Column>
+            <Column className="column_6">
+              <Image
+                loader={gumletLoader}
+                src="/tickerTape.png"
+                width={scaledWidth}
+                height={scaledHeight}
+              />
+            </Column>
+          </>
+        ) : (
+          <>
+            <Column className="column_1">
+              <Image
+                loader={gumletLoader}
+                src="/goldenPi.png"
+                width={width}
+                height={height}
+              />
+            </Column>
+            <Column className="column_2">
+              <Image
+                loader={gumletLoader}
+                src="/zerodha.png"
+                width={width}
+                height={height}
+              />
+            </Column>
+            <Column className="column_3">
+              <Image
+                loader={gumletLoader}
+                src="/upstock.png"
+                width={width}
+                height={height}
+              />
+            </Column>
+            <Column className="column_4">
+              <Image
+                loader={gumletLoader}
+                src="/tradingView.png"
+                width={width}
+                height={height}
+              />
+            </Column>
+            <Column className="column_5">
+              <Image
+                loader={gumletLoader}
+                src="/iifl.png"
+                width={width}
+                height={height}
+              />
+            </Column>
+            <Column className="column_6">
+              <Image
+                loader={gumletLoader}
+                src="/tickerTape.png"
+                width={width}
+                height={height}
+              />
+            </Column>
+          </>
+        )}
       </Row>
     </Container>
   );

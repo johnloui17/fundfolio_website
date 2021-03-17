@@ -10,7 +10,16 @@ export const Container = styled.div`
   }
   @media (max-width: 767px) {
     padding: ${rem(20)} ${rem(20)};
-    padding-top:160px;
+    padding-top: 160px;
+  }
+  @media (min-width: 1920px) {
+    padding: ${rem(120, "large")} ${rem(150, "large")};
+  }
+  @media (min-width: 2560px) {
+    padding: ${rem(120, "extraLarge")} ${rem(150, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    padding: ${rem(120, "xxl")} ${rem(150, "xxl")};
   }
 `;
 
@@ -24,8 +33,21 @@ export const Heading = styled.div`
   @media (max-width: 767px) {
     margin-bottom: ${rem(40, "mobile")};
     font-size: ${rem(50, "mobile")};
-    padding-left:30px;
-    padding-right:30px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: ${rem(38, "large")};
+    margin-bottom: ${rem(40, "large")};
+  }
+  @media (min-width: 2560px) {
+    font-size: ${rem(38, "extraLarge")};
+    margin-bottom: ${rem(40, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    font-size: ${rem(38, "xxl")};
+    margin-bottom: ${rem(40, "xxl")};
   }
 `;
 
@@ -44,15 +66,16 @@ export const Column = styled.div`
       }
     }};
     border-bottom: ${(props) => {
-      if (
-        props.className === "column_1" ||
-        props.className === "column_2" 
-      ) {
+      if (props.className === "column_1" || props.className === "column_2") {
         return "1px solid #252232";
       }
     }};
     border-left: ${(props) => {
-      if (props.className === "column_4" || props.className === "column_6"||props.className === "column_2") {
+      if (
+        props.className === "column_4" ||
+        props.className === "column_6" ||
+        props.className === "column_2"
+      ) {
         return "1px solid #252232";
       }
     }};
@@ -78,5 +101,15 @@ export const Column = styled.div`
         return "1px solid #252232";
       }
     }};
+  }
+
+  @media (min-width: 1920px) {
+    padding: ${rem(25, "large")};
+  }
+  @media (min-width: 2560px) {
+    padding: ${rem(25, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    padding: ${rem(25, "xxl")};
   }
 `;

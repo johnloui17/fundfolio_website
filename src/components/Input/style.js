@@ -3,17 +3,38 @@ import { rem } from "../../utils/remConverter";
 
 export const Container = styled.div`
   width: ${rem(480)};
-  @media (max-width: 767px) {
-    width: ${rem(300)};
-  }
   background: transparent;
   color: #fff;
   border-bottom: 1px solid #6a6a77;
   margin-bottom: ${rem(48)};
+  @media (max-width: 767px) {
+    width: ${rem(300)};
+  }
+  @media (min-width: 1920px) {
+    width ${rem(480, "large")};
+    margin-bottom: ${rem(48, "large")};
+  }
+  @media (min-width: 2560px){
+    width ${rem(480, "extraLarge")};
+    margin-bottom: ${rem(48, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    width ${rem(480, "xxl")};
+    margin-bottom: ${rem(48, "xxl")};
+  }
   label {
     display: block;
     font-size: 20px;
     font-family: "gilroymedium";
+    @media (min-width: 1920px) {
+      font-size: ${rem(20, "large")};
+    }
+    @media (min-width: 2560px) {
+      font-size: ${rem(20, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      font-size: ${rem(20, "xxl")};
+    }
   }
   input {
     width: 100%;
@@ -25,6 +46,16 @@ export const Container = styled.div`
     color: #6a6a77;
     outline: none;
     font-family: "gilroymedium";
+    @media (min-width: 1920px) {
+      font-size: ${rem(30, "large")};
+    }
+    @media (min-width: 2560px) {
+      font-size: ${rem(30, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      font-size: ${rem(30, "xxl")};
+    }
+    
   }
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {

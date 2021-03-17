@@ -118,7 +118,15 @@ const Contact = (props) => {
           placeholder="type here"
           onChange={(e) => setMessage(e.target.value)}
         />
-        <Button type="ghost" onClick={() => sentMail()}>
+        <div
+          class="g-recaptcha col-sm-5"
+          data-sitekey="6Ldlit0ZAAAAAEjYjd5ZanjhyVD4531RtpTZQ8WN"
+          data-callback="recaptcha_callback"
+          data-expired-callback="recaptchaExpired"
+          style={{paddingBottom:40}}
+        ></div>
+
+        <Button  type="ghost" onClick={() => sentMail()}>
           <Icons name="arrow" fill={"#fff"} />
           <BtnTextContainer>Submit</BtnTextContainer>
         </Button>

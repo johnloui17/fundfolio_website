@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Container, ImageBackground, Content, ContentWrapper } from "./style";
+import {
+  Container,
+  ImageBackground,
+  Content,
+  ContentWrapper,
+  BottomLogoContainer,
+} from "./style";
 import Image from "next/image";
 import Button from "../Button";
 import Icons from "../Icons";
@@ -8,6 +14,7 @@ const Home = (props) => {
   const [device, setDevice] = useState("");
   useEffect(() => {
     if (window.innerWidth < 800) setDevice("mobile");
+    if (window.innerWidth > 1920) setDevice("large");
   }, []);
   return (
     <Container id="home">
@@ -40,6 +47,26 @@ const Home = (props) => {
           </Button>
         </Content>
       </ContentWrapper>
+      <BottomLogoContainer>
+        <p>backed by</p>
+          {device === "large" ? (
+            <Image
+              src="/yc_logo.svg"
+              loader={gumletLoader}
+              height={60}
+              width={290}
+              alt="fundfolio y-combinator"
+            />
+          ) : (
+            <Image
+              loader={gumletLoader}
+              src="/yc_logo.svg"
+              height={20}
+              width={92}
+              alt="fundfolio y-combinator"
+            />
+          )}
+      </BottomLogoContainer>
     </Container>
   );
 };

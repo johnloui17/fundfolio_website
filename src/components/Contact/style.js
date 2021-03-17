@@ -4,16 +4,24 @@ import { rem } from "../../utils/remConverter";
 export const Container = styled.div`
   width: 100vw;
   position: relative;
+  background-color:#0d0a1b;
   padding: ${rem(90)} ${rem(150)};
   @media (max-width: 1024px) and (min-width: 768px) {
     padding: ${rem(20)} ${rem(100)};
   }
   @media (max-width: 767px) {
-    padding: ${rem(120)} ${rem(50)};
+    padding: ${rem(180)} ${rem(50)};
     margin-bottom:100px;
-    height:150vh;
   }
-  background-color:#0d0a1b;
+  @media (min-width: 1920px) {
+    padding: ${rem(90, "large")} ${rem(150, "large")};
+  }
+  @media (min-width: 2560px) {
+    padding: ${rem(90, "extraLarge")} ${rem(150, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    padding: ${rem(90, "xxl")} ${rem(150, "xxl")};
+  }
 `;
 export const ImageBackground = styled.div`
   position: absolute;
@@ -52,6 +60,18 @@ export const Heading = styled.div`
   font-family: "gilroybold";
   @media (max-width: 767px) {
     font-size: ${rem(50, "mobile")};
+  }
+  @media (min-width: 1920px) {
+    font-size: ${rem(50, "large")};
+    margin-bottom: ${rem(40, "large")};
+  }
+  @media (min-width: 2560px) {
+    font-size: ${rem(50, "extraLarge")};
+    margin-bottom: ${rem(40, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    font-size: ${rem(50, "xxl")};
+    margin-bottom: ${rem(40, "xxl")};
   }
 `;
 export const FormContainer = styled.div`

@@ -14,7 +14,16 @@ export const Container = styled.div`
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 160px;
-    padding-bottom:0px;
+    padding-bottom: 0px;
+  }
+  @media (min-width: 1920px) {
+    padding: ${rem(120, "large")} ${rem(150, "large")};
+  }
+  @media (min-width: 2560px) {
+    padding: ${rem(120, "extraLarge")} ${rem(150, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    padding: ${rem(120, "xxl")} ${rem(150, "xxl")};
   }
 `;
 
@@ -39,5 +48,17 @@ export const Heading = styled.div`
   font-family: "gilroybold";
   @media (max-width: 767px) {
     font-size: ${rem(50, "mobile")};
+  }
+  @media (min-width: 1920px) {
+    font-size: ${rem(38, "large")};
+    margin-bottom: ${rem(40)};
+  }
+  @media (min-width: 2560px) {
+    font-size: ${rem(38, "extraLarge")};
+    margin-bottom: ${rem(40, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    font-size: ${rem(38, "xxl")};
+    margin-bottom: ${rem(40, "xxl")};
   }
 `;

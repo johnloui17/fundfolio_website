@@ -5,17 +5,25 @@ export const Container = styled.div`
   background: #0d0a1b;
   padding: ${rem(150)};
   @media (max-width: 1024px) and (min-width: 768px) {
-    padding: ${rem(100)};
+    padding-left: ${rem(200, "tablet")};
+    padding-right: ${rem(200, "tablet")};
+    padding-top: ${rem(150, "mobile")};
   }
   @media (max-width: 767px) {
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top:160px;
-    padding-bottom:0px;
+    padding-bottom: 0;
+    padding-left: ${rem(100, "mobile")};
+    padding-right: ${rem(100, "mobile")};
+    padding-top: ${rem(150, "mobile")};
   }
-  // @media (min-width: 1920px) {
-  //   padding: ${rem(150,"large")};
-  // }
+  @media (min-width: 1920px) {
+    padding: ${rem(150, "large")};
+  }
+  @media (min-width: 2560px) {
+    padding: ${rem(150, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    padding: ${rem(150, "xxl")};
+  }
 `;
 export const HoverNav = styled.div`
   min-width: ${rem(350)};
@@ -27,6 +35,15 @@ export const HoverNav = styled.div`
   @media (max-width: 767px) {
     min-width: 100%;
     flex-direction: column;
+  }
+  @media (min-width: 1920px) {
+    min-width: ${rem(350, "large")};
+  }
+  @media (min-width: 2560px) {
+    min-width: ${rem(350, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    min-width: ${rem(350, "xxl")};
   }
   ul {
     list-style: none;
@@ -61,6 +78,18 @@ export const HoverNav = styled.div`
       @media (max-width: 767px) {
         display: none;
       }
+      @media (min-width: 1920px) {
+        font-size: ${rem(20, "large")};
+        margin-right: ${rem(26, "large")};
+      }
+      @media (min-width: 2560px) {
+        font-size: ${rem(20, "extraLarge")};
+        margin-right: ${rem(26, "large")};
+      }
+      @media (min-width: 3840px) {
+        font-size: ${rem(20, "xxl")};
+        margin-right: ${rem(26, "large")};
+      }
     }
     @media (max-width: 1024px) and (min-width: 768px) {
       font-size: ${rem(60, "tablet")};
@@ -69,8 +98,20 @@ export const HoverNav = styled.div`
       padding-right: ${rem(60, "tablet")};
     }
     @media (max-width: 767px) {
-      font-size: ${rem(50, "mobile")};
-      margin: ${rem(20, "tablet")};
+      font-size: ${rem(40, "mobile")};
+      margin-right: ${rem(20, "mobile")};
+    }
+    @media (min-width: 1920px) {
+      font-size: ${rem(60, "large")};
+      margin-bottom: ${rem(20, "large")};
+    }
+    @media (min-width: 2560px) {
+      font-size: ${rem(60, "extraLarge")};
+      margin-bottom: ${rem(20, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      font-size: ${rem(60, "xxl")};
+      margin-bottom: ${rem(20, "xxl")};
     }
   }
   li.active {
@@ -87,8 +128,18 @@ export const HoverNav = styled.div`
       padding-right: ${rem(60, "tablet")};
     }
     @media (max-width: 767px) {
-      font-size: ${rem(50, "mobile")};
-      margin: ${rem(20, "mobile")};
+      font-size: ${rem(40, "mobile")};
+      margin-right: ${rem(20, "mobile")};
+    }
+
+    @media (min-width: 1920px) {
+      font-size: ${rem(60, "large")};
+    }
+    @media (min-width: 2560px) {
+      font-size: ${rem(60, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      font-size: ${rem(60, "xxl")};
     }
   }
 `;
@@ -110,36 +161,68 @@ export const Heading = styled.div`
   font-weight: bold;
   letter-spacing: 0.2px;
   margin-bottom: ${rem(40)};
+  font-family: "gilroybold";
   @media (max-width: 1024px) and (min-width: 768px) {
-    font-size: ${rem(50, "tablet")};
-    font-family: "gilroybold";
+    font-size: ${rem(52, "tablet")};
   }
   @media (max-width: 767px) {
-    font-family: "gilroybold";
-    margin-bottom: ${rem(20)};
-    font-size: ${rem(50, "mobile")};
-    padding-left: 50px;
-    padding-right: 50px;
+    font-size: ${rem(52, "mobile")};
+  }
+
+  @media (min-width: 1920px) {
+    font-size: ${rem(38, "large")};
+    margin-bottom: ${rem(40, "large")};
+  }
+  @media (min-width: 2560px) {
+    font-size: ${rem(38, "extraLarge")};
+    margin-bottom: ${rem(40, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    font-size: ${rem(38, "xxl")};
+    margin-bottom: ${rem(40, "xxl")};
   }
 `;
 export const DisplayCard = styled.div`
   width: ${rem(754)};
   height: ${rem(600)};
-  @media (max-width: 1024px) and (min-width: 768px) {
-    width: ${rem(700, "tablet")};
-    height: ${rem(500, "tablet")};
-  }
-  @media (max-width: 767px) {
-    width: ${rem(615, "mobile")};
-    height: ${rem(650, "mobile")};
-  }
   border-radius: ${rem(16)};
+  margin: ${rem(30)};
   background-image: linear-gradient(to top, #201e2d, #120f20);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  margin: ${rem(30)};
+  @media (max-width: 1024px) and (min-width: 768px) {
+    width: ${rem(700, "tablet")};
+    height: ${rem(500, "tablet")};
+  }
+  @media (max-width: 767px) {
+    display:block;
+    width: 100%;
+    padding:20px;
+    height:300px;
+    flex:none;
+    margin: 0;
+  }
+
+  @media (min-width: 1920px) {
+    width: ${rem(754, "large")};
+    height: ${rem(600, "large")};
+    border-radius: ${rem(16, "large")};
+    margin: ${rem(30, "large")};
+  }
+  @media (min-width: 2560px) {
+    width: ${rem(754, "extraLarge")};
+    height: ${rem(600, "extraLarge")};
+    border-radius: ${rem(16, "extraLarge")};
+    margin: ${rem(30, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    width: ${rem(754, "xxl")};
+    height: ${rem(600, "xxl")};
+    border-radius: ${rem(16, "xxl")};
+    margin: ${rem(30, "xxl")};
+  }
   p {
     transition: all 0.5s ease-in;
     opacity: 0;
@@ -168,6 +251,24 @@ export const DisplayCard = styled.div`
       color: #86868c;
       font-weight: 500;
     }
+    @media (min-width: 1920px) {
+      width: ${rem(436, "large")};
+      top: ${rem(190, "large")};
+      left: ${rem(196, "large")};
+      font-size: ${rem(30, "large")};
+    }
+    @media (min-width: 2560px) {
+      width: ${rem(436, "extraLarge")};
+      top: ${rem(190, "extraLarge")};
+      left: ${rem(196, "extraLarge")};
+      font-size: ${rem(30, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      width: ${rem(436, "xxl")};
+      top: ${rem(190, "xxl")};
+      left: ${rem(196, "xxl")};
+      font-size: ${rem(30, "xxl")};
+    }
   }
   p.active {
     animation-delay: 0.5s;
@@ -188,5 +289,17 @@ export const BackgroundIcon = styled.div`
     width: ${rem(120, "mobile")};
     top: ${rem(10, "mobile")};
     left: ${rem(20, "mobile")};
+  }
+  @media (min-width: 1920px) {
+    top: ${rem(60, "large")};
+    left: ${rem(100, "large")};
+  }
+  @media (min-width: 2560px) {
+    top: ${rem(60, "extraLarge")};
+    left: ${rem(100, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    top: ${rem(60, "xxl")};
+    left: ${rem(100, "xxl")};
   }
 `;

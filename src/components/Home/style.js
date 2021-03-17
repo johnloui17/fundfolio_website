@@ -15,6 +15,9 @@ export const ImageBackground = styled.div`
     height: 100%;
     object-fit: cover;
   }
+  @media (max-width: 767px) {
+    background-color:#140F2A
+  }
 `;
 export const ContentWrapper = styled.div`
   position: relative;
@@ -35,6 +38,12 @@ export const ContentWrapper = styled.div`
   @media (min-width: 1920px) {
     padding: ${rem(150, "large")};
   }
+  @media (min-width: 2560px) {
+    padding: ${rem(150, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    padding: ${rem(150, "xxl")};
+  }
   svg {
     fill: #fff;
   }
@@ -47,12 +56,21 @@ export const Content = styled.div`
   @media (max-width: 767px) {
     max-width: 100%;
   }
+  @media (min-width: 1920px) {
+    max-width: ${rem(725, "large")};
+  }
+  @media (min-width: 2560px) {
+    max-width: ${rem(725, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    max-width: ${rem(725, "xxl")};
+  }
   h1 {
     font-size: ${rem(80)};
     font-weight: 900;
     line-height: ${rem(90)};
     font-family: "gilroyheavy";
-    color: #fff;
+    color:#fff;
     @media (max-width: 1024px) and (min-width: 768px) {
       font-size: ${rem(80, "tablet")};
       line-height: ${rem(90, "tablet")};
@@ -63,6 +81,15 @@ export const Content = styled.div`
     }
     @media (min-width: 1920px) {
       font-size: ${rem(80, "large")};
+      line-height: ${rem(90, "large")};
+    }
+    @media (min-width: 2560px) {
+      font-size: ${rem(80, "extraLarge")};
+      line-height: ${rem(90, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      font-size: ${rem(80, "xxl")};
+      line-height: ${rem(90, "xxl")};
     }
   }
   p {
@@ -77,6 +104,56 @@ export const Content = styled.div`
     @media (max-width: 767px) {
       font-size: ${rem(16)};
       padding-right: ${rem(200, "mobile")};
+    }
+    @media (min-width: 1920px) {
+      font-size: ${rem(24, "large")};
+    }
+    @media (min-width: 2560px) {
+      font-size: ${rem(24, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      font-size: ${rem(24, "xxl")};
+    }
+  }
+`;
+export const BottomLogoContainer = styled.div`
+  position: absolute;
+  bottom:0;
+  @media (max-width: 1024px) and (min-width: 768px) {
+    padding: ${rem(40, "tablet")} ${rem(90, "tablet")};
+  }
+  @media (max-width: 767px) {
+    padding: ${rem(40, "mobile")} ${rem(90, "mobile")};
+  }
+  @media (min-width: 1920px) {
+    padding: ${rem(80, "large")} ${rem(150, "large")};
+  }
+  @media (min-width: 2560px) {
+    padding: ${rem(80, "extraLarge")} ${rem(150, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    padding: ${rem(80, "xxl")} ${rem(150, "xxl")};
+  }
+  p{
+    color:#fff;
+    font-size: ${rem(16)}
+    padding-top :10px;
+    opacity:60%;
+    @media (max-width: 767px) {
+      font-size: ${rem(12)};
+      padding-bottom :6px;
+    }
+    @media (min-width: 1920px) {
+      font-size: ${rem(16, "large")};
+      padding-bottom :${rem(10, "large")};
+    }
+    @media (min-width: 2560px) {
+      font-size: ${rem(16, "extraLarge")};
+      padding-bottom :${rem(10, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      font-size: ${rem(16, "xxl")};
+      padding-bottom :${rem(10, "xxl")};
     }
   }
 `;

@@ -1,3 +1,14 @@
 - add grid
 - add grid 
 - add placeholder image
+- [x]   products cta fontsize:20px
+- [x]   headers fontsize : our way size
+- [x]   contact bcg alignment issue
+- [x]   logo overlapping header in our #ourproducts
+- [x]   add spacing between sections
+- [x]   our way
+  - [x]   dont change font-size 
+- [x]   Add recaptcha to form
+- [ ]   add background
+- [x]   add yc
+- [x]   add google analytics
