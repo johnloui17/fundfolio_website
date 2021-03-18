@@ -119,6 +119,7 @@ export const Content = styled.div`
 export const BottomLogoContainer = styled.div`
   position: absolute;
   bottom:0;
+  padding: ${rem(80)} ${rem(150)};
   @media (max-width: 1024px) and (min-width: 768px) {
     padding: ${rem(40, "tablet")} ${rem(90, "tablet")};
   }

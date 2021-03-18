@@ -47,7 +47,7 @@ const Home = (props) => {
           </Button>
         </Content>
       </ContentWrapper>
-      <BottomLogoContainer>
+      {false?<BottomLogoContainer>
         <p>backed by</p>
           {device === "large" ? (
             <Image
@@ -66,7 +66,7 @@ const Home = (props) => {
               alt="fundfolio y-combinator"
             />
           )}
-      </BottomLogoContainer>
+      </BottomLogoContainer>:null}
     </Container>
   );
 };
