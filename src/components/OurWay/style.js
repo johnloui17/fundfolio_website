@@ -244,10 +244,10 @@ export const DisplayCard = styled.div`
       font-weight: 500;
     }
     @media (max-width: 767px) {
-      width: ${rem(500, "mobile")};
+      width: 80%;
       top: ${rem(110, "mobile")};
       left: ${rem(50, "mobile")};
-      font-size: ${rem(45, "mobile")};
+      font-size: ${rem(40, "mobile")};
       color: #86868c;
       font-weight: 500;
     }
