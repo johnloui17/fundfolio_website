@@ -12,3 +12,5 @@
 - [ ]   add background
 - [x]   add yc
 - [x]   add google analytics
+- youtube
+- background color

@@ -139,7 +139,7 @@ const Header = (props) => {
             ) : (
               <Image
                 loader={gumletLoader}
-                src={"/facebook.svg"}
+                src={"/you-tube.svg"}
                 width={22}
                 height={22}
               />
