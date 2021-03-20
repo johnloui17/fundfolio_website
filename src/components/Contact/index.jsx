@@ -34,7 +34,6 @@ const Contact = (props) => {
       try {
         const resp = await Email.send({
           SecureToken: token,
-          To: "sajin4dev@gmail.com",
           Subject: "From Fundfolio Website",
           To: "support@fundfolio.in",
           From: email,
