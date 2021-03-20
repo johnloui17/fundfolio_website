@@ -86,19 +86,8 @@ function MyApp({ Component, pageProps }) {
         ></script>
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=UA-166954131-1"
+          src="https://www.google.com/recaptcha/api.js?render=6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz"
         ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '[Tracking ID]');
-        `,
-          }}
-        />
-
         <link
           rel="preload"
           href="/fonts/gilroy-bold-webfont.woff"

@@ -11,6 +11,7 @@ import Button from "../Button";
 import Input from "../Input";
 import Icons from "../Icons";
 import { gumletLoader } from "../../utils/gumletLoader";
+import ReCaptcha from "./reCaptcha"
 
 const Contact = (props) => {
   const [name, setName] = useState("");
@@ -32,17 +33,22 @@ const Contact = (props) => {
     if (validationTrue()) {
       console.log("in ");
       try {
-        const resp = await Email.send({
-          SecureToken: token,
-          To: "sajin4dev@gmail.com",
-          Subject: "From Fundfolio Website",
-          To: "support@fundfolio.in",
-          From: email,
-          Number: number,
-          Body: `Name: ${name}\n` + `Email: ${email}\n` + `Message: ${message}`,
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz', {action: 'submit'}).then(async function(token) {
+              // Add your logic to submit to your backend server here.
+              const resp = await Email.send({
+                SecureToken: token,
+                To: "sajin4dev@gmail.com",
+                Subject: "From Fundfolio Website",
+                To: "support@fundfolio.in",
+                From: email,
+                Number: number,
+                Body: `Name: ${name}\n` + `Email: ${email}\n` + `Message: ${message}`,
+              });
+              document.getElementById("message").innerText =
+                "Thank you! Your message is successfully sent :)";
+          });
         });
-        document.getElementById("message").innerText =
-          "Thank you! Your message is successfully sent :)";
       } catch (e) {
         // document.getElementById('message').innerText = "Oops! Somthing went wrong :/";
         console.log(e);
@@ -118,15 +124,11 @@ const Contact = (props) => {
           placeholder="type here"
           onChange={(e) => setMessage(e.target.value)}
         />
-        <div
-          class="g-recaptcha col-sm-5"
-          data-sitekey="6Ldlit0ZAAAAAEjYjd5ZanjhyVD4531RtpTZQ8WN"
-          data-callback="recaptcha_callback"
-          data-expired-callback="recaptchaExpired"
-          style={{paddingBottom:40}}
-        ></div>
-
-        <Button  type="ghost" onClick={() => sentMail()}>
+        {/* <ReCaptcha/> */}
+        <Button
+          type="ghost"
+          onClick={() => sentMail()}
+        >
           <Icons name="arrow" fill={"#fff"} />
           <BtnTextContainer>Submit</BtnTextContainer>
         </Button>

@@ -12,5 +12,7 @@
 - [ ]   add background
 - [x]   add yc
 - [x]   add google analytics
-- youtube
-- background color
+- [x] youtube
+- [x] background color
+- [ ] set page offsets to trigger auto select of header tabs
+- [ ] 
