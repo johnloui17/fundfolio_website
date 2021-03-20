@@ -11,7 +11,7 @@ const OurProduct = (props) => (
             type="marketfeed"
             heading="to know"
             desc="curated stock market insights with live feed, market news, screeners and sebi-registered advisory"
-            href={"https://marketfeed.news/"}
+            href={"https://marketfeed.app/"}
             width={120}
             height={20}
             scaledWidth={244}
@@ -31,7 +31,7 @@ const OurProduct = (props) => (
             type="fundfolioOne"
             heading="to earn"
             desc="get a personal finance companion to help sort all your financial needs."
-            href={""}
+            href={"#"}
             width={120}
             height={20}
             scaledWidth={248}

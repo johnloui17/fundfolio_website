@@ -129,9 +129,6 @@ const Footer = (props) => {
         </Column>
         <Column>
           <SubHeading>products</SubHeading>
-          <Link href={"https://fundfolio.in"} passHref={true}>
-            <FooterLink target={"_blank"}>fundfolio.in</FooterLink>
-          </Link>
           <Link href="https://marketfeed.news/" passHref={true}>
             <FooterLink target={"_blank"}>marketfeed.news</FooterLink>
           </Link>
@@ -166,7 +163,7 @@ const Footer = (props) => {
           ) : (
             <Icons name="love" />
           )}
-          <span>by fundfolio.in.</span>
+          <span>by fundfolio.com.</span>
         </Copyright>
       </Row>
     </Container>
