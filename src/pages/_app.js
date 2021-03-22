@@ -63,7 +63,30 @@ function MyApp({ Component, pageProps }) {
           name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
-        <title>fundfolio - financial freedom for all.</title>
+        <title>Fundfolio - Financial Freedom for all.</title>
+        
+        <meta name="description" content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence."/>
+        <meta name="keywords" content="ITR Filing, Tax Filing, Mutual funds in India, Buy Insurance online, Stock market Online, stock tips, intraday screener, algo trading"/>
+
+        <meta property="og:url" content="https://fundfolio.com" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Fundfolio - Financial Freedom for all." />
+        <meta property="og:description" content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence." />
+        <meta property="og:image" content="https://l8n8labs.com/assets/img/cover-pic/L8-N8-Labs.png" />
+
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:site" content="@MarketfeedNews"/>
+        <meta name="twitter:creator" content="@MarketfeedNews"/>
+        <meta name="twitter:title" content="Fundfolio - Financial Freedom for all."/>
+        <meta name="twitter:description" content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence."/>
+        <meta name="twitter:image" content="https://l8n8labs.com/assets/img/cover-pic/L8-N8-Labs.png"/>
+
+        <meta itemscope itemtype="http://schema.org/Article" />
+        <meta itemprop="headline" content="Fundfolio - Financial Freedom for all." />
+        <meta itemprop="description" content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence." />
+        <meta itemprop="image" content="https://l8n8labs.com/assets/img/cover-pic/L8-N8-Labs.png" />
+        <meta itemprop="og:headline" content="Fundfolio - Financial Freedom for all." />
+
         <link
           rel="shortcut icon"
           href="https://fundfolio.gumlet.io/fundfolio/fav_ico.png"
