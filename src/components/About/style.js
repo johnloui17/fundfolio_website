@@ -11,10 +11,19 @@ export const Container = styled.div`
     padding-top: ${rem(150, "mobile")};
   }
   @media (max-width: 767px) {
-    padding: ${rem(0, "mobile")} ${rem(150, "mobile")};
+    padding-bottom: 0;
     padding-left: ${rem(100, "mobile")};
     padding-right: ${rem(100, "mobile")};
     padding-top: ${rem(150, "mobile")};
+  }
+  @media (min-width: 1920px) {
+    padding: ${rem(137, "large")} ${rem(150, "large")};
+  }
+  @media (min-width: 2560px) {
+    padding: ${rem(137, "extraLarge")} ${rem(150, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    padding: ${rem(137, "xxl")} ${rem(150, "xxl")};
   }
 `;
 export const Row = styled.div`
@@ -37,11 +46,33 @@ export const Heading = styled.div`
   font-family: "gilroybold";
   @media (max-width: 767px) {
     margin-bottom: ${rem(40, "mobile")};
+    font-size: ${rem(50, "mobile")};
+  }
+  @media (min-width: 1920px) {
+    font-size: ${rem(38, "large")};
+    margin-bottom: ${rem(40, "large")};
+  }
+  @media (min-width: 2560px) {
+    font-size: ${rem(38, "extraLarge")};
+    margin-bottom: ${rem(40, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    font-size: ${rem(38, "xxl")};
+    margin-bottom: ${rem(40, "xxl")};
   }
 `;
 
 export const LeftSection = styled.div`
   max-width: ${rem(615)};
+  @media (min-width: 1920px) {
+    max-width: ${rem(615, "large")};
+  }
+  @media (min-width: 2560px) {
+    max-width: ${rem(615, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    max-width: ${rem(615, "xxl")};
+  }
   h1 {
     color: #fff;
     font-size: ${rem(60)};
@@ -55,6 +86,15 @@ export const LeftSection = styled.div`
     @media (max-width: 767px) {
       font-size: ${rem(65, "mobile")};
     }
+    @media (min-width: 1920px) {
+      font-size: ${rem(60, "large")};
+    }
+    @media (min-width: 2560px) {
+      font-size: ${rem(60, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      font-size: ${rem(60, "xxl")};
+    }
   }
   p {
     color: #70707c;
@@ -66,11 +106,29 @@ export const LeftSection = styled.div`
     @media (max-width: 767px) {
       font-size: ${rem(40, "mobile")};
     }
+    @media (min-width: 1920px) {
+      font-size: ${rem(24, "large")};
+    }
+    @media (min-width: 2560px) {
+      font-size: ${rem(24, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      font-size: ${rem(24, "xxl")};
+    }
   }
 `;
 
 export const RightSection = styled.div`
   margin-left: ${rem(150)};
+  @media (min-width: 1920px) {
+    margin-left: ${rem(150, "large")};
+  }
+  @media (min-width: 2560px) {
+    margin-left: ${rem(150, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    margin-left: ${rem(150, "xxl")};
+  }
   position: relative;
   .pattern {
     position: absolute;
@@ -91,6 +149,21 @@ export const RightSection = styled.div`
       font-size: ${rem(150, "mobile")};
       margin-top: ${rem(60)};
     }
+    @media (min-width: 1920px) {
+      font-size: ${rem(100, "large")};
+      margin-top: ${rem(40, "large")};
+      margin-left: ${rem(30, "large")};
+    }
+    @media (min-width: 2560px) {
+      font-size: ${rem(24, "extraLarge")};
+      margin-top: ${rem(40, "extraLarge")};
+      margin-left: ${rem(30, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      font-size: ${rem(100, "xxl")};
+      margin-top: ${rem(40, "xxl")};
+      margin-left: ${rem(30, "xxl")};
+    }
   }
   p {
     color: #fff;
@@ -99,6 +172,18 @@ export const RightSection = styled.div`
     margin-left: ${rem(30)};
     font-family: "gilroybold";
     opacity: 0.6;
+    @media (min-width: 1920px) {
+      font-size: ${rem(24, "large")};
+      margin-left: ${rem(30, "large")};
+    }
+    @media (min-width: 2560px) {
+      font-size: ${rem(24, "extraLarge")};
+      margin-left: ${rem(30, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      font-size: ${rem(24, "xxl")};
+      margin-left: ${rem(30, "xxl")};
+    }
   }
 
   @media (max-width: 1024px) and (min-width: 768px) {

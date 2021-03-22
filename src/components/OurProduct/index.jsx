@@ -10,8 +10,8 @@ const OurProduct = (props) => (
         <ProductCard 
             type="marketfeed"
             heading="to know"
-            desc="Curated noise-free market news, realtime screeners, live feed and more. "
-            href={"https://marketfeed.news/"}
+            desc="curated stock market insights with live feed, market news, screeners and sebi-registered advisory"
+            href={"https://marketfeed.app/"}
             width={120}
             height={20}
             scaledWidth={244}
@@ -20,7 +20,7 @@ const OurProduct = (props) => (
         <ProductCard 
             type="breakout"
             heading="to learn"
-            desc="Learn directly from seasoned stock market experts. Taste the secret sauce in their journey to success."
+            desc="learn directly from seasoned stock market experts. taste the secret sauce in their journey to success."
             href={"https://breakout.army/"}
             width={112}
             height={19.3}
@@ -30,8 +30,8 @@ const OurProduct = (props) => (
         <ProductCard 
             type="fundfolioOne"
             heading="to earn"
-            desc="Lorem ipsum dolomet, consectetur adipiscing elit. In luctus lorem Aenean venenatis"
-            href={""}
+            desc="get a personal finance companion to help sort all your financial needs."
+            href={"#"}
             width={120}
             height={20}
             scaledWidth={248}
