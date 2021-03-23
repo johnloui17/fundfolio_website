@@ -67,7 +67,10 @@ export const HoverNav = styled.div`
     cursor: pointer;
     margin-bottom: ${rem(20)};
     transition: all 0.3s ease;
-    font-family: "gilroybold";
+    b{
+      font-family: "gilroybold";
+
+    }
     span {
       font-size: ${rem(20)};
       font-weight: 300;
@@ -115,14 +118,17 @@ export const HoverNav = styled.div`
     }
   }
   li.active {
-    background: -webkit-linear-gradient(left, #40eaf5, #504dff);
-    background: -o-linear-gradient(right, #40eaf5, #504dff);
-    background: -moz-linear-gradient(right, #40eaf5, #504dff);
-    background: linear-gradient(to right, #40eaf5, #504dff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     font-size: ${rem(60)};
     font-family: "gilroybold";
+    b{
+      background: -webkit-linear-gradient(left, #40eaf5, #504dff);
+      background: -o-linear-gradient(right, #40eaf5, #504dff);
+      background: -moz-linear-gradient(right, #40eaf5, #504dff);
+      background: linear-gradient(to right, #40eaf5, #504dff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+    }
     @media (max-width: 1024px) and (min-width: 768px) {
       font-size: ${rem(60, "tablet")};
       padding-right: ${rem(60, "tablet")};
