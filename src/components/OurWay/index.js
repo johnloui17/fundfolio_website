@@ -20,7 +20,7 @@ const OurWay = (props) => {
       intervalId = setCurrentAttr(attributes[k % 3]);
       console.log(k);
       k++;
-    }, 10000);
+    }, 4000);
     return () => {
       clearInterval(intervalId);
     };
@@ -35,20 +35,20 @@ const OurWay = (props) => {
               className={currentAttr === "educate" ? "active" : ""}
               onClick={() => setCurrentAttr("educate")}
             >
-              <span>01</span> educate
+              <span>01</span> <b>educate</b>
             </li>
             <li
               onClick={() => setCurrentAttr("engage")}
               className={currentAttr === "engage" ? "active" : ""}
             >
-              <span>02</span> engage
+              <span>02</span> <b>engage</b>
             </li>
             <li
               onClick={() => setCurrentAttr("elevate")}
               className={currentAttr === "elevate" ? "active" : ""}
             >
               {" "}
-              <span>03</span> elevate
+              <span>03</span> <b>elevate</b>
             </li>
           </ul>
         </HoverNav>
