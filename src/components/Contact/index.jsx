@@ -33,7 +33,7 @@ const Contact = (props) => {
     if (validationTrue()) {
       console.log("in ");
       try {
-        grecaptcha.ready(function() {
+        grecaptcha.ready(async function() {
           grecaptcha.execute('6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz', {action: 'submit'}).then(async function(token) {
               // Add your logic to submit to your backend server here.
               const resp = await Email.send({

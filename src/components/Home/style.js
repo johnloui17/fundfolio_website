@@ -16,7 +16,7 @@ export const ImageBackground = styled.div`
     object-fit: cover;
   }
   @media (max-width: 767px) {
-    background-color:#140F2A
+    background:#140F2A;
   }
 `;
 export const ContentWrapper = styled.div`

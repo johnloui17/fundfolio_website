@@ -85,7 +85,6 @@ function MyApp({ Component, pageProps }) {
           defer
         ></script>
         <script
-          async
           src="https://www.google.com/recaptcha/api.js?render=6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz"
         ></script>
         <link
