@@ -63,7 +63,30 @@ function MyApp({ Component, pageProps }) {
           name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
-        <title>fundfolio - financial freedom for all.</title>
+        <title>Fundfolio - financial freedom for all.</title>
+        
+        <meta name="description" content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence."/>
+        <meta name="keywords" content="ITR Filing, Tax Filing, Mutual funds in India, Buy Insurance online, Stock market Online, stock tips, intraday screener, algo trading"/>
+
+        <meta property="og:url" content="https://fundfolio.com" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Fundfolio - financial freedom for all." />
+        <meta property="og:description" content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence." />
+        <meta property="og:image" content="https://fundfolio.gumlet.io/fundfolio/fundfolio-thumbnail.png" />
+
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:site" content="@MarketfeedNews"/>
+        <meta name="twitter:creator" content="@MarketfeedNews"/>
+        <meta name="twitter:title" content="Fundfolio - financial freedom for all."/>
+        <meta name="twitter:description" content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence."/>
+        <meta name="twitter:image" content="https://fundfolio.gumlet.io/fundfolio/fundfolio-thumbnail.png"/>
+
+        <meta itemscope itemtype="http://schema.org/Article" />
+        <meta itemprop="headline" content="Fundfolio - financial freedom for all." />
+        <meta itemprop="description" content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence." />
+        <meta itemprop="image" content="https://fundfolio.gumlet.io/fundfolio/fundfolio-thumbnail.png" />
+        <meta itemprop="og:headline" content="Fundfolio - financial freedom for all." />
+
         <link
           rel="shortcut icon"
           href="https://fundfolio.gumlet.io/fundfolio/fav_ico.png"
@@ -117,7 +140,13 @@ function MyApp({ Component, pageProps }) {
           as="font"
           crossOrigin=""
         />
-      </Head>
+      <script dangerouslySetInnerHTML={{__html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-UA-166954131-1');`}} />
+    </Head>
+    <noscript dangerouslySetInnerHTML={{__html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-UA-166954131-1" height="0" width="0" style="display:none;visibility:hidden;"></iframe>`}} />
       <GlobalStyle />
       <Component {...pageProps} />
     </ThemeProvider>
