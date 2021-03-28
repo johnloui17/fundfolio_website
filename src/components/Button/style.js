@@ -6,10 +6,23 @@ export const Container = styled.button`
   border-radius: 35px;
   border: solid 1px
     ${(props) => (props.type == "ghost" ? "#f55240" : "transparent")};
-  background: ${(props) => (props.type == "ghost" ? "transparent" : "#ee368e")};
-  background-image: ${(props) =>
+  background: ${(props) =>
     props.type == "ghost"
+      ? "transparent"
+      : props.type === "submitting"
+      ? "rgb(245,82,64,0.1)"
+      : props.type === "submitted"
+      ? "#44b9a4"
+      : "#ee368e"};
+  background-image: ${(props) =>
+    props.type === "ghost"
       ? "linear-gradient(to top, transparent, transparent)"
+      : props.type === "submitting"
+      ? "linear-gradient(160deg,rgb(245,82,64,0.1),rgb(238,54,142,0.1))"
+      : props.type === "submitted"
+      ? "linear-gradient(160deg,#44b9a4,#32c37e)"
+      : props.type === "error"
+      ? "linear-gradient(160deg,#f552401f,#ee368e1a)"
       : "linear-gradient(160deg,#f55240,#ee368e)"};
   color: #fff;
   font-size: ${rem(24)};
@@ -25,7 +38,7 @@ export const Container = styled.button`
   }
   svg {
     margin-right: 10px;
-    margin-bottom: 5px;
+    // margin-bottom: 5px;
   }
   @media (min-width: 1920px) {
     width: ${rem(217, "large")};

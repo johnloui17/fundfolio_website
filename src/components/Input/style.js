@@ -45,8 +45,7 @@ export const Container = styled.div`
     color: #6a6a77;
     outline: none;
     font-family: "gilroymedium";
-
-  border-bottom: 1px solid #6a6a77;
+    border-bottom: 1px solid #6a6a77;
     &:focus {
       outline: none;
       border-bottom: 1px solid #2b80ff;
