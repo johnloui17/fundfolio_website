@@ -80,18 +80,10 @@ export const FormContainer = styled.div`
   svg {
     fill: #fff;
   }
-  @media (max-width: 767px) {
-    svg {
-      fill: #f55240;
-    }
-  }
 `;
 
 export const BtnTextContainer = styled.span`
   color: #fff;
-  @media (max-width: 767px) {
-    color: #f55240;
-  }
 `;
 
 export const Spin = styled.div`
