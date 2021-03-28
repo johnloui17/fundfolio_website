@@ -28,21 +28,16 @@ const Contact = (props) => {
     setButtonType("ghost");
   }, []);
   useEffect(() => {
-    console.log(action, buttonType);
     handleButtonTypeChange();
   }, [action]);
   useEffect(() => {
-    console.log(action, buttonType);
     if (validationTrue(false)) {
       action === "ghost" ? setAction("default") : null;
-      console.log("in1");
     } else {
       action === "default" ? setAction("ghost") : null;
-      console.log("in2");
     }
   }, [name, number, email, message]);
   const sentMail = async () => {
-    console.log("in ");
     const token = "a2064791-13b2-4e57-bf5f-c21d1147f4ac";
     const mailData = {
       name,
@@ -51,10 +46,7 @@ const Contact = (props) => {
       message,
     };
     if (validationTrue(true)) {
-      console.log("in ");
       setAction("submitting");
-
-      console.log("in3");
       try {
         grecaptcha.ready(async function () {
           grecaptcha
@@ -66,8 +58,7 @@ const Contact = (props) => {
               const resp = await Email.send({
                 SecureToken: token,
                 Subject: "From Fundfolio Website",
-                To: "jose.loui@fundfolio.in",
-                To:"louijose@gmail.com",
+                To: "support@fundfolio.in",
                 From: email,
                 Number: number,
                 Body:
@@ -76,11 +67,6 @@ const Contact = (props) => {
                   `Message: ${message}`,
               });
               setAction("submitted");
-
-                // To: "sajin4dev@gmail.com",
-                // Subject: "From Fundfolio Website",
-                // To: "support@fundfolio.in",
-              console.log("in4");
             });
         });
       } catch (e) {
@@ -117,10 +103,6 @@ const Contact = (props) => {
     return true;
   };
   const handleButtonTypeChange = () => {
-    if (validationTrue(false)) {
-      // setAction("default");
-      console.log("in5");
-    }
     if (action === "default") {
       setButtonType(null);
     } else if (action === "ghost") {
@@ -160,7 +142,6 @@ const Contact = (props) => {
     }
   };
   const resetForm = () => {
-    console.log("in2");
     setNumber("");
     setName("");
     setEmail("");
@@ -219,9 +200,6 @@ const Contact = (props) => {
           type={buttonType}
           onClick={() => {
             action === "default" ? sentMail() : null;
-            // action === "submitted" ? resetForm() : null;
-            // setAction("submitted")
-            console.log(action, buttonType);
           }}
         >
           {getIcon()}
