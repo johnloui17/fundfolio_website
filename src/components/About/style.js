@@ -16,6 +16,9 @@ export const Container = styled.div`
     padding-right: ${rem(100, "mobile")};
     padding-top: ${rem(150, "mobile")};
   }
+  @media (min-width: 1280px) {
+    padding: ${rem(137, "medium")} ${rem(150, "medium")};
+  }
   @media (min-width: 1920px) {
     padding: ${rem(137, "large")} ${rem(150, "large")};
   }
@@ -48,6 +51,10 @@ export const Heading = styled.div`
     margin-bottom: ${rem(40, "mobile")};
     font-size: ${rem(50, "mobile")};
   }
+  @media (min-width: 1280px) {
+    font-size: ${rem(38, "medium")};
+    margin-bottom: ${rem(40, "medium")};
+  }
   @media (min-width: 1920px) {
     font-size: ${rem(38, "large")};
     margin-bottom: ${rem(40, "large")};
@@ -64,6 +71,9 @@ export const Heading = styled.div`
 
 export const LeftSection = styled.div`
   max-width: ${rem(615)};
+  @media (min-width: 1280px) {
+    max-width: ${rem(615, "medium")};
+  }
   @media (min-width: 1920px) {
     max-width: ${rem(615, "large")};
   }
@@ -79,12 +89,14 @@ export const LeftSection = styled.div`
     font-weight: bold;
     line-height: 1.17;
     font-family: "gilroybold";
-
     @media (max-width: 1024px) and (min-width: 768px) {
       font-size: ${rem(60, "tablet")};
     }
     @media (max-width: 767px) {
       font-size: ${rem(65, "mobile")};
+    }
+    @media (min-width: 1280px) {
+      font-size: ${rem(60, "medium")};
     }
     @media (min-width: 1920px) {
       font-size: ${rem(60, "large")};
@@ -106,6 +118,9 @@ export const LeftSection = styled.div`
     @media (max-width: 767px) {
       font-size: ${rem(40, "mobile")};
     }
+    @media (min-width: 1280px) {
+      font-size: ${rem(24, "medium")};
+    }
     @media (min-width: 1920px) {
       font-size: ${rem(24, "large")};
     }
@@ -120,6 +135,9 @@ export const LeftSection = styled.div`
 
 export const RightSection = styled.div`
   margin-left: ${rem(150)};
+  @media (min-width: 1280px) {
+    margin-left: ${rem(150, "medium")};
+  }
   @media (min-width: 1920px) {
     margin-left: ${rem(150, "large")};
   }
@@ -149,6 +167,11 @@ export const RightSection = styled.div`
       font-size: ${rem(150, "mobile")};
       margin-top: ${rem(60)};
     }
+    @media (min-width: 1280px) {
+      font-size: ${rem(100, "medium")};
+      margin-top: ${rem(40, "medium")};
+      margin-left: ${rem(30, "medium")};
+    }
     @media (min-width: 1920px) {
       font-size: ${rem(100, "large")};
       margin-top: ${rem(40, "large")};
@@ -172,6 +195,10 @@ export const RightSection = styled.div`
     margin-left: ${rem(30)};
     font-family: "gilroybold";
     opacity: 0.6;
+    @media (min-width: 1280px) {
+      font-size: ${rem(24, "medium")};
+      margin-left: ${rem(30, "medium")};
+    }
     @media (min-width: 1920px) {
       font-size: ${rem(24, "large")};
       margin-left: ${rem(30, "large")};

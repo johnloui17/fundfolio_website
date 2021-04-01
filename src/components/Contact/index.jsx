@@ -53,7 +53,7 @@ const Contact = (props) => {
             .execute("6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz", {
               action: "submit",
             })
-            .then(async function (token) {
+            .then(async function () {
               // Add your logic to submit to your backend server here.
               const resp = await Email.send({
                 SecureToken: token,
@@ -67,11 +67,14 @@ const Contact = (props) => {
                   `Message: ${message}`,
               });
               setAction("submitted");
+              setTimeout(() => {
+                resetForm();
+              }, 3000);
             });
         });
       } catch (e) {
         // document.getElementById('message').innerText = "Oops! Somthing went wrong :/";
-        setAction("error");
+        setAction("errors");
         console.log(e);
       }
     } else {
@@ -142,11 +145,13 @@ const Contact = (props) => {
     }
   };
   const resetForm = () => {
-    setNumber("");
+    setNumber((num)=>"");
     setName("");
     setEmail("");
     setMessage("");
+    setAction("ghost");
     setButtonType("ghost");
+    console.log((number,email,name,message));
   }
   return (
     <Container id="contact">
@@ -176,24 +181,28 @@ const Contact = (props) => {
           label="my name is"
           placeholder="your name"
           onChange={(e) => setName(e.target.value)}
-        />
+          value={name}
+          />
         <Input
           type="number"
           label="my phone number is"
           placeholder="your phone number"
           onChange={(e) => setNumber(e.target.value)}
-        />
+          value={number}
+          />
         <Input
           type="email"
           label="reach me at"
           placeholder="your@email.com"
           onChange={(e) => setEmail(e.target.value)}
-        />
+          value={email}
+          />
         <Input
           label="message"
           placeholder="type here"
           onChange={(e) => setMessage(e.target.value)}
-        />
+          value={message}
+          />
         {/* <ReCaptcha/> */}
         <Button
           id="submitButton"

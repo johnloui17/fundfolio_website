@@ -16,7 +16,7 @@ export const ImageBackground = styled.div`
     object-fit: cover;
   }
   @media (max-width: 767px) {
-    background:#140F2A;
+    background: #140f2a;
   }
 `;
 export const ContentWrapper = styled.div`
@@ -34,6 +34,9 @@ export const ContentWrapper = styled.div`
     padding-left: ${rem(100, "mobile")};
     padding-right: ${rem(100, "mobile")};
     padding-top: ${rem(300, "mobile")};
+  }
+  @media (min-width: 1280px) {
+    padding: ${rem(150, "medium")};
   }
   @media (min-width: 1920px) {
     padding: ${rem(150, "large")};
@@ -56,6 +59,9 @@ export const Content = styled.div`
   @media (max-width: 767px) {
     max-width: 100%;
   }
+  @media (min-width: 1280px) {
+    max-width: ${rem(725, "medium")};
+  }
   @media (min-width: 1920px) {
     max-width: ${rem(725, "large")};
   }
@@ -70,7 +76,7 @@ export const Content = styled.div`
     font-weight: 900;
     line-height: ${rem(90)};
     font-family: "gilroyheavy";
-    color:#fff;
+    color: #fff;
     @media (max-width: 1024px) and (min-width: 768px) {
       font-size: ${rem(80, "tablet")};
       line-height: ${rem(90, "tablet")};
@@ -78,6 +84,10 @@ export const Content = styled.div`
     @media (max-width: 767px) {
       font-size: ${rem(80, "mobile")};
       line-height: ${rem(90, "mobile")};
+    }
+    @media (min-width: 1280px) {
+      font-size: ${rem(80, "medium")};
+      line-height: ${rem(90, "medium")};
     }
     @media (min-width: 1920px) {
       font-size: ${rem(80, "large")};
@@ -105,6 +115,9 @@ export const Content = styled.div`
       font-size: ${rem(16)};
       padding-right: ${rem(200, "mobile")};
     }
+    @media (min-width: 1280px) {
+      font-size: ${rem(24, "medium")};
+    }
     @media (min-width: 1920px) {
       font-size: ${rem(24, "large")};
     }
@@ -126,6 +139,9 @@ export const BottomLogoContainer = styled.div`
   @media (max-width: 767px) {
     padding: ${rem(40, "mobile")} ${rem(90, "mobile")};
   }
+  @media (min-width: 1280px) {
+    padding: ${rem(80, "medium")} ${rem(150, "medium")};
+  }
   @media (min-width: 1920px) {
     padding: ${rem(80, "large")} ${rem(150, "large")};
   }
@@ -143,6 +159,10 @@ export const BottomLogoContainer = styled.div`
     @media (max-width: 767px) {
       font-size: ${rem(12)};
       padding-bottom :6px;
+    }
+    @media (min-width: 1280px) {
+      font-size: ${rem(16, "medium")};
+        padding-bottom :${rem(10, "medium")};
     }
     @media (min-width: 1920px) {
       font-size: ${rem(16, "large")};
