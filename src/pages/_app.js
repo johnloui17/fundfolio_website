@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-const GlobalStyle = createGlobalStyle`
 
+const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: 'gilroybold';
   src: url("/fonts/gilroy-bold-webfont.woff"),

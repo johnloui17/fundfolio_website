@@ -247,7 +247,7 @@ export const DisplayCard = styled.div`
   }
   @media (min-width: 1280px) {
     width: ${rem(754, "medium")};
-    height: ${rem(600, "medium")};
+    height: ${rem(500, "medium")};
     border-radius: ${rem(16, "medium")};
     margin: ${rem(30, "medium")};
   }
