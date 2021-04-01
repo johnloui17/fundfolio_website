@@ -21,10 +21,10 @@ export default function HomePage() {
   let partnersOffset;
   let contactOffset;
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
     setTimeout(() => {
       setLoading(false);
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }, 2500);
   }, []);
   useEffect(() => {
@@ -146,9 +146,9 @@ export default function HomePage() {
     const homeOffset = 0;
     const aboutOffset = document.getElementById("about").offsetTop - 10;
     const ourWayOffset = document.getElementById("our-way").offsetTop - 10;
-    const productsOffset = document.getElementById("products").offsetTop - 10;
-    const partnersOffset = document.getElementById("partners").offsetTop - 10;
-    const contactOffset = document.getElementById("contact").offsetTop - 10;
+    const productsOffset = document.getElementById("products").offsetTop - 70;
+    const partnersOffset = document.getElementById("partners").offsetTop - 70;
+    const contactOffset = document.getElementById("contact").offsetTop - 70;
     if (!isScrolling) {
       if (document.body.getBoundingClientRect().top > scrollPos) {
         // console.log("up");
@@ -202,18 +202,21 @@ export default function HomePage() {
   };
   return (
     <>
-      <>
-        <App transparent={transparent} activeTab={activeTab}>
-          <Home />
-          <About onView={activeTab === "about"} />
-          <OurWay />
-          <OurProduct />
-          <Partners />
-          <Contact />
-          <Footer />
-        </App>
-        {isLoading ? <Loader /> : null}
-      </>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <App transparent={transparent} activeTab={activeTab}>
+            <Home />
+            <About onView={activeTab === "about"} />
+            <OurWay />
+            <OurProduct />
+            <Partners />
+            <Contact />
+            <Footer />
+          </App>
+        </>
+      )}
     </>
   );
 }

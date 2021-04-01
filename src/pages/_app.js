@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-
 const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: 'gilroybold';
@@ -50,10 +49,11 @@ const GlobalStyle = createGlobalStyle`
   }
   body, html {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    height: 100%;
+    height: 100vh;
+    width:100vw;
     font-family: 'Roboto', sans-serif;
+    overscroll-behavior: none;
   }
   #__next{
     height: 100%;
