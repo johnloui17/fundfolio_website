@@ -1,9 +1,19 @@
 import React from 'react'
 import { Container} from './style'
 const Input = (props) => {
+  console.log(props, props.value !== "", "props")
+  let labelStyle = ()=>{
+    if (props.value === "") {
+      return {color:"#fff"}
+    }
+    else {
+      return { color: "#fff", opacity:"0.4"}
+    }
+  }
+  console.log(labelStyle())
   return(
   <Container>
-    <label>{props.label}</label>
+    <label style={labelStyle()}>{props.label}</label>
     <input {...props}/>
   </Container>
 )}

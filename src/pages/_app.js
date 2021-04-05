@@ -61,7 +61,9 @@ const GlobalStyle = createGlobalStyle`
   h1,h2,h3,h4,p{
     margin: 0;
   }
-  
+::-webkit-scrollbar {
+  display: none;
+}
 `;
 function MyApp({ Component, pageProps }) {
   return (
