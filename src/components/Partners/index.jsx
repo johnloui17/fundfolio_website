@@ -104,7 +104,7 @@ const Partners = (props) => {
             <Column className="column_5">
               <Image
                 loader={gumletLoader}
-                src="/iifl.png"
+                src="/smallcase.svg"
                 width={width}
                 height={height}
               />

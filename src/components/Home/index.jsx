@@ -17,6 +17,13 @@ const Home = (props) => {
     if (window.innerWidth > 1920) setDevice("large");
     console.log(device);
   }, []);
+  const handleHeaderClick = () => {
+    document.getElementById('contact').scrollIntoView();
+    props.setIsScrolling(true);
+    setTimeout(() => {
+      props.setIsScrolling(false);
+    }, 750);
+  };
   return (
     <Container id="home">
       <ImageBackground>
@@ -42,9 +49,9 @@ const Home = (props) => {
         <Content>
           <h1>we help you win the stock market</h1>
           <p>join the next billion revolution</p>
-          <Button>
-            <Icons name="arrow" fill="#fff" style={{ marginRight: 10 }} />
-            <span>join us</span>
+          <Button onClick={handleHeaderClick}>
+              <Icons name="arrow" fill="#fff" style={{ marginRight: 10 }} />
+              <span>join us</span>
           </Button>
         </Content>
       </ContentWrapper>

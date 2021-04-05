@@ -210,7 +210,7 @@ export default function HomePage() {
             activeTab={activeTab}
             setIsScrolling={setIsScrolling}
           >
-            <Home />
+            <Home setIsScrolling={setIsScrolling}/>
             <About onView={activeTab === "about"} />
             <OurWay />
             <OurProduct />

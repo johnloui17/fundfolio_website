@@ -8,7 +8,12 @@ const ProductCard = (props) => {
   const [fill, setFill] = useState(null);
   const [device, setDevice] = useState("");
   useEffect(() => {
-    if (window.innerWidth > 1920) {
+    if (window.innerWidth > 1920&& props.type==="fundfolioOne") {
+      setWidth(props.scaledWidth * 2);
+      setHeight(props.scaledHeight * 2);
+      setDevice("large");
+    }
+    else if (window.innerWidth > 1920) {
       setWidth(props.scaledWidth * 1.5);
       setHeight(props.scaledHeight * 1.5);
       setDevice("large");
