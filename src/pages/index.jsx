@@ -15,11 +15,11 @@ export default function HomePage() {
   const [isLoading, setLoading] = useState(true);
   const [scrollPos, setScrollPos] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
-  let aboutOffset;
-  let ourWayOffset;
-  let productsOffset;
-  let partnersOffset;
-  let contactOffset;
+  // let aboutOffset;
+  // let ourWayOffset;
+  // let productsOffset;
+  // let partnersOffset;
+  // let contactOffset;
   useEffect(() => {
     document.body.style.overflow = "hidden";
     setTimeout(() => {
@@ -69,13 +69,11 @@ export default function HomePage() {
 
     const aboutOffset = document.getElementById("about").offsetTop;
     const ourWayOffset = document.getElementById("our-way").offsetTop;
-    const productsOffset = document.getElementById("products").offsetTop - 70;
+    const productsOffset = document.getElementById("products").offsetTop;
     const productsOffsetMob =
       document.getElementById("products").offsetTop * 1.75;
-    const partnersOffset = document.getElementById("partners").offsetTop - 70;
-    const contactOffset = document.getElementById("contact").offsetTop - 70;
-    const contactOffsetBottom =
-      document.getElementById("contact").offsetHeight + contactOffset + 70;
+    const partnersOffset = document.getElementById("partners").offsetTop;
+    const contactOffset = document.getElementById("contact").offsetTop;
 
     if (window.innerWidth > 1023) {
       if (direction === "down") {
@@ -91,22 +89,22 @@ export default function HomePage() {
           // console.log(ourWayOffset);
         } else if (
           window.pageYOffset > ourWayOffset &&
-          window.pageYOffset < productsOffset
+          window.pageYOffset < productsOffset-70
         ) {
           window.scrollTo(0, productsOffset);
           offSet = productsOffset;
         } else if (
-          window.pageYOffset > productsOffset &&
-          window.pageYOffset < partnersOffset
+          window.pageYOffset > productsOffset - 70 &&
+          window.pageYOffset < partnersOffset - 70
         ) {
           window.scrollTo(0, partnersOffset);
         } else if (
-          window.pageYOffset > partnersOffset &&
-          window.pageYOffset < contactOffset
+          window.pageYOffset > partnersOffset - 70 &&
+          window.pageYOffset < contactOffset - 70
         ) {
           // console.log("scroll1");
           window.scrollTo(0, contactOffset);
-        } else if (window.pageYOffset > contactOffset) {
+        } else if (window.pageYOffset > contactOffset - 70) {
         }
       } else {
         if (window.pageYOffset < aboutOffset) {
@@ -130,7 +128,7 @@ export default function HomePage() {
           window.scrollTo(0, productsOffset);
         } else if (
           window.pageYOffset > partnersOffset &&
-          window.pageYOffset < contactOffset
+          window.pageYOffset < contactOffset + 30
         ) {
           window.scrollTo(0, partnersOffset);
         }
@@ -141,14 +139,15 @@ export default function HomePage() {
     // return offSet;
   };
   const onScroll = (event) => {
-    console.log(event);
+    
     event.preventDefault();
     const homeOffset = 0;
     const aboutOffset = document.getElementById("about").offsetTop - 10;
     const ourWayOffset = document.getElementById("our-way").offsetTop - 10;
-    const productsOffset = document.getElementById("products").offsetTop - 70;
-    const partnersOffset = document.getElementById("partners").offsetTop - 70;
-    const contactOffset = document.getElementById("contact").offsetTop - 70;
+    const productsOffset = document.getElementById("products").offsetTop - 10;
+    const partnersOffset = document.getElementById("partners").offsetTop - 10;
+    const contactOffset = document.getElementById("contact").offsetTop - 10;
+    console.log(event,window.pageYOffset,contactOffset);
     if (!isScrolling) {
       if (document.body.getBoundingClientRect().top > scrollPos) {
         // console.log("up");
@@ -206,7 +205,11 @@ export default function HomePage() {
         <Loader />
       ) : (
         <>
-          <App transparent={transparent} activeTab={activeTab}>
+          <App
+            transparent={transparent}
+            activeTab={activeTab}
+            setIsScrolling={setIsScrolling}
+          >
             <Home />
             <About onView={activeTab === "about"} />
             <OurWay />
