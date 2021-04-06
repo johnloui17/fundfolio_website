@@ -54,6 +54,7 @@ const GlobalStyle = createGlobalStyle`
     width:100vw;
     font-family: 'Roboto', sans-serif;
     overscroll-behavior: none;
+    .grecaptcha-badge { visibility: hidden; }
   }
   #__next{
     height: 100%;

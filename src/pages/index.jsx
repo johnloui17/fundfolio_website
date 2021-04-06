@@ -197,9 +197,6 @@ export default function HomePage() {
   };
   return (
     <>
-      {isLoading ? (
-        <Loader />
-      ) : (
         <>
           <App
             transparent={transparent}
@@ -213,9 +210,9 @@ export default function HomePage() {
             <Partners />
             <Contact />
             <Footer />
-          </App>
+            </App>
+            {isLoading ? <Loader /> : null}
         </>
-      )}
     </>
   );
 }
