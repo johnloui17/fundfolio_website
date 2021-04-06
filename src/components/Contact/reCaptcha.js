@@ -3,7 +3,7 @@ const handleLoaded = (_) => {
   window.grecaptcha.ready((_) => {
     window.grecaptcha
       .execute("6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz", {
-        action: "homepage",
+        action: "submit",
       })
       .then((token) => {
         // ...

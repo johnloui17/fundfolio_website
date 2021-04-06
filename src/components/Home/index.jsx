@@ -15,14 +15,15 @@ const Home = (props) => {
   useEffect(() => {
     if (window.innerWidth < 800) setDevice("mobile");
     if (window.innerWidth > 1920) setDevice("large");
+    console.log(device);
   }, []);
   return (
     <Container id="home">
       <ImageBackground>
         {device === "mobile" ? (
           <Image
-            src="/home-bg-mobile.png"
             loader={gumletLoader}
+            src="/mask-group@3x.png"
             className="background"
             layout={"fill"}
             alt="fundfolio website background"
@@ -30,7 +31,7 @@ const Home = (props) => {
         ) : (
           <Image
             loader={gumletLoader}
-            src="/home-bg.png"
+            src="/hero_bg.svg"
             className="background"
             layout={"fill"}
             alt="fundfolio website background"
@@ -47,8 +48,9 @@ const Home = (props) => {
           </Button>
         </Content>
       </ContentWrapper>
-      {false?<BottomLogoContainer>
-        <p>backed by</p>
+      {false ? (
+        <BottomLogoContainer>
+          <p>backed by</p>
           {device === "large" ? (
             <Image
               src="/yc_logo.svg"
@@ -66,7 +68,8 @@ const Home = (props) => {
               alt="fundfolio y-combinator"
             />
           )}
-      </BottomLogoContainer>:null}
+        </BottomLogoContainer>
+      ) : null}
     </Container>
   );
 };

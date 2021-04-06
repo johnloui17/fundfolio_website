@@ -5,7 +5,6 @@ export const Container = styled.div`
   width: ${rem(480)};
   background: transparent;
   color: #fff;
-  border-bottom: 1px solid #6a6a77;
   margin-bottom: ${rem(48)};
   @media (max-width: 767px) {
     width: ${rem(300)};
@@ -46,6 +45,11 @@ export const Container = styled.div`
     color: #6a6a77;
     outline: none;
     font-family: "gilroymedium";
+    border-bottom: 1px solid #6a6a77;
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid #2b80ff;
+    }
     @media (min-width: 1920px) {
       font-size: ${rem(30, "large")};
     }
@@ -55,7 +59,6 @@ export const Container = styled.div`
     @media (min-width: 3840px) {
       font-size: ${rem(30, "xxl")};
     }
-    
   }
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {

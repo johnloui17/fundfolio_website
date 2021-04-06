@@ -108,7 +108,6 @@ function MyApp({ Component, pageProps }) {
           defer
         ></script>
         <script
-          async
           src="https://www.google.com/recaptcha/api.js?render=6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz"
         ></script>
         <link
@@ -141,7 +140,13 @@ function MyApp({ Component, pageProps }) {
           as="font"
           crossOrigin=""
         />
-      </Head>
+      <script dangerouslySetInnerHTML={{__html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtag/js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','UA-166954131-1');`}} />
+    </Head>
+    <noscript dangerouslySetInnerHTML={{__html: `<iframe src="https://www.googletagmanager.com/gtag/js?id=UA-166954131-1" height="0" width="0" style="display:none;visibility:hidden;"></iframe>`}} />
       <GlobalStyle />
       <Component {...pageProps} />
     </ThemeProvider>

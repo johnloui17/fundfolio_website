@@ -4,14 +4,14 @@ import { rem } from "../../utils/remConverter";
 export const Container = styled.div`
   width: 100vw;
   position: relative;
-  background-color:#0d0a1b;
+  background-color: #0d0a1b;
   padding: ${rem(90)} ${rem(150)};
   @media (max-width: 1024px) and (min-width: 768px) {
     padding: ${rem(20)} ${rem(100)};
   }
   @media (max-width: 767px) {
     padding: ${rem(180)} ${rem(50)};
-    margin-bottom:100px;
+    margin-bottom: 100px;
   }
   @media (min-width: 1920px) {
     padding: ${rem(90, "large")} ${rem(150, "large")};
@@ -34,7 +34,7 @@ export const ImageBackground = styled.div`
     object-fit: cover;
   }
   @media (max-width: 767px) {
-    padding-top:100px;
+    padding-top: 100px;
   }
   &.background {
     display: none;
@@ -80,16 +80,30 @@ export const FormContainer = styled.div`
   svg {
     fill: #fff;
   }
-  @media (max-width: 767px) {
-    svg {
-      fill: #f55240;
-    }
-  }
 `;
 
 export const BtnTextContainer = styled.span`
   color: #fff;
-  @media (max-width: 767px) {
-    color: #f55240;
+`;
+
+export const Spin = styled.div`
+  display: inline-block;
+  width: ${rem(19)};
+  height: ${rem(19)};
+  
+  margin-right: 10px;
+  margin-top: 5px;
+  border: 3px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  }
+
+  @keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+  }
+  @-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
   }
 `;

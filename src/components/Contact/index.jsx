@@ -5,13 +5,14 @@ import {
   Heading,
   FormContainer,
   BtnTextContainer,
+  Spin,
 } from "./style";
 import Image from "next/image";
 import Button from "../Button";
 import Input from "../Input";
 import Icons from "../Icons";
 import { gumletLoader } from "../../utils/gumletLoader";
-import ReCaptcha from "./reCaptcha"
+import ReCaptcha from "./reCaptcha";
 
 const Contact = (props) => {
   const [name, setName] = useState("");
@@ -19,9 +20,23 @@ const Contact = (props) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [device, setDevice] = useState("");
+  const [loader, setLoader] = useState(false);
+  const [action, setAction] = useState("ghost");
+  const [buttonType, setButtonType] = useState();
   useEffect(() => {
     if (window.innerWidth < 800) setDevice("mobile");
+    setButtonType("ghost");
   }, []);
+  useEffect(() => {
+    handleButtonTypeChange();
+  }, [action]);
+  useEffect(() => {
+    if (validationTrue(false)) {
+      action === "ghost" ? setAction("default") : null;
+    } else {
+      action === "default" ? setAction("ghost") : null;
+    }
+  }, [name, number, email, message]);
   const sentMail = async () => {
     const token = "a2064791-13b2-4e57-bf5f-c21d1147f4ac";
     const mailData = {
@@ -30,38 +45,46 @@ const Contact = (props) => {
       email,
       message,
     };
-    if (validationTrue()) {
-      console.log("in ");
+    if (validationTrue(true)) {
+      setAction("submitting");
       try {
-        grecaptcha.ready(function() {
-          grecaptcha.execute('6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz', {action: 'submit'}).then(async function(token) {
+        grecaptcha.ready(async function () {
+          grecaptcha
+            .execute("6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz", {
+              action: "submit",
+            })
+            .then(async function (token) {
               // Add your logic to submit to your backend server here.
               const resp = await Email.send({
                 SecureToken: token,
-                To: "sajin4dev@gmail.com",
                 Subject: "From Fundfolio Website",
                 To: "support@fundfolio.in",
                 From: email,
                 Number: number,
-                Body: `Name: ${name}\n` + `Email: ${email}\n` + `Message: ${message}`,
+                Body:
+                  `Name: ${name}\n` +
+                  `Email: ${email}\n` +
+                  `Message: ${message}`,
               });
-              document.getElementById("message").innerText =
-                "Thank you! Your message is successfully sent :)";
-          });
+              setAction("submitted");
+            });
         });
       } catch (e) {
         // document.getElementById('message').innerText = "Oops! Somthing went wrong :/";
+        setAction("error");
         console.log(e);
       }
+    } else {
+      console.log(validationTrue());
     }
   };
-  const validationTrue = () => {
+  const validationTrue = (displayAlert) => {
     if (name === "") {
-      alert("Please enter your name");
+      displayAlert ? alert("Please enter your name") : null;
       return false;
     }
     if (number !== "" && !number.length >= 10 && !number.length < 15) {
-      alert("Please enter a valid mobile number.");
+      displayAlert ? alert("Please enter a valid mobile number.") : null;
       return false;
     }
     if (
@@ -70,14 +93,61 @@ const Contact = (props) => {
         email
       )
     ) {
-      alert("Please enter a valid email id");
+      displayAlert ? alert("Please enter a valid email id") : null;
       return false;
     }
     if (message === "") {
-      alert("Please type your message");
+      displayAlert ? alert("Please type your message") : null;
       return false;
     }
+    return true;
   };
+  const handleButtonTypeChange = () => {
+    if (action === "default") {
+      setButtonType(null);
+    } else if (action === "ghost") {
+      setButtonType("ghost");
+    } else if (action === "submitting") {
+      setButtonType("submitting");
+    } else if (action === "submitted") {
+      setButtonType("submitted");
+    } else if (action === "error") {
+      setButtonType(null);
+    }
+  };
+  const getIcon = () => {
+    if (action === "default") {
+      return <Icons name="arrow" fill={"#fff"} />;
+    } else if (action === "ghost") {
+      return <Icons name="arrow" fill={"#fff"} />;
+    } else if (action === "submitting") {
+      return <Spin />;
+    } else if (action === "submitted") {
+      return <Icons name="check" fill={"#fff"} />;
+    } else if (action === "error") {
+      return null;
+    }
+  };
+  const getText = () => {
+    if (action === "default") {
+      return "submit";
+    } else if (action === "ghost") {
+      return "submit";
+    } else if (action === "submitting") {
+      return "submitting";
+    } else if (action === "submitted") {
+      return "submitted";
+    } else if (action === "error") {
+      return "error";
+    }
+  };
+  const resetForm = () => {
+    setNumber("");
+    setName("");
+    setEmail("");
+    setMessage("");
+    setButtonType("ghost");
+  }
   return (
     <Container id="contact">
       <ImageBackground>
@@ -126,11 +196,14 @@ const Contact = (props) => {
         />
         {/* <ReCaptcha/> */}
         <Button
-          type="ghost"
-          onClick={() => sentMail()}
+          id="submitButton"
+          type={buttonType}
+          onClick={() => {
+            action === "default" ? sentMail() : null;
+          }}
         >
-          <Icons name="arrow" fill={"#fff"} />
-          <BtnTextContainer>Submit</BtnTextContainer>
+          {getIcon()}
+          <BtnTextContainer>{getText()}</BtnTextContainer>
         </Button>
       </FormContainer>
     </Container>
