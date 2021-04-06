@@ -148,7 +148,7 @@ function MyApp({ Component, pageProps }) {
           href="https://fundfolio.gumlet.io/fundfolio/fav_ico.png"
         />
         <link rel="apple-touch-icon" sizes="114x114" href="" />
-        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        {/* <script src="https://smtpjs.com/v3/smtp.js"></script> */}
         {/* <script
           async
           src="https://www.google.com/recaptcha/api.js?render=6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz"

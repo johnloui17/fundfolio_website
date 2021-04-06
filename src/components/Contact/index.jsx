@@ -48,20 +48,24 @@ const Contact = (props) => {
     if (validationTrue(true)) {
       setAction("submitting");
       try {
+        <script src="https://smtpjs.com/v3/smtp.js"></script>;
         let head = document.getElementsByTagName("head")[0];
         let script = document.createElement("script");
+        let smtp = document.createElement("script");
         script.type = "text/javascript";
+        smtp.type = "text/javascript";
         script.onload = function () {
           grecaptcha.ready(async function () {
             grecaptcha
               .execute("6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz", {
                 action: "homepage",
               })
-              .then(async function (token) {
+              .then(async function () {
                 const resp = await Email.send({
                   SecureToken: token,
                   Subject: "From Fundfolio Website",
                   To: "support@fundfolio.in",
+                  To:"jose.loui@fundfolio.in",
                   From: email,
                   Number: number,
                   Body:
@@ -78,31 +82,10 @@ const Contact = (props) => {
         };
         script.src =
           "https://www.google.com/recaptcha/api.js?render=6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz";
+
+        smtp.src = "https://smtpjs.com/v3/smtp.js";
+        head.appendChild(smtp);
         head.appendChild(script);
-        // grecaptcha.ready(async function () {
-        //   grecaptcha
-        //     .execute("6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz", {
-        //       action: "submit",
-        //     })
-        //     .then(async function () {
-        //       // Add your logic to submit to your backend server here.
-        //       const resp = await Email.send({
-        //         SecureToken: token,
-        //         Subject: "From Fundfolio Website",
-        //         To: "support@fundfolio.in",
-        //         From: email,
-        //         Number: number,
-        //         Body:
-        //           `Name: ${name}\n` +
-        //           `Email: ${email}\n` +
-        //           `Message: ${message}`,
-        //       });
-        //       setAction("submitted");
-        //       setTimeout(() => {
-        //         resetForm();
-        //       }, 3000);
-        //     });
-        // });
       } catch (e) {
         // document.getElementById('message').innerText = "Oops! Somthing went wrong :/";
         setAction("errors");
