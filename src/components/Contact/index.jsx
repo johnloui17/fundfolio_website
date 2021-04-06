@@ -48,30 +48,61 @@ const Contact = (props) => {
     if (validationTrue(true)) {
       setAction("submitting");
       try {
-        grecaptcha.ready(async function () {
-          grecaptcha
-            .execute("6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz", {
-              action: "submit",
-            })
-            .then(async function () {
-              // Add your logic to submit to your backend server here.
-              const resp = await Email.send({
-                SecureToken: token,
-                Subject: "From Fundfolio Website",
-                To: "support@fundfolio.in",
-                From: email,
-                Number: number,
-                Body:
-                  `Name: ${name}\n` +
-                  `Email: ${email}\n` +
-                  `Message: ${message}`,
+        let head = document.getElementsByTagName("head")[0];
+        let script = document.createElement("script");
+        script.type = "text/javascript";
+        script.onload = function () {
+          grecaptcha.ready(async function () {
+            grecaptcha
+              .execute("6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz", {
+                action: "homepage",
+              })
+              .then(async function (token) {
+                const resp = await Email.send({
+                  SecureToken: token,
+                  Subject: "From Fundfolio Website",
+                  To: "support@fundfolio.in",
+                  From: email,
+                  Number: number,
+                  Body:
+                    `Name: ${name}\n` +
+                    `Email: ${email}\n` +
+                    `Message: ${message}`,
+                });
+                setAction("submitted");
+                setTimeout(() => {
+                  resetForm();
+                }, 3000);
               });
-              setAction("submitted");
-              setTimeout(() => {
-                resetForm();
-              }, 3000);
-            });
-        });
+          });
+        };
+        script.src =
+          "https://www.google.com/recaptcha/api.js?render=6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz";
+        head.appendChild(script);
+        // grecaptcha.ready(async function () {
+        //   grecaptcha
+        //     .execute("6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz", {
+        //       action: "submit",
+        //     })
+        //     .then(async function () {
+        //       // Add your logic to submit to your backend server here.
+        //       const resp = await Email.send({
+        //         SecureToken: token,
+        //         Subject: "From Fundfolio Website",
+        //         To: "support@fundfolio.in",
+        //         From: email,
+        //         Number: number,
+        //         Body:
+        //           `Name: ${name}\n` +
+        //           `Email: ${email}\n` +
+        //           `Message: ${message}`,
+        //       });
+        //       setAction("submitted");
+        //       setTimeout(() => {
+        //         resetForm();
+        //       }, 3000);
+        //     });
+        // });
       } catch (e) {
         // document.getElementById('message').innerText = "Oops! Somthing went wrong :/";
         setAction("errors");
@@ -145,14 +176,14 @@ const Contact = (props) => {
     }
   };
   const resetForm = () => {
-    setNumber((num)=>"");
+    setNumber((num) => "");
     setName("");
     setEmail("");
     setMessage("");
     setAction("ghost");
     setButtonType("ghost");
-    console.log((number,email,name,message));
-  }
+    console.log((number, email, name, message));
+  };
   return (
     <Container id="contact">
       <ImageBackground>
@@ -182,29 +213,30 @@ const Contact = (props) => {
           placeholder="your name"
           onChange={(e) => setName(e.target.value)}
           value={name}
-          />
+        />
         <Input
           type="number"
           label="my phone number is"
           placeholder="your phone number"
           onChange={(e) => setNumber(e.target.value)}
           value={number}
-          />
+        />
         <Input
           type="email"
           label="reach me at"
           placeholder="your@email.com"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
-          />
+        />
         <Input
           label="message"
           placeholder="type here"
           onChange={(e) => setMessage(e.target.value)}
           value={message}
-          />
+        />
         {/* <ReCaptcha/> */}
         <Button
+          value="submit"
           id="submitButton"
           type={buttonType}
           onClick={() => {

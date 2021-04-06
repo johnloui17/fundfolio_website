@@ -149,15 +149,10 @@ function MyApp({ Component, pageProps }) {
         />
         <link rel="apple-touch-icon" sizes="114x114" href="" />
         <script src="https://smtpjs.com/v3/smtp.js"></script>
-        <script
-          src="https://www.google.com/recaptcha/api.js"
-          async
-          defer
-        ></script>
-        <script
+        {/* <script
           async
           src="https://www.google.com/recaptcha/api.js?render=6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz"
-        ></script>
+        ></script> */}
         <link
           rel="preload"
           href="/fonts/gilroy-bold-webfont.woff"
