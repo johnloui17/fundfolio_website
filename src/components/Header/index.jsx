@@ -7,7 +7,6 @@ const Header = (props) => {
   const [device, setDevice] = useState("");
   useEffect(() => {
     if (window.innerWidth > 1920) setDevice("large");
-    console.log(props,"props")
   }, []);
   const handleHeaderClick = () => {
     props.setIsScrolling(true);

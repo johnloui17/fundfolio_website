@@ -153,7 +153,10 @@ function MyApp({ Component, pageProps }) {
           async
           defer
         ></script>
-        <script src="https://www.google.com/recaptcha/api.js?render=6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz"></script>
+        <script
+          async
+          src="https://www.google.com/recaptcha/api.js?render=6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz"
+        ></script>
         <link
           rel="preload"
           href="/fonts/gilroy-bold-webfont.woff"

@@ -15,7 +15,6 @@ const Home = (props) => {
   useEffect(() => {
     if (window.innerWidth < 800) setDevice("mobile");
     if (window.innerWidth > 1920) setDevice("large");
-    console.log(device);
   }, []);
   const handleHeaderClick = () => {
     document.getElementById('contact').scrollIntoView();

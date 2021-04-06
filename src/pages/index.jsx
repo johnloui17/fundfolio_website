@@ -28,9 +28,6 @@ export default function HomePage() {
     }, 2500);
   }, []);
   useEffect(() => {
-    window.onscroll = function () {
-      console.log(checkScrollSpeed());
-    };
     window.addEventListener("scroll", onScroll);
     return () => {
       window.removeEventListener("scroll", onScroll);
@@ -147,7 +144,6 @@ export default function HomePage() {
     const productsOffset = document.getElementById("products").offsetTop - 10;
     const partnersOffset = document.getElementById("partners").offsetTop - 10;
     const contactOffset = document.getElementById("contact").offsetTop - 10;
-    console.log(event,window.pageYOffset,contactOffset);
     if (!isScrolling) {
       if (document.body.getBoundingClientRect().top > scrollPos) {
         // console.log("up");

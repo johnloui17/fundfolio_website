@@ -10,7 +10,6 @@ import {
 import Image from "next/image";
 import { gumletLoader } from "../../utils/gumletLoader";
 const About = (props) => {
-  console.log(props.onView);
   const [device, setDevice] = useState("");
   useEffect(() => {
     if (window.innerWidth > 2560) setDevice("large");

@@ -18,7 +18,6 @@ const OurWay = (props) => {
     let intervalId;
     setInterval(() => {
       intervalId = setCurrentAttr(attributes[k % 3]);
-      console.log(k);
       k++;
     }, 4000);
     return () => {
