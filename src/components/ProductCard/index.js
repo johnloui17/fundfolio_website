@@ -9,6 +9,7 @@ const ProductCard = (props) => {
   const [device, setDevice] = useState("");
   useEffect(() => {
     if (window.innerWidth > 1920) {
+      console.log(props.type,"ddworked");
       setWidth(props.scaledWidth * 1.5);
       setHeight(props.scaledHeight * 1.5);
       setDevice("large");
@@ -16,7 +17,6 @@ const ProductCard = (props) => {
   }, []);
   const mouseEnter = () => {
     if (window.innerWidth > 1920) {
-      console.log("in");
       setWidth(props.scaledWidth * 2);
       setHeight(props.scaledHeight * 2);
       setFill("#000");
@@ -29,17 +29,20 @@ const ProductCard = (props) => {
   };
   const mouseleave = () => {
     if (window.innerWidth > 1920) {
-      console.log("in");
       setWidth(props.scaledWidth * 1.5);
       setHeight(props.scaledHeight * 1.5);
       setFill(null);
     }
     if (window.innerWidth === 1920) {
-      console.log("in");
       setWidth(props.scaledWidth);
       setHeight(props.scaledHeight);
       setFill(null);
     }
+    // if (window.innerWidth > 1024 && window.innerWidth < 1920 && props.type === "fundfolioOne") {
+    //   setWidth(width=>width * 1.5);
+    //   setHeight(height=>height* 1.5);
+    //   setFill(null);
+    // }
     if (window.innerWidth > 1024 && window.innerWidth < 1920) {
       setWidth(props.width);
       setHeight(props.height);

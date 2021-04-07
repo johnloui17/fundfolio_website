@@ -16,6 +16,9 @@ export const Container = styled.div`
     padding-top: 160px;
     padding-bottom: 0px;
   }
+  @media (min-width: 1280px) {
+    padding: ${rem(120, "medium")} ${rem(150, "medium")};
+  }
   @media (min-width: 1920px) {
     padding: ${rem(120, "large")} ${rem(150, "large")};
   }
@@ -49,9 +52,13 @@ export const Heading = styled.div`
   @media (max-width: 767px) {
     font-size: ${rem(50, "mobile")};
   }
+  @media (min-width: 1280px) {
+    font-size: ${rem(38, "medium")};
+    margin-bottom: ${rem(40,"medium")};
+  }
   @media (min-width: 1920px) {
     font-size: ${rem(38, "large")};
-    margin-bottom: ${rem(40)};
+    margin-bottom: ${rem(40,"large")};
   }
   @media (min-width: 2560px) {
     font-size: ${rem(38, "extraLarge")};

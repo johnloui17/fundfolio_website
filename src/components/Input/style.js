@@ -42,7 +42,7 @@ export const Container = styled.div`
     border: none;
     font-size: 30px;
     font-weight: 500;
-    color: #6a6a77;
+    color: #fff;
     outline: none;
     font-family: "gilroymedium";
     border-bottom: 1px solid #6a6a77;

@@ -15,6 +15,9 @@ export const Container = styled.div`
     padding-right: ${rem(100, "mobile")};
     padding-top: ${rem(150, "mobile")};
   }
+  @media (min-width: 1280px) {
+    padding: ${rem(150, "medium")};
+  }
   @media (min-width: 1920px) {
     padding: ${rem(150, "large")};
   }
@@ -35,6 +38,9 @@ export const HoverNav = styled.div`
   @media (max-width: 767px) {
     min-width: 100%;
     flex-direction: column;
+  }
+  @media (min-width: 1280px) {
+    min-width: ${rem(350, "medium")};
   }
   @media (min-width: 1920px) {
     min-width: ${rem(350, "large")};
@@ -67,9 +73,25 @@ export const HoverNav = styled.div`
     cursor: pointer;
     margin-bottom: ${rem(20)};
     transition: all 0.3s ease;
-    b{
+    b {
       font-family: "gilroybold";
+    }
+    @media (min-width: 1280px) {
+      font-size: ${rem(60, "medium")};
+      margin-bottom: ${rem(20, "medium")};
+    }
 
+    @media (min-width: 1920px) {
+      font-size: ${rem(60, "large")};
+      margin-bottom: ${rem(20, "large")};
+    }
+    @media (min-width: 2560px) {
+      font-size: ${rem(60, "extraLarge")};
+      margin-bottom: ${rem(20, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      font-size: ${rem(60, "xxl")};
+      margin-bottom: ${rem(20, "xxl")};
     }
     span {
       font-size: ${rem(20)};
@@ -81,17 +103,21 @@ export const HoverNav = styled.div`
       @media (max-width: 767px) {
         display: none;
       }
+      @media (min-width: 1280px) {
+        font-size: ${rem(20, "medium")};
+        margin-right: ${rem(26, "medium")};
+      }
       @media (min-width: 1920px) {
         font-size: ${rem(20, "large")};
         margin-right: ${rem(26, "large")};
       }
       @media (min-width: 2560px) {
         font-size: ${rem(20, "extraLarge")};
-        margin-right: ${rem(26, "large")};
+        margin-right: ${rem(26, "extraLarge")};
       }
       @media (min-width: 3840px) {
         font-size: ${rem(20, "xxl")};
-        margin-right: ${rem(26, "large")};
+        margin-right: ${rem(26, "xxl")};
       }
     }
     @media (max-width: 1024px) and (min-width: 768px) {
@@ -103,6 +129,10 @@ export const HoverNav = styled.div`
     @media (max-width: 767px) {
       font-size: ${rem(40, "mobile")};
       margin-right: ${rem(20, "mobile")};
+    }
+    @media (min-width: 1280px) {
+      font-size: ${rem(60, "medium")};
+      margin-bottom: ${rem(20, "medium")};
     }
     @media (min-width: 1920px) {
       font-size: ${rem(60, "large")};
@@ -120,14 +150,13 @@ export const HoverNav = styled.div`
   li.active {
     font-size: ${rem(60)};
     font-family: "gilroybold";
-    b{
+    b {
       background: -webkit-linear-gradient(left, #40eaf5, #504dff);
       background: -o-linear-gradient(right, #40eaf5, #504dff);
       background: -moz-linear-gradient(right, #40eaf5, #504dff);
       background: linear-gradient(to right, #40eaf5, #504dff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-
     }
     @media (max-width: 1024px) and (min-width: 768px) {
       font-size: ${rem(60, "tablet")};
@@ -137,7 +166,9 @@ export const HoverNav = styled.div`
       font-size: ${rem(40, "mobile")};
       margin-right: ${rem(20, "mobile")};
     }
-
+    @media (min-width: 1280px) {
+      font-size: ${rem(60, "medium")};
+    }
     @media (min-width: 1920px) {
       font-size: ${rem(60, "large")};
     }
@@ -175,6 +206,10 @@ export const Heading = styled.div`
     font-size: ${rem(52, "mobile")};
   }
 
+  @media (min-width: 1280px) {
+    font-size: ${rem(28, "medium")};
+    margin-bottom: ${rem(40, "medium")};
+  }
   @media (min-width: 1920px) {
     font-size: ${rem(38, "large")};
     margin-bottom: ${rem(40, "large")};
@@ -203,14 +238,19 @@ export const DisplayCard = styled.div`
     height: ${rem(500, "tablet")};
   }
   @media (max-width: 767px) {
-    display:block;
+    display: block;
     width: 100%;
-    padding:20px;
-    height:300px;
-    flex:none;
+    padding: 20px;
+    height: 300px;
+    flex: none;
     margin: 0;
   }
-
+  @media (min-width: 1280px) {
+    width: ${rem(754, "medium")};
+    height: ${rem(500, "medium")};
+    border-radius: ${rem(16, "medium")};
+    margin: ${rem(30, "medium")};
+  }
   @media (min-width: 1920px) {
     width: ${rem(754, "large")};
     height: ${rem(600, "large")};
@@ -257,6 +297,12 @@ export const DisplayCard = styled.div`
       color: #86868c;
       font-weight: 500;
     }
+    @media (min-width: 1280px) {
+      width: ${rem(436, "medium")};
+      top: ${rem(190, "medium")};
+      left: ${rem(196, "medium")};
+      font-size: ${rem(30, "medium")};
+    }
     @media (min-width: 1920px) {
       width: ${rem(436, "large")};
       top: ${rem(190, "large")};
@@ -295,6 +341,11 @@ export const BackgroundIcon = styled.div`
     width: ${rem(120, "mobile")};
     top: ${rem(10, "mobile")};
     left: ${rem(20, "mobile")};
+  }
+
+  @media (min-width: 1280px) {
+    top: ${rem(60, "medium")};
+    left: ${rem(100, "medium")};
   }
   @media (min-width: 1920px) {
     top: ${rem(60, "large")};

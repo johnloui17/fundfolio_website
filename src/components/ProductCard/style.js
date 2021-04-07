@@ -15,6 +15,11 @@ export const Container = styled.div`
     height: auto;
     padding-bottom: 50px;
   }
+  @media (min-width: 1280px) {
+    width: ${rem(360, "medium")};
+    height: ${rem(384, "medium")};
+    padding: ${rem(50, "medium")};
+  }
   @media (min-width: 1920px) {
     width: ${rem(360, "large")};
     height: ${rem(384, "large")};
@@ -46,6 +51,10 @@ export const Container = styled.div`
           : "#6d5ec8"};
       transition: width 1s ease;
       position: absolute;
+      @media (min-width: 1280px) {
+        width: ${rem(20, "medium")};
+        height: ${rem(2, "medium")};
+      }
       @media (min-width: 1920px) {
         width: ${rem(20, "large")};
         height: ${rem(2, "large")};
@@ -86,6 +95,10 @@ export const Container = styled.div`
     @media (max-width: 767px) {
       font-size: 40px;
     }
+    @media (min-width: 1280px) {
+      font-size: ${rem(60, "medium")};
+      margin-top: ${rem(37, "medium")};
+    }
     @media (min-width: 1920px) {
       font-size: ${rem(60, "large")};
       margin-top: ${rem(37, "large")};
@@ -116,6 +129,11 @@ export const Container = styled.div`
     }
     @media (max-width: 767px) {
       font-size: 20px;
+    }
+    @media (min-width: 1280px) {
+      width: ${rem(196, "medium")};
+      font-size: ${rem(18, "medium")};
+      margin-top: ${rem(7, "medium")};
     }
     @media (min-width: 1920px) {
       width: ${rem(196, "large")};
@@ -176,6 +194,9 @@ export const Container = styled.div`
         visibility: visible;
         color: #f55240;
       }
+      @media (min-width: 1280px) {
+        margin-left: ${rem(12, "medium")};
+      }
       @media (min-width: 1920px) {
         margin-left: ${rem(12, "large")};
       }
@@ -198,6 +219,10 @@ export const Container = styled.div`
       position: relative;
       top: 20px;
       font-size: 20px;
+    }
+    @media (min-width: 1280px) {
+      margin-top: ${rem(32, "medium")};
+      top: ${rem(170, "medium")};
     }
     @media (min-width: 1920px) {
       margin-top: ${rem(32, "large")};
@@ -238,6 +263,10 @@ export const Container = styled.div`
       width: 100%;
       height: auto;
     }
+    @media (min-width: 1280px) {
+      width: calc(100% - ${rem(24, "medium")});
+      height: calc(100% - ${rem(24, "medium")});
+    }
     @media (min-width: 1920px) {
       width: calc(100% - ${rem(24, "large")});
       height: calc(100% - ${rem(24, "large")});
@@ -274,6 +303,10 @@ export const Container = styled.div`
       width: 100%;
       height: auto;
     }
+    @media (min-width: 1280px) {
+      width:  ${rem(360, "medium")};
+      height: ${rem(384, "medium")};
+    }
     @media (min-width: 1920px) {
       width:  ${rem(360, "large")};
       height: ${rem(384, "large")};
@@ -304,6 +337,10 @@ export const Container = styled.div`
       width: 100%;
       height: auto;
       background-image: linear-gradient(-210deg, #201e2d, #120f20);
+    }
+    @media (min-width: 1280px) {
+      width:  ${rem(384, "medium")};
+      height: ${rem(324, "medium")};
     }
     @media (min-width: 1920px) {
       width:  ${rem(384, "large")};
@@ -350,6 +387,10 @@ export const Container = styled.div`
       width: 100%;
       height: auto;
     }
+    @media (min-width: 1280px) {
+      width:  ${rem(360, "medium")};
+      height: ${rem(300, "medium")};
+    }
     @media (min-width: 1920px) {
       width:  ${rem(360, "large")};
       height: ${rem(300, "large")};
@@ -370,6 +411,9 @@ export const Container = styled.div`
     }
     @media (max-width: 767px) {
       transform: translate(0);
+    }
+    @media (min-width: 1280px) {
+      transform: translate(${rem(0)}, ${rem(94, "medium")});
     }
     @media (min-width: 1920px) {
       transform: translate(${rem(0)}, ${rem(94, "large")});

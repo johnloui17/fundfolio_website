@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
         url("/fonts/gilroy-bold-webfont.woff2");
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'gilroyextrabold';
@@ -14,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
         url("/fonts/gilroy-extrabold-webfont.woff2");
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'gilroyheavy';
@@ -21,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
         url("/fonts/gilroy-heavy-webfont.woff2");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'gilroymedium';
@@ -28,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
         url("/fonts/gilroy-medium-webfont.woff2");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'gilroyregular';
@@ -35,17 +39,22 @@ const GlobalStyle = createGlobalStyle`
         url("/fonts/gilroy-regular-webfont.woff2");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
+
   *{
     box-sizing: border-box;
     font-family: 'gilroyregular';
+    scroll-behavior:smooth;
   }
   body, html {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    height: 100%;
+    height: 100vh;
+    width:100vw;
     font-family: 'Roboto', sans-serif;
+    overscroll-behavior: none;
+    .grecaptcha-badge { visibility: hidden; }
   }
   #__next{
     height: 100%;
@@ -53,7 +62,9 @@ const GlobalStyle = createGlobalStyle`
   h1,h2,h3,h4,p{
     margin: 0;
   }
- 
+::-webkit-scrollbar {
+  display: none;
+}
 `;
 function MyApp({ Component, pageProps }) {
   return (
@@ -64,28 +75,64 @@ function MyApp({ Component, pageProps }) {
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
         <title>Fundfolio - financial freedom for all.</title>
-        
-        <meta name="description" content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence."/>
-        <meta name="keywords" content="ITR Filing, Tax Filing, Mutual funds in India, Buy Insurance online, Stock market Online, stock tips, intraday screener, algo trading"/>
+
+        <meta
+          name="description"
+          content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence."
+        />
+        <meta
+          name="keywords"
+          content="ITR Filing, Tax Filing, Mutual funds in India, Buy Insurance online, Stock market Online, stock tips, intraday screener, algo trading"
+        />
 
         <meta property="og:url" content="https://fundfolio.com" />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="Fundfolio - financial freedom for all." />
-        <meta property="og:description" content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence." />
-        <meta property="og:image" content="https://fundfolio.gumlet.io/fundfolio/fundfolio-thumbnail.png" />
+        <meta
+          property="og:title"
+          content="Fundfolio - financial freedom for all."
+        />
+        <meta
+          property="og:description"
+          content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence."
+        />
+        <meta
+          property="og:image"
+          content="https://fundfolio.gumlet.io/fundfolio/fundfolio-thumbnail.png"
+        />
 
-        <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="twitter:site" content="@MarketfeedNews"/>
-        <meta name="twitter:creator" content="@MarketfeedNews"/>
-        <meta name="twitter:title" content="Fundfolio - financial freedom for all."/>
-        <meta name="twitter:description" content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence."/>
-        <meta name="twitter:image" content="https://fundfolio.gumlet.io/fundfolio/fundfolio-thumbnail.png"/>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@MarketfeedNews" />
+        <meta name="twitter:creator" content="@MarketfeedNews" />
+        <meta
+          name="twitter:title"
+          content="Fundfolio - financial freedom for all."
+        />
+        <meta
+          name="twitter:description"
+          content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence."
+        />
+        <meta
+          name="twitter:image"
+          content="https://fundfolio.gumlet.io/fundfolio/fundfolio-thumbnail.png"
+        />
 
         <meta itemscope itemtype="http://schema.org/Article" />
-        <meta itemprop="headline" content="Fundfolio - financial freedom for all." />
-        <meta itemprop="description" content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence." />
-        <meta itemprop="image" content="https://fundfolio.gumlet.io/fundfolio/fundfolio-thumbnail.png" />
-        <meta itemprop="og:headline" content="Fundfolio - financial freedom for all." />
+        <meta
+          itemprop="headline"
+          content="Fundfolio - financial freedom for all."
+        />
+        <meta
+          itemprop="description"
+          content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence."
+        />
+        <meta
+          itemprop="image"
+          content="https://fundfolio.gumlet.io/fundfolio/fundfolio-thumbnail.png"
+        />
+        <meta
+          itemprop="og:headline"
+          content="Fundfolio - financial freedom for all."
+        />
 
         <link
           rel="shortcut icon"
@@ -101,15 +148,6 @@ function MyApp({ Component, pageProps }) {
           href="https://fundfolio.gumlet.io/fundfolio/fav_ico.png"
         />
         <link rel="apple-touch-icon" sizes="114x114" href="" />
-        <script src="https://smtpjs.com/v3/smtp.js"></script>
-        <script
-          src="https://www.google.com/recaptcha/api.js"
-          async
-          defer
-        ></script>
-        <script
-          src="https://www.google.com/recaptcha/api.js?render=6LfTTIcaAAAAAGQDA__sAkZNZadGNeQCmld4Cpvz"
-        ></script>
         <link
           rel="preload"
           href="/fonts/gilroy-bold-webfont.woff"
@@ -140,7 +178,9 @@ function MyApp({ Component, pageProps }) {
           as="font"
           crossOrigin=""
         />
-      <script dangerouslySetInnerHTML={{__html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtag/js?id='+i+dl;f.parentNode.insertBefore(j,f);

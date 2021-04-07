@@ -8,6 +8,12 @@ const Header = (props) => {
   useEffect(() => {
     if (window.innerWidth > 1920) setDevice("large");
   }, []);
+  const handleHeaderClick = () => {
+    props.setIsScrolling(true);
+    setTimeout(() => {
+      props.setIsScrolling(false);
+    }, 750);
+  }
   return (
     <Container transparent={props.transparent}>
       {device === "large" ? (
@@ -30,37 +36,43 @@ const Header = (props) => {
           <a
             href="/#home"
             className={props.activeTab === "home" ? "active" : ""}
+            onClick={handleHeaderClick}
           >
             home
           </a>
           <a
             href="/#about"
             className={props.activeTab === "about" ? "active" : ""}
-          >
+            onClick={handleHeaderClick}
+            >
             about
           </a>
           <a
             href="/#our-way"
             className={props.activeTab === "our-way" ? "active" : ""}
-          >
+            onClick={handleHeaderClick}
+            >
             our way
           </a>
           <a
             href="/#products"
             className={props.activeTab === "products" ? "active" : ""}
-          >
+            onClick={handleHeaderClick}
+            >
             products
           </a>
           <a
             href="/#partners"
             className={props.activeTab === "partners" ? "active" : ""}
-          >
+            onClick={handleHeaderClick}
+            >
             partners
           </a>
           <a
             href="/#contact"
             className={props.activeTab === "contact" ? "active" : ""}
-          >
+            onClick={handleHeaderClick}
+            >
             contact us
           </a>
         </NavBar>
