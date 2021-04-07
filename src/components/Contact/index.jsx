@@ -65,7 +65,6 @@ const Contact = (props) => {
                   SecureToken: token,
                   Subject: "From Fundfolio Website",
                   To: "support@fundfolio.in",
-                  To:"jose.loui@fundfolio.in",
                   From: email,
                   Number: number,
                   Body:
