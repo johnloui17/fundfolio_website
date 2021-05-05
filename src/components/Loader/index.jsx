@@ -18,9 +18,9 @@ export const Loader = () => (
             <g
               id="Branding-Finals"
               stroke="none"
-              stroke-width="1"
+              strokeWidth="1"
               fill="none"
-              fill-rule="evenodd"
+              fillRule="evenodd"
             >
               <g
                 id="Brand-Logo_fundfolio_icons-Copy"

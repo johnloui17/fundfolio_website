@@ -29,13 +29,13 @@ const OurProduct = (props) => (
             />
         <ProductCard 
             type="fundfolioOne"
-            heading="to earn"
+            heading="to grow"
             desc="get a personal finance companion to help sort all your financial needs."
             href={"#"}
-            width={120}
+            width={114}
             height={20}
-            scaledWidth={248}
-            scaledHeight={30.2}
+            scaledWidth={224}
+            scaledHeight={38}
         />
     </Row>
   </Container>
