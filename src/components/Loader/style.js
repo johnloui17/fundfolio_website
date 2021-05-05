@@ -5,7 +5,7 @@ export const Container = styled.div`
   background-image: linear-gradient(-45deg, #3f3251 2%, #261a66 100%);
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 15;
