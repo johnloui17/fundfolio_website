@@ -48,7 +48,7 @@ const Contact = (props) => {
     if (validationTrue(true)) {
       setAction("submitting");
       try {
-        <script src="https://smtpjs.com/v3/smtp.js"></script>;
+        // <script src="https://smtpjs.com/v3/smtp.js"></script>;
         let head = document.getElementsByTagName("head")[0];
         let script = document.createElement("script");
         let smtp = document.createElement("script");

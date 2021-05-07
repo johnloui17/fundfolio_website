@@ -27,7 +27,7 @@ const About = (props) => {
             insights and a snowballing community.
           </p>
         </LeftSection>
-        <RightSection onView={props.onView}>
+        <RightSection >
           <ImageWrapper>
             {device === "large" ? (
               <Image
