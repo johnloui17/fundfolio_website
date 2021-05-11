@@ -15,6 +15,7 @@ export default function HomePage() {
   const [isLoading, setLoading] = useState(true);
   const [scrollPos, setScrollPos] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
   // let aboutOffset;
   // let ourWayOffset;
   // let productsOffset;
@@ -26,6 +27,12 @@ export default function HomePage() {
       setLoading(false);
       document.body.style.overflow = "auto";
     }, 2500);
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isTabletView =
+      /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(
+        userAgent
+      );
+    setIsTablet(isTabletView);
   }, []);
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
@@ -72,7 +79,7 @@ export default function HomePage() {
     const partnersOffset = document.getElementById("partners").offsetTop;
     const contactOffset = document.getElementById("contact").offsetTop;
 
-    if (window.innerWidth > 1023) {
+    if (window.innerWidth > 1024  && !isTablet) {
       if (direction === "down") {
         let offSet;
         if (window.pageYOffset < window.innerHeight) {
@@ -206,7 +213,7 @@ export default function HomePage() {
             <Home setIsScrolling={setIsScrolling}/>
             <About  />
             <OurWay />
-            <OurProduct />
+            <OurProduct isTablet={isTablet} />
             <Partners />
             <Contact />
             <Footer />

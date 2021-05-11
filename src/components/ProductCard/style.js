@@ -161,15 +161,15 @@ export const Container = styled.div`
     margin-top: ${rem(32)};
     z-index: 1;
     svg {
-      opacity: 0;
-      visibility: hidden;
+      opacity:  ${(props) => (props.isTablet ? 1 : 0)};
+      visibility:  ${(props) => (props.isTablet ? "visible" : "hidden")};
       transition: opacity 0.5s ease;
-      fill: #131319;
-      // @media (max-width: 1024px) and (min-width: 768px) {
-      //   opacity: 1;
-      //   visibility: visible;
-      //   fill: #f55240;
-      // }
+      fill: ${(props) => (props.isTablet ? "#f55240" : "#131319")};
+      @media (max-width: 1024px) and (min-width: 768px) {
+        opacity: 1;
+        visibility: visible;
+        fill: #f55240;
+      }
       @media (max-width: 767px) {
         opacity: 1;
         visibility: visible;
@@ -177,14 +177,16 @@ export const Container = styled.div`
       }
     }
     span {
-      opacity: 0;
+      opacity: ${(props) => (props.isTablet ? 1 : 0)};
+      visibility: ${(props) => (props.isTablet ? "visible" : "hidden")};
       margin-left: ${rem(12)};
       transition: opacity 0.5s ease;
-      // @media (max-width: 1024px) and (min-width: 768px) {
-      //   opacity: 1;
-      //   visibility: visible;
-      //   color: #f55240;
-      // }
+      color:${(props) => (props.isTablet ? "#f55240" : "#131319")};
+      @media (max-width: 1024px) and (min-width: 768px) {
+        opacity: 1;
+        visibility: visible;
+        color: #f55240;
+      }
       @media (max-width: 767px) {
         opacity: 1;
         visibility: visible;
@@ -203,12 +205,12 @@ export const Container = styled.div`
         margin-left: ${rem(12, "xxl")};
       }
     }
-    // @media (max-width: 1024px) and (min-width: 768px) {
-    //   opacity: 1;
-    //   visibility: visible;
-    //   position: relative;
-    //   top: 20px;
-    // }
+    @media (max-width: 1024px) and (min-width: 768px) {
+      opacity: 1;
+      visibility: visible;
+      position: relative;
+      top: 20px;
+    }
     @media (max-width: 767px) {
       opacity: 1;
       visibility: visible;
@@ -217,8 +219,12 @@ export const Container = styled.div`
       font-size: 20px;
     }
     @media (min-width: 1280px) {
-      margin-top: ${rem(32, "medium")};
-      top: ${rem(170, "medium")};
+      opacity: ${(props) => (props.isTablet ? 1 : 0)};
+      visibility: ${(props) => (props.isTablet ? "visible" : "hidden")};
+      position: ${(props) => (props.isTablet ? "relative" : "absolute")};
+      margin-top:${(props) =>
+        props.isTablet ? "0px" : `${rem(32, "medium")}`};
+      top: ${(props) => (props.isTablet ? "20px" : `${rem(170, "medium")}`)};
     }
     @media (min-width: 1920px) {
       margin-top: ${rem(32, "large")};
@@ -323,12 +329,11 @@ export const Container = styled.div`
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.03);
     border: solid 1px #424247;
     background: transparent;
-
-    // @media (max-width: 1024px) and (min-width: 768px) {
-    //   background-image: linear-gradient(-210deg, #201e2d, #120f20);
-    //   width: ${rem(360)};
-    //   height: ${rem(384)};
-    // }
+    @media (max-width: 1024px) and (min-width: 768px) {
+      background-image: linear-gradient(-210deg, #201e2d, #120f20);
+      width: ${rem(360)};
+      height: ${rem(384)};
+    }
     @media (max-width: 767px) {
       width: 100%;
       height: auto;
@@ -336,7 +341,9 @@ export const Container = styled.div`
     }
     @media (min-width: 1280px) {
       width:  ${rem(384, "medium")};
-      height: ${rem(324, "medium")};
+      height: ${(props) => (props.isTablet ? `${rem(384, "medium")}` : `${rem(324, "medium")}`)};
+      background-image:${(props) =>
+        props.isTablet ? "linear-gradient(-210deg, #201e2d, #120f20)" : null};
     }
     @media (min-width: 1920px) {
       width:  ${rem(384, "large")};
@@ -371,12 +378,12 @@ export const Container = styled.div`
     );
     width: ${rem(360)};
     height: ${rem(300)};
-    // @media (max-width: 1024px) and (min-width: 768px) {
-    //   background-image: linear-gradient(75deg, transparent, transparent);
-    //   border: none;
-    //   width: ${rem(360)};
-    //   height: ${rem(384)};
-    // }
+    @media (max-width: 1024px) and (min-width: 768px) {
+      background-image: linear-gradient(75deg, transparent, transparent);
+      border: none;
+      width: ${rem(360)};
+      height: ${rem(384)};
+    }
     @media (max-width: 767px) {
       background-image: linear-gradient(75deg, transparent, transparent);
       border: none;
@@ -386,6 +393,10 @@ export const Container = styled.div`
     @media (min-width: 1280px) {
       width:  ${rem(360, "medium")};
       height: ${rem(300, "medium")};
+      background-image:${(props) =>
+        props.isTablet
+          ? "linear-gradient(75deg, transparent, transparent)"
+          : null};
     }
     @media (min-width: 1920px) {
       width:  ${rem(360, "large")};
@@ -402,14 +413,17 @@ export const Container = styled.div`
   }
   &:hover > .icon-wrapper {
     transform: translate(${rem(0)}, ${rem(94)});
-    // @media (max-width: 1024px) and (min-width: 768px) {
-    //   transform: translate(0);
-    // }
+    @media (max-width: 1024px) and (min-width: 768px) {
+      transform: translate(0);
+    }
     @media (max-width: 767px) {
       transform: translate(0);
     }
     @media (min-width: 1280px) {
-      transform: translate(${rem(0)}, ${rem(94, "medium")});
+      transform: ${(props) =>
+        props.isTablet
+          ? "translate(0)"
+          : `translate(${rem(0)}, ${rem(94, "medium")})`};
     }
     @media (min-width: 1920px) {
       transform: translate(${rem(0)}, ${rem(94, "large")});
@@ -425,24 +439,24 @@ export const Container = styled.div`
     width: 0;
   }
   &:hover > .desc {
-    opacity: 0;
-    visibility: hidden;
-    // @media (max-width: 1024px) and (min-width: 768px) {
-    //   opacity: 0.3;
-    //   visibility: visible;
-    // }
+    opacity: ${(props) => (props.isTablet ? 0.3 : 0)};
+    opacity: ${(props) => (props.isTablet ? "visible" : "hidden")};
+    @media (max-width: 1024px) and (min-width: 768px) {
+      opacity: 0.3;
+      visibility: visible;
+    }
     @media (max-width: 767px) {
       opacity: 0.3;
       visibility: visible;
     }
   }
   &:hover > .heading {
-    opacity: 0;
-    visibility: hidden;
-    // @media (max-width: 1024px) and (min-width: 768px) {
-    //   opacity: 1;
-    //   visibility: visible;
-    // }
+    opacity: ${(props) => (props.isTablet ? 1 : 0)};
+    visibility: ${(props) => (props.isTablet ? "visible" : "hidden")};
+    @media (max-width: 1024px) and (min-width: 768px) {
+      opacity: 1;
+      visibility: visible;
+    }
     @media (max-width: 767px) {
       opacity: 1;
       visibility: visible;

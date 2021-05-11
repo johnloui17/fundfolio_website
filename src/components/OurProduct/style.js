@@ -17,7 +17,8 @@ export const Container = styled.div`
     padding-bottom: 0px;
   }
   @media (min-width: 1280px) {
-    padding: ${rem(120, "medium")} ${rem(150, "medium")};
+    padding: ${(props) =>
+      props.isTablet ? `${rem(20)} ${rem(150)}` : `${rem(150, "medium")}`};
   }
   @media (min-width: 1920px) {
     padding: ${rem(120, "large")} ${rem(150, "large")};
@@ -35,9 +36,10 @@ export const Row = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  flex-direction: ${(props) => (props.isTablet ? "column" : "row")};
   @media (max-width: 1024px) and (min-width: 768px) {
     justify-content: center;
-    flex-direction:column;
+    flex-direction: column;
   }
   @media (max-width: 767px) {
     justify-content: center;
@@ -55,11 +57,11 @@ export const Heading = styled.div`
   }
   @media (min-width: 1280px) {
     font-size: ${rem(38, "medium")};
-    margin-bottom: ${rem(40,"medium")};
+    margin-bottom: ${rem(40, "medium")};
   }
   @media (min-width: 1920px) {
     font-size: ${rem(38, "large")};
-    margin-bottom: ${rem(40,"large")};
+    margin-bottom: ${rem(40, "large")};
   }
   @media (min-width: 2560px) {
     font-size: ${rem(38, "extraLarge")};

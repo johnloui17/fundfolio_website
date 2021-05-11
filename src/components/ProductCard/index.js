@@ -20,7 +20,11 @@ const ProductCard = (props) => {
       setHeight(props.scaledHeight * 2);
       setFill("#000");
     }
-    if (window.innerWidth > 720 && window.innerWidth <= 1920) {
+    if (
+      window.innerWidth > 1024 &&
+      window.innerWidth <= 1920 &&
+      !props.isTablet
+    ) {
       setWidth(props.scaledWidth);
       setHeight(props.scaledHeight);
       setFill("#000");
@@ -37,12 +41,21 @@ const ProductCard = (props) => {
       setHeight(props.scaledHeight);
       setFill(null);
     }
-    if (window.innerWidth > 720 && window.innerWidth < 1920 && props.type === "fundfolioOne") {
-      setWidth(width=>width * 1.5);
-      setHeight(height=>height* 1.5);
+    if (
+      window.innerWidth > 1024 &&
+      window.innerWidth < 1920 &&
+      props.type === "fundfolioOne" &&
+      !props.isTablet
+    ) {
+      setWidth((width) => width * 1.5);
+      setHeight((height) => height * 1.5);
       setFill(null);
     }
-    if (window.innerWidth > 720 && window.innerWidth < 1920) {
+    if (
+      window.innerWidth > 1024 &&
+      window.innerWidth < 1920 &&
+      !props.isTablet
+    ) {
       setWidth(props.width);
       setHeight(props.height);
       setFill(null);
@@ -53,13 +66,18 @@ const ProductCard = (props) => {
       type={props.type}
       onMouseEnter={mouseEnter}
       onMouseLeave={mouseleave}
+      isTablet={props.isTablet}
     >
       <div className="icon-wrapper">
         <Icon name={props.type} width={width} height={height} fill={fill} />
       </div>
       <div className="heading">{props.heading}</div>
       <div className="desc">{props.desc}</div>
-      <a className="link" href={props.type !== "fundfolioOne"?props.href:null} target="_blank">
+      <a
+        className="link"
+        href={props.type !== "fundfolioOne" ? props.href : null}
+        target="_blank"
+      >
         {device === "large" ? (
           <Icon name="arrow" width={28} height={26} />
         ) : (
