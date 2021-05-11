@@ -6,10 +6,6 @@ export const Container = styled.div`
   padding: ${rem(50)};
   position: relative;
   margin-bottom: 20px;
-  @media (max-width: 1024px) and (min-width: 768px) {
-    width: ${rem(360)};
-    height: ${rem(384)};
-  }
   @media (max-width: 767px) {
     width: 100%;
     height: auto;
@@ -169,11 +165,11 @@ export const Container = styled.div`
       visibility: hidden;
       transition: opacity 0.5s ease;
       fill: #131319;
-      @media (max-width: 1024px) and (min-width: 768px) {
-        opacity: 1;
-        visibility: visible;
-        fill: #f55240;
-      }
+      // @media (max-width: 1024px) and (min-width: 768px) {
+      //   opacity: 1;
+      //   visibility: visible;
+      //   fill: #f55240;
+      // }
       @media (max-width: 767px) {
         opacity: 1;
         visibility: visible;
@@ -184,11 +180,11 @@ export const Container = styled.div`
       opacity: 0;
       margin-left: ${rem(12)};
       transition: opacity 0.5s ease;
-      @media (max-width: 1024px) and (min-width: 768px) {
-        opacity: 1;
-        visibility: visible;
-        color: #f55240;
-      }
+      // @media (max-width: 1024px) and (min-width: 768px) {
+      //   opacity: 1;
+      //   visibility: visible;
+      //   color: #f55240;
+      // }
       @media (max-width: 767px) {
         opacity: 1;
         visibility: visible;
@@ -207,12 +203,12 @@ export const Container = styled.div`
         margin-left: ${rem(12, "xxl")};
       }
     }
-    @media (max-width: 1024px) and (min-width: 768px) {
-      opacity: 1;
-      visibility: visible;
-      position: relative;
-      top: 20px;
-    }
+    // @media (max-width: 1024px) and (min-width: 768px) {
+    //   opacity: 1;
+    //   visibility: visible;
+    //   position: relative;
+    //   top: 20px;
+    // }
     @media (max-width: 767px) {
       opacity: 1;
       visibility: visible;
@@ -328,11 +324,11 @@ export const Container = styled.div`
     border: solid 1px #424247;
     background: transparent;
 
-    @media (max-width: 1024px) and (min-width: 768px) {
-      background-image: linear-gradient(-210deg, #201e2d, #120f20);
-      width: ${rem(360)};
-      height: ${rem(384)};
-    }
+    // @media (max-width: 1024px) and (min-width: 768px) {
+    //   background-image: linear-gradient(-210deg, #201e2d, #120f20);
+    //   width: ${rem(360)};
+    //   height: ${rem(384)};
+    // }
     @media (max-width: 767px) {
       width: 100%;
       height: auto;
@@ -375,12 +371,12 @@ export const Container = styled.div`
     );
     width: ${rem(360)};
     height: ${rem(300)};
-    @media (max-width: 1024px) and (min-width: 768px) {
-      background-image: linear-gradient(75deg, transparent, transparent);
-      border: none;
-      width: ${rem(360)};
-      height: ${rem(384)};
-    }
+    // @media (max-width: 1024px) and (min-width: 768px) {
+    //   background-image: linear-gradient(75deg, transparent, transparent);
+    //   border: none;
+    //   width: ${rem(360)};
+    //   height: ${rem(384)};
+    // }
     @media (max-width: 767px) {
       background-image: linear-gradient(75deg, transparent, transparent);
       border: none;
@@ -406,9 +402,9 @@ export const Container = styled.div`
   }
   &:hover > .icon-wrapper {
     transform: translate(${rem(0)}, ${rem(94)});
-    @media (max-width: 1024px) and (min-width: 768px) {
-      transform: translate(0);
-    }
+    // @media (max-width: 1024px) and (min-width: 768px) {
+    //   transform: translate(0);
+    // }
     @media (max-width: 767px) {
       transform: translate(0);
     }
@@ -431,10 +427,10 @@ export const Container = styled.div`
   &:hover > .desc {
     opacity: 0;
     visibility: hidden;
-    @media (max-width: 1024px) and (min-width: 768px) {
-      opacity: 0.3;
-      visibility: visible;
-    }
+    // @media (max-width: 1024px) and (min-width: 768px) {
+    //   opacity: 0.3;
+    //   visibility: visible;
+    // }
     @media (max-width: 767px) {
       opacity: 0.3;
       visibility: visible;
@@ -443,10 +439,10 @@ export const Container = styled.div`
   &:hover > .heading {
     opacity: 0;
     visibility: hidden;
-    @media (max-width: 1024px) and (min-width: 768px) {
-      opacity: 1;
-      visibility: visible;
-    }
+    // @media (max-width: 1024px) and (min-width: 768px) {
+    //   opacity: 1;
+    //   visibility: visible;
+    // }
     @media (max-width: 767px) {
       opacity: 1;
       visibility: visible;

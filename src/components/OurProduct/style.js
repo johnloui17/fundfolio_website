@@ -37,6 +37,7 @@ export const Row = styled.div`
   justify-content: space-between;
   @media (max-width: 1024px) and (min-width: 768px) {
     justify-content: center;
+    flex-direction:column;
   }
   @media (max-width: 767px) {
     justify-content: center;

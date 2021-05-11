@@ -20,7 +20,7 @@ const ProductCard = (props) => {
       setHeight(props.scaledHeight * 2);
       setFill("#000");
     }
-    if (window.innerWidth > 1024 && window.innerWidth <= 1920) {
+    if (window.innerWidth > 720 && window.innerWidth <= 1920) {
       setWidth(props.scaledWidth);
       setHeight(props.scaledHeight);
       setFill("#000");
@@ -37,12 +37,12 @@ const ProductCard = (props) => {
       setHeight(props.scaledHeight);
       setFill(null);
     }
-    if (window.innerWidth > 1024 && window.innerWidth < 1920 && props.type === "fundfolioOne") {
+    if (window.innerWidth > 720 && window.innerWidth < 1920 && props.type === "fundfolioOne") {
       setWidth(width=>width * 1.5);
       setHeight(height=>height* 1.5);
       setFill(null);
     }
-    if (window.innerWidth > 1024 && window.innerWidth < 1920) {
+    if (window.innerWidth > 720 && window.innerWidth < 1920) {
       setWidth(props.width);
       setHeight(props.height);
       setFill(null);
