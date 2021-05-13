@@ -15,8 +15,11 @@ import Icons from "../Icons";
 import { gumletLoader } from "../../utils/gumletLoader";
 const Footer = (props) => {
   const [device, setDevice] = useState("");
+  const [iFrame, setIframe] = useState(false);
   useEffect(() => {
     if (window.innerWidth > 1920) setDevice("large");
+    if (window.location !== window.parent.location)
+      setIframe(true);
   }, []);
   return (
     <Container>
@@ -127,7 +130,7 @@ const Footer = (props) => {
             </SocialIcon>
           </SocialRow>
         </Column>
-        <Column>
+        <Column iFrame={iFrame}>
           <SubHeading>products</SubHeading>
           <Link href="https://marketfeed.news/" passHref={true}>
             <FooterLink target={"_blank"}>marketfeed.news</FooterLink>
@@ -144,14 +147,17 @@ const Footer = (props) => {
           <Link href="/#about" passHref={true}>
             <FooterLink>about</FooterLink>
           </Link>
-          <Link href="https://marketfeed.news/disclaimer/" passHref={true}>
+          <Link href="https://payments.fundfolio.in/disclaimer/" passHref={true}>
             <FooterLink>disclaimer</FooterLink>
           </Link>
-          <Link href="https://marketfeed.news/privacy-policy/" passHref={true}>
+          <Link href="https://payments.fundfolio.in/privacy-policy-2/" passHref={true}>
             <FooterLink target={"_blank"}>privacy policy</FooterLink>
           </Link>
-          <Link href="https://marketfeed.news/terms-of-use/" passHref={true}>
+          <Link href="https://payments.fundfolio.in/terms-of-use/" passHref={true}>
             <FooterLink target={"_blank"}>terms & conditions</FooterLink>
+          </Link>
+          <Link href="https://payments.fundfolio.in/refund-policy/" passHref={true}>
+            <FooterLink target={"_blank"}>refund policy</FooterLink>
           </Link>
         </Column>
       </Row>
