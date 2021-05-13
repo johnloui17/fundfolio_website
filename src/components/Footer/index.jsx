@@ -15,8 +15,11 @@ import Icons from "../Icons";
 import { gumletLoader } from "../../utils/gumletLoader";
 const Footer = (props) => {
   const [device, setDevice] = useState("");
+  const [iFrame, setIframe] = useState(false);
   useEffect(() => {
     if (window.innerWidth > 1920) setDevice("large");
+    if (window.location !== window.parent.location)
+      setIframe(true);
   }, []);
   return (
     <Container>
@@ -127,7 +130,7 @@ const Footer = (props) => {
             </SocialIcon>
           </SocialRow>
         </Column>
-        <Column iFrame={window.location !== window.parent.location}>
+        <Column iFrame={iFrame}>
           <SubHeading>products</SubHeading>
           <Link href="https://marketfeed.news/" passHref={true}>
             <FooterLink target={"_blank"}>marketfeed.news</FooterLink>
