@@ -32,7 +32,7 @@ export const SocialRow = styled.div`
 `;
 
 export const Column = styled.div`
-  display: flex;
+  display: ${(props)=>props.iFrame ? "none" :"flex"};
   margin-right: 130px;
   flex-direction: column;
   align-items: flex-start;

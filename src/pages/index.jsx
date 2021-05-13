@@ -27,47 +27,28 @@ export default function HomePage() {
       setLoading(false);
       document.body.style.overflow = "auto";
     }, 2500);
-    const userAgent = navigator.userAgent.toLowerCase();
-    const isTabletView =
-      /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(
-        userAgent
-      );
-    setIsTablet(isTabletView);
+    checkForTabletView();
   }, []);
+
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
   });
-  var checkScrollSpeed = (function (settings) {
-    settings = settings || {};
 
-    var lastPos,
-      newPos,
-      timer,
-      delta,
-      delay = settings.delay || 50; // in "ms" (higher means lower fidelity )
+  useEffect(() => {}, []);
 
-    function clear() {
-      lastPos = null;
-      delta = 0;
-    }
+  const checkForTabletView = () => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isTabletView =
+      /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(
+        userAgent
+      );
+    setIsTablet(isTabletView);
+  };
 
-    clear();
 
-    return function () {
-      newPos = window.scrollY;
-      if (lastPos != null) {
-        // && newPos < maxScroll
-        delta = newPos - lastPos;
-      }
-      lastPos = newPos;
-      clearTimeout(timer);
-      timer = setTimeout(clear, delay);
-      return delta;
-    };
-  })();
   const gotoNextPage = (direction) => {
     // setIsScrolling(true);
 
@@ -79,7 +60,7 @@ export default function HomePage() {
     const partnersOffset = document.getElementById("partners").offsetTop;
     const contactOffset = document.getElementById("contact").offsetTop;
 
-    if (window.innerWidth > 1024  && !isTablet) {
+    if (window.innerWidth > 1024 && !isTablet) {
       if (direction === "down") {
         let offSet;
         if (window.pageYOffset < window.innerHeight) {
@@ -93,7 +74,7 @@ export default function HomePage() {
           // console.log(ourWayOffset);
         } else if (
           window.pageYOffset > ourWayOffset &&
-          window.pageYOffset < productsOffset-70
+          window.pageYOffset < productsOffset - 70
         ) {
           window.scrollTo(0, productsOffset);
           offSet = productsOffset;
@@ -143,7 +124,6 @@ export default function HomePage() {
     // return offSet;
   };
   const onScroll = (event) => {
-    
     event.preventDefault();
     const homeOffset = 0;
     const aboutOffset = document.getElementById("about").offsetTop - 10;
@@ -204,22 +184,22 @@ export default function HomePage() {
   };
   return (
     <>
-        <>
-          <App
-            transparent={transparent}
-            activeTab={activeTab}
-            setIsScrolling={setIsScrolling}
-          >
-            <Home setIsScrolling={setIsScrolling}/>
-            <About  />
-            <OurWay />
-            <OurProduct isTablet={isTablet} />
-            <Partners />
-            <Contact />
-            <Footer />
-            </App>
-            {isLoading ? <Loader /> : null}
-        </>
+      <>
+        <App
+          transparent={transparent}
+          activeTab={activeTab}
+          setIsScrolling={setIsScrolling}
+        >
+          <Home setIsScrolling={setIsScrolling}/>
+          <About  />
+          <OurWay />
+          <OurProduct isTablet={isTablet} />
+          <Partners />
+          <Contact />
+          <Footer />
+        </App>
+        {isLoading ? <Loader /> : null}
+      </>
     </>
   );
 }
