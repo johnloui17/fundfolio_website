@@ -41,16 +41,16 @@ const ProductCard = (props) => {
       setHeight(props.scaledHeight);
       setFill(null);
     }
-    if (
-      window.innerWidth > 1024 &&
-      window.innerWidth < 1920 &&
-      props.type === "fundfolioOne" &&
-      !props.isTablet
-    ) {
-      setWidth((width) => width * 1.5);
-      setHeight((height) => height * 1.5);
-      setFill(null);
-    }
+    // if (
+    //   window.innerWidth > 1024 &&
+    //   window.innerWidth < 1920 &&
+    //   props.type === "fundfolioOne" &&
+    //   !props.isTablet
+    // ) {
+    //   setWidth((width) => width * 1.5);
+    //   setHeight((height) => height * 1.5);
+    //   setFill(null);
+    // }
     if (
       window.innerWidth > 1024 &&
       window.innerWidth < 1920 &&
@@ -73,11 +73,7 @@ const ProductCard = (props) => {
       </div>
       <div className="heading">{props.heading}</div>
       <div className="desc">{props.desc}</div>
-      <a
-        className="link"
-        href={props.type !== "fundfolioOne" ? props.href : null}
-        target="_blank"
-      >
+      <a className="link" href={props.href} target="_blank">
         {device === "large" ? (
           <Icon name="arrow" width={28} height={26} />
         ) : (

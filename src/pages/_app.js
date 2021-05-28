@@ -179,14 +179,22 @@ function MyApp({ Component, pageProps }) {
           crossOrigin=""
         />
         <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=G-CHLNQSS681`}
+        />
+        <script
           dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtag/js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','UA-166954131-1');`}} />
-    </Head>
-    <noscript dangerouslySetInnerHTML={{__html: `<iframe src="https://www.googletagmanager.com/gtag/js?id=UA-166954131-1" height="0" width="0" style="display:none;visibility:hidden;"></iframe>`}} />
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-CHLNQSS681', {
+              page_path: window.location.pathname,
+            });
+          `,
+          }}
+        />
+      </Head>
       <GlobalStyle />
       <Component {...pageProps} />
     </ThemeProvider>
