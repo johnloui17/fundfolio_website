@@ -1,4 +1,4 @@
-const GROW_URL = "https://web-fundfolio-one-4uwx739uw-fundfolio.vercel.app";
+const GROW_URL = "https://web-fundfolio-one-4bbprmtx2-fundfolio.vercel.app";
 module.exports = {
   distDir: "../.next",
   async rewrites() {
