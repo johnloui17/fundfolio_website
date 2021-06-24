@@ -27,7 +27,7 @@ const About = (props) => {
             insights and a snowballing community.
           </p>
         </LeftSection>
-        <RightSection >
+        <RightSection>
           <ImageWrapper>
             {device === "large" ? (
               <Image
@@ -49,7 +49,7 @@ const About = (props) => {
               />
             )}
           </ImageWrapper>
-          <h2>600k+</h2>
+          <h2>800k+</h2>
           <p>
             community <br />
             members
