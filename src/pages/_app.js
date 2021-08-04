@@ -82,7 +82,7 @@ function MyApp({ Component, pageProps }) {
         />
         <meta
           name="keywords"
-          content="ITR Filing, Tax Filing, Mutual funds in India, Buy Insurance online, Stock market Online, stock tips, intraday screener, algo trading"
+          content="ITR Filing, Tax Filing, Mutual funds in India, Buy Insurance online, Stock market Online, stock tips, intraday screener, algo trading, YC, Y Combinator"
         />
 
         <meta property="og:url" content="https://fundfolio.com" />
