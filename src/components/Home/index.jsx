@@ -17,7 +17,7 @@ const Home = (props) => {
     if (window.innerWidth > 1920) setDevice("large");
   }, []);
   const handleHeaderClick = () => {
-    document.getElementById('contact').scrollIntoView();
+    document.getElementById("contact").scrollIntoView();
     props.setIsScrolling(true);
     setTimeout(() => {
       props.setIsScrolling(false);
@@ -49,33 +49,31 @@ const Home = (props) => {
           <h1>we help you win the stock market</h1>
           <p>join the next billion revolution</p>
           <Button onClick={handleHeaderClick}>
-              <Icons name="arrow" fill="#fff" style={{ marginRight: 10 }} />
-              <span>join us</span>
+            <Icons name="arrow" fill="#fff" style={{ marginRight: 10 }} />
+            <span>join us</span>
           </Button>
         </Content>
       </ContentWrapper>
-      {false ? (
-        <BottomLogoContainer>
-          <p>backed by</p>
-          {device === "large" ? (
-            <Image
-              src="/yc_logo.svg"
-              loader={gumletLoader}
-              height={60}
-              width={290}
-              alt="fundfolio y-combinator"
-            />
-          ) : (
-            <Image
-              loader={gumletLoader}
-              src="/yc_logo.svg"
-              height={20}
-              width={92}
-              alt="fundfolio y-combinator"
-            />
-          )}
-        </BottomLogoContainer>
-      ) : null}
+      <BottomLogoContainer>
+        <p>backed by</p>
+        {device === "large" ? (
+          <Image
+            src="/yc_logo.svg"
+            loader={gumletLoader}
+            height={60}
+            width={290}
+            alt="fundfolio y-combinator"
+          />
+        ) : (
+          <Image
+            loader={gumletLoader}
+            src="/yc_logo.svg"
+            height={20}
+            width={92}
+            alt="fundfolio y-combinator"
+          />
+        )}
+      </BottomLogoContainer>
     </Container>
   );
 };
