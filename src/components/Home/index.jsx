@@ -60,16 +60,16 @@ const Home = (props) => {
           <Image
             src="/yc_logo.svg"
             loader={gumletLoader}
-            height={60}
-            width={290}
+            height={120}
+            width={580}
             alt="fundfolio y-combinator"
           />
         ) : (
           <Image
             loader={gumletLoader}
             src="/yc_logo.svg"
-            height={20}
-            width={92}
+            height={30}
+            width={138}
             alt="fundfolio y-combinator"
           />
         )}
