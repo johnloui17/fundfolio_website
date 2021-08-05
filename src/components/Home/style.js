@@ -30,10 +30,15 @@ export const ContentWrapper = styled.div`
     padding-left: ${rem(100, "tablet")};
     padding-right: ${rem(100, "tablet")};
   }
-  @media (max-width: 767px) {
+  @media (max-width: 320px) {
+    padding-left: ${rem(80, "mobile")};
+    padding-right: ${rem(80, "mobile")};
+    padding-top: ${rem(200, "mobile")};
+  }
+  @media (min-width: 321px) and (max-width: 767px) {
     padding-left: ${rem(100, "mobile")};
     padding-right: ${rem(100, "mobile")};
-    padding-top: ${rem(300, "mobile")};
+    padding-top: ${rem(250, "mobile")};
   }
   @media (min-width: 1280px) {
     padding: ${rem(150, "medium")};
@@ -81,9 +86,13 @@ export const Content = styled.div`
       font-size: ${rem(80, "tablet")};
       line-height: ${rem(90, "tablet")};
     }
-    @media (max-width: 767px) {
-      font-size: ${rem(80, "mobile")};
-      line-height: ${rem(90, "mobile")};
+    @media (max-width: 320px) {
+      font-size: ${rem(65, "mobile")};
+      line-height: 1.15;
+    }
+    @media (min-width: 321px) and (max-width: 767px) {
+      font-size: ${rem(75, "mobile")};
+      line-height: 1.15;
     }
     @media (min-width: 1280px) {
       font-size: ${rem(80, "medium")};
@@ -111,8 +120,14 @@ export const Content = styled.div`
     @media (max-width: 1024px) and (min-width: 768px) {
       font-size: ${rem(20)};
     }
-    @media (max-width: 767px) {
+    @media (max-width: 320px) {
+      font-size: ${rem(14)};
+      margin: ${rem(12)} 0 ${rem(24)};
+      padding-right: ${rem(200, "mobile")};
+    }
+    @media (min-width: 321px) and (max-width: 767px) {
       font-size: ${rem(16)};
+      margin: ${rem(12)} 0 ${rem(24)};
       padding-right: ${rem(200, "mobile")};
     }
     @media (min-width: 1280px) {
