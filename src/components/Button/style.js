@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { rem } from "../../utils/remConverter";
 export const Container = styled.button`
-  width: ${rem(217)};
-  height: ${rem(70)};
+  width: ${rem(204)};
+  height: ${rem(56)};
   border-radius: 35px;
   border: solid 1px
     ${(props) => (props.type == "ghost" ? "#f55240" : "transparent")};
