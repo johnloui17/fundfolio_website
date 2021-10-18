@@ -14,7 +14,7 @@ const Partners = (props) => {
   }, []);
   return (
     <Container id="partners">
-      <Heading>our partners</Heading>
+      <Heading>our integrations</Heading>
       <Row>
         {device === "large" ? (
           <>
