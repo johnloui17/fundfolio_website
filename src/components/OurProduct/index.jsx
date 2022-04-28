@@ -11,14 +11,14 @@ const OurProduct = (props) => (
         type="marketfeed"
         heading="to know"
         desc="curated stock market insights with live feed, market news, screeners and sebi-registered advisory"
-        href={"https://marketfeed.app/"}
+        href={"https://marketfeed.com/"}
         width={120}
         height={20}
         scaledWidth={244}
         scaledHeight={32}
         isTablet={props.isTablet}
       />
-      <ProductCard
+      {/* <ProductCard
         type="breakout"
         heading="to learn"
         desc="learn directly from seasoned stock market experts. taste the secret sauce in their journey to success."
@@ -28,7 +28,7 @@ const OurProduct = (props) => (
         scaledWidth={215.8}
         scaledHeight={35}
         isTablet={props.isTablet}
-      />
+      /> */}
       <ProductCard
         type="fundfolioOne"
         heading="to grow"
