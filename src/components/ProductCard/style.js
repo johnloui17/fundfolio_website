@@ -341,7 +341,8 @@ export const Container = styled.div`
     }
     @media (min-width: 1280px) {
       width:  ${rem(384, "medium")};
-      height: ${(props) => (props.isTablet ? `${rem(384, "medium")}` : `${rem(324, "medium")}`)};
+      height: ${(props) =>
+        props.isTablet ? `${rem(384, "medium")}` : `${rem(324, "medium")}`};
       background-image:${(props) =>
         props.isTablet ? "linear-gradient(-210deg, #201e2d, #120f20)" : null};
     }

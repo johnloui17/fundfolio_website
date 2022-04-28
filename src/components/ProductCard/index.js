@@ -62,30 +62,32 @@ const ProductCard = (props) => {
     }
   };
   return (
-    <Container
-      type={props.type}
-      onMouseEnter={mouseEnter}
-      onMouseLeave={mouseleave}
-      isTablet={props.isTablet}
-    >
-      <div className="icon-wrapper">
-        <Icon name={props.type} width={width} height={height} fill={fill} />
-      </div>
-      <div className="heading">{props.heading}</div>
-      <div className="desc">{props.desc}</div>
-      <a className="link" href={props.href} target="_blank">
-        {device === "large" ? (
-          <Icon name="arrow" width={28} height={26} />
-        ) : (
-          <Icon name="arrow" />
-        )}
-        {props.href !== "#" ? (
-          <span>explore now</span>
-        ) : (
-          <span>coming soon</span>
-        )}
-      </a>
-    </Container>
+    <div style={{ width: 360, marginRight: 30 }}>
+      <Container
+        type={props.type}
+        onMouseEnter={mouseEnter}
+        onMouseLeave={mouseleave}
+        isTablet={props.isTablet}
+      >
+        <div className="icon-wrapper">
+          <Icon name={props.type} width={width} height={height} fill={fill} />
+        </div>
+        <div className="heading">{props.heading}</div>
+        <div className="desc">{props.desc}</div>
+        <a className="link" href={props.href} target="_blank">
+          {device === "large" ? (
+            <Icon name="arrow" width={28} height={26} />
+          ) : (
+            <Icon name="arrow" />
+          )}
+          {props.href !== "#" ? (
+            <span>explore now</span>
+          ) : (
+            <span>coming soon</span>
+          )}
+        </a>
+      </Container>
+    </div>
   );
 };
 
