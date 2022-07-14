@@ -1,8 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { Container, Row, NavBar, SocialIcon } from "./style";
-import Image from "next/image";
-import { gumletLoader } from "../../utils/gumletLoader";
-import getImageDimension from "../../utils/dimensionCalculator";
+import React, {
+  useEffect,
+  useState,
+} from 'react';
+
+import Image from 'next/image';
+
+import { gumletLoader } from '../../utils/gumletLoader';
+import {
+  Container,
+  NavBar,
+  Row,
+  SocialIcon,
+} from './style';
+
 const Header = (props) => {
   const [device, setDevice] = useState("");
   useEffect(() => {
@@ -118,7 +128,7 @@ const Header = (props) => {
             )}
           </SocialIcon>
           <SocialIcon
-            href={"https://www.instagram.com/fundfoliohq/"}
+            href={"https://www.instagram.com/marketfeedhq"}
             target={"_blank"}
           >
             {device === "large" ? (
