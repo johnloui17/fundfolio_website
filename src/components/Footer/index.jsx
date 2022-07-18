@@ -1,18 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, {
+  useEffect,
+  useState,
+} from 'react';
+
+import Image from 'next/image';
+import Link from 'next/link';
+
+import { gumletLoader } from '../../utils/gumletLoader';
+import Icons from '../Icons';
 import {
+  Column,
   Container,
+  Copyright,
+  FooterLink,
   Row,
   SocialIcon,
-  Column,
-  SubHeading,
-  FooterLink,
-  Copyright,
   SocialRow,
-} from "./style";
-import Image from "next/image";
-import Link from "next/link";
-import Icons from "../Icons";
-import { gumletLoader } from "../../utils/gumletLoader";
+  SubHeading,
+} from './style';
+
 const Footer = (props) => {
   const [device, setDevice] = useState("");
   const [iFrame, setIframe] = useState(false);
@@ -88,7 +94,7 @@ const Footer = (props) => {
               )}
             </SocialIcon>
             <SocialIcon
-              href={"https://www.instagram.com/fundfoliohq/"}
+              href={"https://www.instagram.com/marketfeedhq/"}
               target={"_blank"}
             >
               {device === "large" ? (
