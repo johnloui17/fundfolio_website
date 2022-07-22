@@ -46,7 +46,7 @@ const Footer = (props) => {
             />
           )}
           <p className="desc">
-            HoneyKomb by Bhive, 3/B, 19th Main Road, HSR Sector 3<br /> Bengaluru, Bengaluru Urban
+            HoneyKomb by Bhive, 3/B, 19th Main Road, HSR Sector 3<br />Bengaluru, Bengaluru Urban
             <br /> Karnataka, 560102
           </p>
           <SocialRow>
