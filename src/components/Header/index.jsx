@@ -108,7 +108,7 @@ const Header = (props) => {
             )}
           </SocialIcon>
           <SocialIcon
-            href={"https://twitter.com/MarketfeedNews"}
+            href={"https://twitter.com/marketfeedapp"}
             target={"_blank"}
           >
             {device === "large" ? (
@@ -128,7 +128,7 @@ const Header = (props) => {
             )}
           </SocialIcon>
           <SocialIcon
-            href={"https://www.instagram.com/marketfeedhq"}
+            href={"https://www.instagram.com/marketfeed.app"}
             target={"_blank"}
           >
             {device === "large" ? (
