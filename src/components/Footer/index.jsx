@@ -1,13 +1,10 @@
-import React, {
-  useEffect,
-  useState,
-} from 'react';
+import React, { useEffect, useState } from "react";
 
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
-import { gumletLoader } from '../../utils/gumletLoader';
-import Icons from '../Icons';
+import { gumletLoader } from "../../utils/gumletLoader";
+import Icons from "../Icons";
 import {
   Column,
   Container,
@@ -17,7 +14,7 @@ import {
   SocialIcon,
   SocialRow,
   SubHeading,
-} from './style';
+} from "./style";
 
 const Footer = (props) => {
   const [device, setDevice] = useState("");
@@ -46,11 +43,9 @@ const Footer = (props) => {
             />
           )}
           <p className="desc">
-            kinfra hi-tech park
-            <br />
-            kalamassery,kochi
-            <br />
-            kerala 683503
+            HoneyKomb by Bhive, 3/B, 19th Main Road, HSR Sector 3<br />
+            Bengaluru, Bengaluru Urban
+            <br /> Karnataka, 560102
           </p>
           <SocialRow>
             <SocialIcon
@@ -74,7 +69,7 @@ const Footer = (props) => {
               )}
             </SocialIcon>
             <SocialIcon
-              href={"https://twitter.com/MarketfeedNews"}
+              href={"https://twitter.com/marketfeedapp"}
               target={"_blank"}
             >
               {device === "large" ? (
@@ -94,7 +89,7 @@ const Footer = (props) => {
               )}
             </SocialIcon>
             <SocialIcon
-              href={"https://www.instagram.com/marketfeedhq/"}
+              href={"https://www.instagram.com/marketfeed.app/"}
               target={"_blank"}
             >
               {device === "large" ? (
@@ -137,8 +132,8 @@ const Footer = (props) => {
         </Column>
         <Column iFrame={iFrame}>
           <SubHeading>products</SubHeading>
-          <Link href="https://marketfeed.news/" passHref={true}>
-            <FooterLink target={"_blank"}>marketfeed.news</FooterLink>
+          <Link href="https://marketfeed.com/read" passHref={true}>
+            <FooterLink target={"_blank"}>marketfeed.read</FooterLink>
           </Link>
           <Link href="https://marketfeed.com" passHref={true}>
             <FooterLink target={"_blank"}>marketfeed.com</FooterLink>
@@ -146,7 +141,7 @@ const Footer = (props) => {
         </Column>
         <Column>
           <SubHeading>company</SubHeading>
-          <Link href="/#about" passHref={true}>
+          <Link href="https://marketfeed.com" passHref={true}>
             <FooterLink>about</FooterLink>
           </Link>
           <Link
@@ -183,7 +178,7 @@ const Footer = (props) => {
           ) : (
             <Icons name="love" />
           )}
-          <span>by fundfolio.com.</span>
+          <span>by marketfeed.com.</span>
         </Copyright>
       </Row>
     </Container>

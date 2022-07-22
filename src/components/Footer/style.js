@@ -37,7 +37,7 @@ export const Column = styled.div`
   flex-direction: column;
   align-items: flex-start;
   .desc {
-    max-width: ${rem(264)};
+    max-width: ${rem(270)};
     color: #fff;
     font-size: ${rem(20)};
     font-weight: 500;

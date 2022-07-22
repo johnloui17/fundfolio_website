@@ -1,17 +1,9 @@
-import React, {
-  useEffect,
-  useState,
-} from 'react';
+import React, { useEffect, useState } from "react";
 
-import Image from 'next/image';
+import Image from "next/image";
 
-import { gumletLoader } from '../../utils/gumletLoader';
-import {
-  Container,
-  NavBar,
-  Row,
-  SocialIcon,
-} from './style';
+import { gumletLoader } from "../../utils/gumletLoader";
+import { Container, NavBar, Row, SocialIcon } from "./style";
 
 const Header = (props) => {
   const [device, setDevice] = useState("");
@@ -23,7 +15,7 @@ const Header = (props) => {
     setTimeout(() => {
       props.setIsScrolling(false);
     }, 750);
-  }
+  };
   return (
     <Container transparent={props.transparent}>
       {device === "large" ? (
@@ -54,35 +46,35 @@ const Header = (props) => {
             href="/#about"
             className={props.activeTab === "about" ? "active" : ""}
             onClick={handleHeaderClick}
-            >
+          >
             about
           </a>
           <a
             href="/#our-way"
             className={props.activeTab === "our-way" ? "active" : ""}
             onClick={handleHeaderClick}
-            >
+          >
             our way
           </a>
           <a
             href="/#products"
             className={props.activeTab === "products" ? "active" : ""}
             onClick={handleHeaderClick}
-            >
+          >
             products
           </a>
           <a
             href="/#partners"
             className={props.activeTab === "partners" ? "active" : ""}
             onClick={handleHeaderClick}
-            >
+          >
             partners
           </a>
           <a
             href="/#contact"
             className={props.activeTab === "contact" ? "active" : ""}
             onClick={handleHeaderClick}
-            >
+          >
             contact us
           </a>
         </NavBar>
@@ -108,7 +100,7 @@ const Header = (props) => {
             )}
           </SocialIcon>
           <SocialIcon
-            href={"https://twitter.com/MarketfeedNews"}
+            href={"https://twitter.com/marketfeedapp"}
             target={"_blank"}
           >
             {device === "large" ? (
@@ -128,7 +120,7 @@ const Header = (props) => {
             )}
           </SocialIcon>
           <SocialIcon
-            href={"https://www.instagram.com/marketfeedhq"}
+            href={"https://www.instagram.com/marketfeed.app"}
             target={"_blank"}
           >
             {device === "large" ? (
