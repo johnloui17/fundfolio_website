@@ -1,13 +1,10 @@
-import React, {
-  useEffect,
-  useState,
-} from 'react';
+import React, { useEffect, useState } from "react";
 
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
-import { gumletLoader } from '../../utils/gumletLoader';
-import Icons from '../Icons';
+import { gumletLoader } from "../../utils/gumletLoader";
+import Icons from "../Icons";
 import {
   Column,
   Container,
@@ -17,7 +14,7 @@ import {
   SocialIcon,
   SocialRow,
   SubHeading,
-} from './style';
+} from "./style";
 
 const Footer = (props) => {
   const [device, setDevice] = useState("");
@@ -46,7 +43,8 @@ const Footer = (props) => {
             />
           )}
           <p className="desc">
-            HoneyKomb by Bhive, 3/B, 19th Main Road, HSR Sector 3<br />Bengaluru, Bengaluru Urban
+            HoneyKomb by Bhive, 3/B, 19th Main Road, HSR Sector 3<br />
+            Bengaluru, Bengaluru Urban
             <br /> Karnataka, 560102
           </p>
           <SocialRow>
