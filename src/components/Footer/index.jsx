@@ -43,9 +43,11 @@ const Footer = (props) => {
             />
           )}
           <p className="desc">
-            HoneyKomb by Bhive, 3/B, 19th Main Road, HSR Sector 3<br />
-            Bengaluru, Bengaluru Urban
-            <br /> Karnataka, 560102
+            Fundfolio Fintech Pvt. Ltd.<br />
+            Honeykomb by BHIVE,<br />
+            19th Main Road,<br />
+            HSR Sector 3,<br />
+            Bengaluru, KA - 560102
           </p>
           <SocialRow>
             <SocialIcon
