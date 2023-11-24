@@ -9,11 +9,13 @@ module.exports = {
       },
       {
         source: "/grow",
-        destination: `${GROW_URL}/grow`,
+        // destination: `${GROW_URL}/grow`,
+        destination: `/`,
       },
       {
         source: "/grow/:path*",
-        destination: `${GROW_URL}/grow/:path*`,
+        destination: `/`,
+        // destination: `${GROW_URL}/grow/:path*`,
       },
     ];
   },
