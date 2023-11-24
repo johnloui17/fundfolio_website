@@ -29,7 +29,7 @@ const OurProduct = (props) => (
         scaledHeight={35}
         isTablet={props.isTablet}
       /> */}
-      <ProductCard
+      {/* <ProductCard
         type="fundfolioOne"
         heading="to grow"
         desc="get a personal finance companion to help sort all your financial needs."
@@ -40,7 +40,7 @@ const OurProduct = (props) => (
         scaledWidth={224}
         scaledHeight={38}
         isTablet={props.isTablet}
-      />
+      /> */}
     </Row>
   </Container>
 );
