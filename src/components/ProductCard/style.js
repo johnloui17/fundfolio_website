@@ -77,13 +77,13 @@ export const Container = styled.div`
   }
   .heading {
     font-size: 60px;
-    font-weight: bold;
+    font-weight:900;
     color: #fff;
     letter-spacing: 0.2px;
     margin-top: ${rem(37)};
     transition: opacity 0.2s ease;
     transition-delay: 0.5s;
-    font-family: "gilroybold";
+    font-family: "Satoshi-Variable";
     position: relative;
     @media (max-width: 1024px) and (min-width: 768px) {
       font-size: 40px;
@@ -119,7 +119,7 @@ export const Container = styled.div`
     margin-top: ${rem(7)};
     transition: opacity 0.2s ease;
     transition-delay: 0.5s;
-    font-family: "gilroymedium";
+    font-family: "Satoshi-Variable";
     @media (max-width: 1024px) and (min-width: 768px) {
       font-size: 20px;
     }
@@ -151,7 +151,7 @@ export const Container = styled.div`
     color: #131319;
     opacity: 0;
     font-size: 24px;
-    font-weight: bold;
+    font-weight:900;
     visibility: hidden;
     transition: opacity 0.5s ease;
     position: absolute;

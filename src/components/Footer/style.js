@@ -6,9 +6,14 @@ export const Container = styled.div`
   position: relative;
   padding: ${rem(125)} ${rem(155)};
   background: #0d0a1b;
-  @media (max-width: 767px) {
-    padding: ${rem(20)} ${rem(50)};
-    padding-top: 160px;
+
+  @media (min-width: 360px) and (max-width: 767px) {
+    padding: ${rem(20)} ${rem(20)};
+    /* padding-top: 160px; */
+  }
+
+  @media (min-width: 767px) and (max-width: 1024px) {
+    padding: ${rem(40)} ${rem(60)};
   }
   @media (min-width: 1920px) {
     padding: ${rem(120, "large")} ${rem(150, "large")};
@@ -22,8 +27,12 @@ export const Container = styled.div`
 `;
 export const Row = styled.div`
   display: flex;
+  gap: 71px;
   @media (max-width: 767px) {
     flex-direction: column;
+  }
+  @media (max-width: 1024px) {
+    gap: 30px;
   }
 `;
 export const SocialRow = styled.div`
@@ -32,37 +41,49 @@ export const SocialRow = styled.div`
 `;
 
 export const Column = styled.div`
-  display: ${(props)=>props.iFrame ? "none" :"flex"};
-  margin-right: 130px;
+  display: ${(props) => (props.iFrame ? "none" : "flex")};
+  /* margin-right: 130px; */
   flex-direction: column;
   align-items: flex-start;
   .desc {
-    max-width: ${rem(270)};
+    max-width: ${rem(323)};
     color: #fff;
     font-size: ${rem(20)};
     font-weight: 500;
     margin: ${rem(24)} 0;
     opacity: 0.6;
+
+    @media (min-width: 360px) and (max-width: 767px) {
+      max-width: ${rem(216, "large")};
+      font-size: ${rem(10, "large")};
+      margin: ${rem(24, "large")} 0;
+    }
+    @media (min-width: 767px) and(max-width: 1024px) {
+      margin: ${rem(24, "large")} 0;
+    }
     @media (min-width: 1920px) {
       max-width: ${rem(264, "large")};
       font-size: ${rem(20, "large")};
-      margin: ${rem(24, "large")} 0 ;
+      margin: ${rem(24, "large")} 0;
     }
     @media (min-width: 2560px) {
       max-width: ${rem(264, "extraLarge")};
       font-size: ${rem(20, "extraLarge")};
-      margin: ${rem(24, "extraLarge")} 0 ;
+      margin: ${rem(24, "extraLarge")} 0;
     }
     @media (min-width: 3840px) {
       max-width: ${rem(264, "xxl")};
       font-size: ${rem(20, "xxl")};
-      margin: ${rem(24, "xxl")} 0 ;
+      margin: ${rem(24, "xxl")} 0;
     }
   }
   a {
     text-decoration: none;
   }
-  @media (max-width: 767px) {
+  @media (min-width: 360px) and (max-width: 767px) {
+    padding-bottom: 0px;
+  }
+  @media (min-width: 767px) and (max-width: 1024px) {
     padding-bottom: 60px;
   }
   @media (min-width: 1920px) {
@@ -96,7 +117,7 @@ export const SubHeading = styled.div`
   color: #56535f;
   opacity: 0.6;
   font-size: ${rem(24)};
-  font-weight: bold;
+  font-weight: 900;
   margin-bottom: ${rem(16)};
 
   @media (min-width: 1920px) {
@@ -137,26 +158,34 @@ export const FooterLink = styled.a`
 export const Copyright = styled.div`
   width: 100%;
   text-align: center;
-  color: #fff;
-  font-size: ${rem(18)};
   margin-top: ${rem(120)};
   align-items: center;
   display: flex;
   justify-content: center;
+  opacity: 0.8;
+  color: #fff;
+  font-family: "Satoshi-Variable";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 216.667% */
   svg {
     margin: 0 5px;
 
-  @media (min-width: 1920px) {
-    margin: 0 ${rem(5, "large")};
+    @media (min-width: 1920px) {
+      margin: 0 ${rem(5, "large")};
+    }
+    @media (min-width: 2560px) {
+      margin: 0 ${rem(5, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      margin: 0 ${rem(5, "xxl")};
+    }
   }
-  @media (min-width: 2560px) {
-    margin: 0 ${rem(5, "extraLarge")};
+  @media (min-width: 360px) and (max-width: 767px) {
+    margin-top: ${rem(30)};
   }
-  @media (min-width: 3840px) {
-    margin: 0 ${rem(5, "xxl")};
-  }
-  }
-  @media (max-width: 767px) {
+  @media (min-width: 767px) and (max-width: 1024px) {
     margin-top: ${rem(30)};
   }
   @media (min-width: 1920px) {

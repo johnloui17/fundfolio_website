@@ -24,7 +24,7 @@ export const Container = styled.div`
   label {
     display: block;
     font-size: 20px;
-    font-family: "gilroymedium";
+    font-family: "Satoshi-Variable";
     @media (min-width: 1920px) {
       font-size: ${rem(20, "large")};
     }
@@ -44,7 +44,7 @@ export const Container = styled.div`
     font-weight: 500;
     color: #fff;
     outline: none;
-    font-family: "gilroymedium";
+    font-family: "Satoshi-Variable";
     border-bottom: 1px solid #6a6a77;
     &:focus {
       outline: none;

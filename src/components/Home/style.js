@@ -26,28 +26,37 @@ export const ContentWrapper = styled.div`
   display: flex;
   align-items: center;
   padding-left: ${rem(150)};
+
+
   @media (max-width: 1024px) and (min-width: 768px) {
-    padding-left: ${rem(100, "tablet")};
-    padding-right: ${rem(100, "tablet")};
+
+    padding-left: ${rem(60, "tablet")};
+    padding-top: ${rem(200, "tablet")};
+    padding-right: ${rem(40, "tablet")};
+    display: flex;
+    justify-content: start;
+    align-items: start;
   }
-  @media (max-width: 320px) {
+  @media (min-width: 360px) and (max-width:767px) {
     padding-left: ${rem(80, "mobile")};
     padding-right: ${rem(80, "mobile")};
-    padding-top: ${rem(200, "mobile")};
+    padding-top: ${rem(150, "mobile")};
   }
   @media (min-width: 321px) and (max-width: 767px) {
-    padding-left: ${rem(100, "mobile")};
-    padding-right: ${rem(100, "mobile")};
+    padding-left: ${rem(45, "mobile")};
+    padding-right: ${rem(45, "mobile")};
     padding-top: ${rem(250, "mobile")};
   }
   @media (min-width: 1280px) {
     padding: ${rem(150, "medium")};
+    padding-top: ${rem(0)};
   }
   @media (min-width: 1920px) {
     padding: ${rem(150, "large")};
   }
   @media (min-width: 2560px) {
     padding: ${rem(150, "extraLarge")};
+    padding-top: ${rem(0)};
   }
   @media (min-width: 3840px) {
     padding: ${rem(150, "xxl")};
@@ -77,11 +86,15 @@ export const Content = styled.div`
     max-width: ${rem(725, "xxl")};
   }
   h1 {
+    white-space: nowrap;
     font-size: ${rem(80)};
     font-weight: 900;
     line-height: ${rem(90)};
-    font-family: "gilroyheavy";
+    font-family: "Satoshi-Variable";
     color: #fff;
+    .noBold {
+      font-weight: 500;
+    }
     @media (max-width: 1024px) and (min-width: 768px) {
       font-size: ${rem(80, "tablet")};
       line-height: ${rem(90, "tablet")};
@@ -116,7 +129,7 @@ export const Content = styled.div`
     font-size: ${rem(24)};
     font-weight: 500;
     margin: ${rem(20)} 0 ${rem(40)};
-    font-family: "gilroymedium";
+    font-family: "Satoshi-Variable";
     @media (max-width: 1024px) and (min-width: 768px) {
       font-size: ${rem(20)};
     }
@@ -146,13 +159,13 @@ export const Content = styled.div`
 `;
 export const BottomLogoContainer = styled.div`
   position: absolute;
-  bottom:0;
+  bottom: 0;
   padding: ${rem(80)} ${rem(150)};
   @media (max-width: 1024px) and (min-width: 768px) {
     padding: ${rem(40, "tablet")} ${rem(90, "tablet")};
   }
   @media (max-width: 767px) {
-    padding: ${rem(40, "mobile")} ${rem(90, "mobile")};
+    padding: ${rem(40, "mobile")} ${rem(45, "mobile")};
   }
   @media (min-width: 1280px) {
     padding: ${rem(80, "medium")} ${rem(150, "medium")};
@@ -166,30 +179,34 @@ export const BottomLogoContainer = styled.div`
   @media (min-width: 3840px) {
     padding: ${rem(80, "xxl")} ${rem(150, "xxl")};
   }
-  p{
-    color:#fff;
-    font-size: ${rem(16)}
-    padding-top :10px;
-    opacity:60%;
+  p {
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+    color: #fff;
+    font-size: ${rem(16)};
+    padding-top: 10px;
+    opacity: 60%;
+    font-family: "Satoshi-Variable";
     @media (max-width: 767px) {
       font-size: ${rem(12)};
-      padding-bottom :6px;
+      padding-bottom: 6px;
     }
     @media (min-width: 1280px) {
       font-size: ${rem(16, "medium")};
-        padding-bottom :${rem(10, "medium")};
+      padding-bottom: ${rem(10, "medium")};
     }
     @media (min-width: 1920px) {
       font-size: ${rem(16, "large")};
-      padding-bottom :${rem(10, "large")};
+      padding-bottom: ${rem(10, "large")};
     }
     @media (min-width: 2560px) {
       font-size: ${rem(16, "extraLarge")};
-      padding-bottom :${rem(10, "extraLarge")};
+      padding-bottom: ${rem(10, "extraLarge")};
     }
     @media (min-width: 3840px) {
       font-size: ${rem(16, "xxl")};
-      padding-bottom :${rem(10, "xxl")};
+      padding-bottom: ${rem(10, "xxl")};
     }
   }
 `;

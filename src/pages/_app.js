@@ -1,50 +1,150 @@
 import Head from "next/head";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-const GlobalStyle = createGlobalStyle`
-@font-face {
-  font-family: 'gilroybold';
-  src: url("/fonts/gilroy-bold-webfont.woff"),
-        url("/fonts/gilroy-bold-webfont.woff2");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'gilroyextrabold';
-  src: url("/fonts/gilroy-extrabold-webfont.woff"),
-        url("/fonts/gilroy-extrabold-webfont.woff2");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'gilroyheavy';
-  src: url("/fonts/gilroy-heavy-webfont.woff"),
-        url("/fonts/gilroy-heavy-webfont.woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'gilroymedium';
-  src: url("/fonts/gilroy-medium-webfont.woff"),
-        url("/fonts/gilroy-medium-webfont.woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'gilroyregular';
-  src: url("/fonts/gilroy-regular-webfont.woff"),
-        url("/fonts/gilroy-regular-webfont.woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+import "./font.css";
 
+const GlobalStyle = createGlobalStyle`
+
+@font-face {
+    font-family: "Satoshi-Variable";
+    src: url("../../public/fonts/Satoshi-Variable.woff2") format("woff2"),
+      url("../../public/fonts/Satoshi-Variable.woff") format("woff"),
+      url("../../public/fonts/Satoshi-Variable.ttf") format("truetype");
+    font-weight: 300 900;
+    font-display: swap;
+    font-style: normal;
+  }
+  
+  /**
+  * This is a variable font
+  * You can controll variable axes as shown below:
+  * font-variation-settings: 'wght' 900.0;
+  *
+  * available axes:
+  
+  * 'wght' (range from 300.0 to 900.0)
+  
+  */
+  
+  @font-face {
+    font-family: "Satoshi-VariableItalic";
+    src: url("../../public/fonts/Satoshi-VariableItalic.woff2")
+        format("woff2"),
+      url("../../public/fonts/Satoshi-VariableItalic.woff") format("woff"),
+      url("../../public/fonts/Satoshi-VariableItalic.ttf")
+        format("truetype");
+    font-weight: 300 900;
+    font-display: swap;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Satoshi-Light";
+    src: url("../../public/fonts/Satoshi-Light.woff2") format("woff2"),
+      url("../../public/fonts/Satoshi-Light.woff") format("woff"),
+      url("../../public/fonts/Satoshi-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Satoshi-LightItalic";
+    src: url("../../public/fonts/Satoshi-LightItalic.woff2")
+        format("woff2"),
+      url("../../public/fonts/Satoshi-LightItalic.woff") format("woff"),
+      url("../../public/fonts/Satoshi-LightItalic.ttf") format("truetype");
+    font-weight: 300;
+    font-display: swap;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Satoshi-Regular";
+    src: url("../../public/fonts/Satoshi-Regular.woff2") format("woff2"),
+      url("../../public/fonts/Satoshi-Regular.woff") format("woff"),
+      url("../../public/fonts/Satoshi-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+    opacity: 0.7;
+  }
+  
+  @font-face {
+    font-family: "Satoshi-Italic";
+    src: url("../../public/fonts/Satoshi-Italic.woff2") format("woff2"),
+      url("../../public/fonts/Satoshi-Italic.woff") format("woff"),
+      url("../../public/fonts/Satoshi-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Satoshi-Medium";
+    src: url("../../public/fonts/Satoshi-Medium.woff2") format("woff2"),
+      url("../../public/fonts/Satoshi-Medium.woff") format("woff"),
+      url("../../public/fonts/Satoshi-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+    opacity: 0.7;
+  }
+  
+  @font-face {
+    font-family: "Satoshi-MediumItalic";
+    src: url("../../public/fonts/Satoshi-MediumItalic.woff2")
+        format("woff2"),
+      url("../../public/fonts/Satoshi-MediumItalic.woff") format("woff"),
+      url("../../public/fonts/Satoshi-MediumItalic.ttf") format("truetype");
+    font-weight: 500;
+    font-display: swap;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Satoshi-Bold";
+    src: url("../../public/fonts/Satoshi-Bold.woff2") format("woff2"),
+      url("../../public/fonts/Satoshi-Bold.woff") format("woff"),
+      url("../../public/fonts/Satoshi-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Satoshi-BoldItalic";
+    src: url("../../public/fonts/Satoshi-BoldItalic.woff2") format("woff2"),
+      url("../../public/fonts/Satoshi-BoldItalic.woff") format("woff"),
+      url("../../public/fonts/Satoshi-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-display: swap;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Satoshi-Black";
+    src: url("../../public/fonts/Satoshi-Black.woff2") format("woff2"),
+      url("../../public/fonts/Satoshi-Black.woff") format("woff"),
+      url("../../public/fonts/Satoshi-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-display: swap;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Satoshi-BlackItalic";
+    src: url("../../public/fonts/Satoshi-BlackItalic.woff2")
+        format("woff2"),
+      url("../../public/fonts/Satoshi-BlackItalic.woff") format("woff"),
+      url("../../public/fonts/Satoshi-BlackItalic.ttf") format("truetype");
+    font-weight: 900;
+    font-display: swap;
+    font-style: italic;
+  }
+  
   *{
     box-sizing: border-box;
-    font-family: 'gilroyregular';
+    font-family: 'Satoshi-Variable';
     scroll-behavior:smooth;
   }
   body, html {
@@ -148,36 +248,7 @@ function MyApp({ Component, pageProps }) {
           href="https://fundfolio.gumlet.io/fundfolio/fav_ico.png"
         />
         <link rel="apple-touch-icon" sizes="114x114" href="" />
-        <link
-          rel="preload"
-          href="/fonts/gilroy-bold-webfont.woff"
-          as="font"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="/fonts/gilroy-extrabold-webfont.woff"
-          as="font"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="/fonts/gilroy-heavy-webfont.woff"
-          as="font"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="/fonts/gilroy-medium-webfont.woff"
-          as="font"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="/fonts/gilroy-regular-webfont.woff"
-          as="font"
-          crossOrigin=""
-        />
+
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=G-CHLNQSS681`}

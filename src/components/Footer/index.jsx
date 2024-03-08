@@ -43,9 +43,8 @@ const Footer = (props) => {
             />
           )}
           <p className="desc">
-            HoneyKomb by Bhive, 3/B, 19th Main Road, HSR Sector 3<br />
-            Bengaluru, Bengaluru Urban
-            <br /> Karnataka, 560102
+            BHIVE (Honeykomb, Managed), 3/B, 19th Main Rd, Sector 3, HSR Layout,
+            Bengaluru, Karnataka 560102
           </p>
           <SocialRow>
             <SocialIcon
@@ -73,19 +72,21 @@ const Footer = (props) => {
               target={"_blank"}
             >
               {device === "large" ? (
-                <Image
-                  loader={gumletLoader}
-                  src={"/twitter.svg"}
-                  width={55}
-                  height={55}
-                />
+                // <Image
+                //   loader={gumletLoader}
+                //   src={"/twitter.svg"}
+                //   width={55}
+                //   height={55}
+                // />
+                <Icons name="twitterLogo" width={55} height={55} />
               ) : (
-                <Image
-                  loader={gumletLoader}
-                  src={"/twitter.svg"}
-                  width={22}
-                  height={22}
-                />
+                // <Image
+                //   loader={gumletLoader}
+                //   src={"/twitter.svg"}
+                //   width={22}
+                //   height={22}
+                // />
+                <Icons name="twitterLogo" width={22} height={24} />
               )}
             </SocialIcon>
             <SocialIcon
@@ -132,41 +133,9 @@ const Footer = (props) => {
         </Column>
         <Column iFrame={iFrame}>
           <SubHeading>products</SubHeading>
-          <Link href="https://marketfeed.com/read" passHref={true}>
-            <FooterLink target={"_blank"}>marketfeed.read</FooterLink>
-          </Link>
+
           <Link href="https://marketfeed.com" passHref={true}>
             <FooterLink target={"_blank"}>marketfeed.com</FooterLink>
-          </Link>
-        </Column>
-        <Column>
-          <SubHeading>company</SubHeading>
-          <Link href="https://marketfeed.com" passHref={true}>
-            <FooterLink>about</FooterLink>
-          </Link>
-          <Link
-            href="https://payments.fundfolio.in/disclaimer/"
-            passHref={true}
-          >
-            <FooterLink>disclaimer</FooterLink>
-          </Link>
-          <Link
-            href="https://payments.fundfolio.in/privacy-policy-2/"
-            passHref={true}
-          >
-            <FooterLink target={"_blank"}>privacy policy</FooterLink>
-          </Link>
-          <Link
-            href="https://payments.fundfolio.in/terms-of-use/"
-            passHref={true}
-          >
-            <FooterLink target={"_blank"}>terms & conditions</FooterLink>
-          </Link>
-          <Link
-            href="https://payments.fundfolio.in/refund-policy/"
-            passHref={true}
-          >
-            <FooterLink target={"_blank"}>refund policy</FooterLink>
           </Link>
         </Column>
       </Row>
@@ -178,7 +147,7 @@ const Footer = (props) => {
           ) : (
             <Icons name="love" />
           )}
-          <span>by marketfeed.com.</span>
+          <span>by fundfolio.com.</span>
         </Copyright>
       </Row>
     </Container>

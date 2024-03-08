@@ -26,15 +26,15 @@ export const Container = styled.button`
       : "linear-gradient(160deg,#f55240,#ee368e)"};
   color: #fff;
   font-size: ${rem(24)};
-  font-weight: bold;
+  font-weight:900;
   outline: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "gilroybold";
+  font-family: "Satoshi-Variable";
   span {
-    font-family: "gilroybold";
+    font-family: "Satoshi-Variable";
   }
   svg {
     margin-right: 10px;
