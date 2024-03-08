@@ -1,14 +1,10 @@
-import { useState, useEffect } from "react";
-import App from "../components/App";
-import Home from "../components/Home";
+import { useEffect, useState } from "react";
 import About from "../components/About";
-import OurWay from "../components/OurWay";
-import OurProduct from "../components/OurProduct";
-import Contact from "../components/Contact";
+import App from "../components/App";
 import Footer from "../components/Footer";
-import Partners from "../components/Partners";
+import Home from "../components/Home";
 import { Loader } from "../components/Loader";
-import debounce from "lodash.debounce";
+import Location from "../components/Location";
 export default function HomePage() {
   const [transparent, setTransparent] = useState(true);
   const [activeTab, setActiveTab] = useState("home");
@@ -16,11 +12,9 @@ export default function HomePage() {
   const [scrollPos, setScrollPos] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
-  // let aboutOffset;
-  // let ourWayOffset;
-  // let productsOffset;
-  // let partnersOffset;
-  // let contactOffset;
+
+  let ourWayOffset;
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
     setTimeout(() => {
@@ -48,88 +42,50 @@ export default function HomePage() {
     setIsTablet(isTabletView);
   };
 
-
   const gotoNextPage = (direction) => {
     // setIsScrolling(true);
 
     const aboutOffset = document.getElementById("about").offsetTop;
-    const ourWayOffset = document.getElementById("our-way").offsetTop;
-    const productsOffset = document.getElementById("products").offsetTop;
-    const productsOffsetMob =
-      document.getElementById("products").offsetTop * 1.75;
-    const partnersOffset = document.getElementById("partners").offsetTop;
+
     const contactOffset = document.getElementById("contact").offsetTop;
 
     if (window.innerWidth > 1024 && !isTablet) {
       if (direction === "down") {
         let offSet;
-        if (window.pageYOffset < window.innerHeight) {
+        if (window.scrollY < window.innerHeight) {
           window.scrollTo(0, aboutOffset);
         } else if (
-          window.pageYOffset > aboutOffset &&
-          window.pageYOffset < ourWayOffset
+          window.scrollY > aboutOffset &&
+          window.scrollY < contactOffset
         ) {
-          window.scrollTo(0, ourWayOffset);
-          offSet = aboutOffset;
-          // console.log(ourWayOffset);
-        } else if (
-          window.pageYOffset > ourWayOffset &&
-          window.pageYOffset < productsOffset - 70
-        ) {
-          window.scrollTo(0, productsOffset);
-          offSet = productsOffset;
-        } else if (
-          window.pageYOffset > productsOffset - 70 &&
-          window.pageYOffset < partnersOffset - 70
-        ) {
-          window.scrollTo(0, partnersOffset);
-        } else if (
-          window.pageYOffset > partnersOffset - 70 &&
-          window.pageYOffset < contactOffset - 70
-        ) {
-          // console.log("scroll1");
           window.scrollTo(0, contactOffset);
-        } else if (window.pageYOffset > contactOffset - 70) {
+          offSet = aboutOffset;
+
         }
       } else {
-        if (window.pageYOffset < aboutOffset) {
+        if (window.scrollY < aboutOffset) {
           // console.log("scroll2");
           window.scrollTo(0, 0);
         } else if (
-          window.pageYOffset > aboutOffset + 20 &&
-          window.pageYOffset < ourWayOffset
+          window.scrollY > aboutOffset + 20 &&
+          window.scrollY < contactOffset
         ) {
           // console.log("scroll3");
           window.scrollTo(0, aboutOffset);
         } else if (
-          window.pageYOffset > ourWayOffset - 50 &&
-          window.pageYOffset < productsOffset
+          window.scrollY > contactOffset -20 &&
+          window.scrollY < contactOffset
         ) {
-          window.scrollTo(0, ourWayOffset);
-        } else if (
-          window.pageYOffset > productsOffset &&
-          window.pageYOffset < partnersOffset
-        ) {
-          window.scrollTo(0, productsOffset);
-        } else if (
-          window.pageYOffset > partnersOffset &&
-          window.pageYOffset < contactOffset + 30
-        ) {
-          window.scrollTo(0, partnersOffset);
+          window.scrollTo(0, contactOffset);
         }
       }
     }
-    // console.log(offSet);
-    // setIsScrolling(false);
-    // return offSet;
   };
   const onScroll = (event) => {
     event.preventDefault();
     const homeOffset = 0;
     const aboutOffset = document.getElementById("about").offsetTop - 10;
-    const ourWayOffset = document.getElementById("our-way").offsetTop - 10;
-    const productsOffset = document.getElementById("products").offsetTop - 10;
-    const partnersOffset = document.getElementById("partners").offsetTop - 10;
+
     const contactOffset = document.getElementById("contact").offsetTop - 10;
     if (!isScrolling) {
       if (document.body.getBoundingClientRect().top > scrollPos) {
@@ -145,41 +101,17 @@ export default function HomePage() {
       }, 1000);
     }
     setScrollPos(document.body.getBoundingClientRect().top);
-    if (window.pageYOffset >= window.innerHeight / 2) {
+    if (window.scrollY >= window.innerHeight / 2) {
       setTransparent(false);
     } else {
       setTransparent(true);
     }
-    if (window.pageYOffset < window.innerHeight) {
+    if (window.scrollY < window.innerHeight) {
       setActiveTab("home");
-      // console.log("home");
-    } else if (
-      window.pageYOffset > aboutOffset &&
-      window.pageYOffset < ourWayOffset
-    ) {
+    } else if (window.scrollY > aboutOffset && window.scrollY < contactOffset) {
       setActiveTab("about");
-      // console.log("about");
-    } else if (
-      window.pageYOffset > ourWayOffset &&
-      window.pageYOffset < productsOffset
-    ) {
-      setActiveTab("our-way");
-      // console.log("our-way");
-    } else if (
-      window.pageYOffset > productsOffset &&
-      window.pageYOffset < partnersOffset
-    ) {
-      setActiveTab("products");
-      // console.log("products");
-    } else if (
-      window.pageYOffset > partnersOffset &&
-      window.pageYOffset < contactOffset
-    ) {
-      setActiveTab("partners");
-      // console.log("partners");
-    } else if (window.pageYOffset > contactOffset) {
+    } else if (window.scrollY > contactOffset) {
       setActiveTab("contact");
-      // console.log("contact");
     }
   };
   return (
@@ -190,12 +122,10 @@ export default function HomePage() {
           activeTab={activeTab}
           setIsScrolling={setIsScrolling}
         >
-          <Home setIsScrolling={setIsScrolling}/>
-          <About  />
-          <OurWay />
-          <OurProduct isTablet={isTablet} />
-          <Partners />
-          <Contact />
+          <Home setIsScrolling={setIsScrolling} />
+          <About />
+
+          <Location />
           <Footer />
         </App>
         {isLoading ? <Loader /> : null}

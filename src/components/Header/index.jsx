@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { gumletLoader } from "../../utils/gumletLoader";
 import { Container, NavBar, Row, SocialIcon } from "./style";
-
+import Icons from "../Icons";
 const Header = (props) => {
   const [device, setDevice] = useState("");
   useEffect(() => {
@@ -34,86 +34,22 @@ const Header = (props) => {
         />
       )}
       <Row>
-        <NavBar>
-          <a
-            href="/#home"
-            className={props.activeTab === "home" ? "active" : ""}
-            onClick={handleHeaderClick}
-          >
-            home
-          </a>
-          <a
-            href="/#about"
-            className={props.activeTab === "about" ? "active" : ""}
-            onClick={handleHeaderClick}
-          >
-            about
-          </a>
-          <a
-            href="/#our-way"
-            className={props.activeTab === "our-way" ? "active" : ""}
-            onClick={handleHeaderClick}
-          >
-            our way
-          </a>
-          <a
-            href="/#products"
-            className={props.activeTab === "products" ? "active" : ""}
-            onClick={handleHeaderClick}
-          >
-            products
-          </a>
-          <a
-            href="/#partners"
-            className={props.activeTab === "partners" ? "active" : ""}
-            onClick={handleHeaderClick}
-          >
-            partners
-          </a>
-          <a
-            href="/#contact"
-            className={props.activeTab === "contact" ? "active" : ""}
-            onClick={handleHeaderClick}
-          >
-            contact us
-          </a>
-        </NavBar>
         <Row>
           <SocialIcon
-            href={"https://www.facebook.com/fundfolio.in"}
+            href={"https://www.youtube.com/channel/UC9CKy1ai9qI8p6_Oh0Qa3Rg"}
             target={"_blank"}
           >
             {device === "large" ? (
               <Image
                 loader={gumletLoader}
-                src={"/facebook.svg"}
+                src={"/you-tube.svg"}
                 width={44}
                 height={44}
               />
             ) : (
               <Image
                 loader={gumletLoader}
-                src={"/facebook.svg"}
-                width={22}
-                height={22}
-              />
-            )}
-          </SocialIcon>
-          <SocialIcon
-            href={"https://twitter.com/marketfeedapp"}
-            target={"_blank"}
-          >
-            {device === "large" ? (
-              <Image
-                loader={gumletLoader}
-                src={"/twitter.svg"}
-                width={44}
-                height={44}
-              />
-            ) : (
-              <Image
-                loader={gumletLoader}
-                src={"/twitter.svg"}
+                src={"/you-tube.svg"}
                 width={22}
                 height={22}
               />
@@ -139,21 +75,34 @@ const Header = (props) => {
               />
             )}
           </SocialIcon>
+
           <SocialIcon
-            href={"https://www.youtube.com/channel/UC9CKy1ai9qI8p6_Oh0Qa3Rg"}
+            href={"https://twitter.com/marketfeedapp"}
+            target={"_blank"}
+          >
+            {device === "large" ? (
+              <Icons name="twitterLogo" width={44} height={44} />
+
+            ) : (
+              <Icons name="twitterLogo" width={22} height={22} />
+            )}
+          </SocialIcon>
+
+          <SocialIcon
+            href={"https://www.facebook.com/fundfolio.in"}
             target={"_blank"}
           >
             {device === "large" ? (
               <Image
                 loader={gumletLoader}
-                src={"/you-tube.svg"}
+                src={"/facebook.svg"}
                 width={44}
                 height={44}
               />
             ) : (
               <Image
                 loader={gumletLoader}
-                src={"/you-tube.svg"}
+                src={"/facebook.svg"}
                 width={22}
                 height={22}
               />

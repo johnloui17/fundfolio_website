@@ -4,7 +4,7 @@ export const Container = styled.div`
     width: 100vw;
     height: ${rem(70)};
     background ${(props) =>
-      props.transparent ? "transparent" : "rgba(0, 0, 0, 0.06)"};
+      props.transparent ? "transparent" : "rgba(255, 255, 255, 0.05);"};
     -webkit-backdrop-filter: blur(100px);
     backdrop-filter: blur(100px);
     transition: background 0.5s ease;
@@ -37,12 +37,12 @@ export const NavBar = styled.div`
 
   a {
     font-size: ${rem(16)};
-    font-weight: bold;
+    font-weight:900;
     cursor: pointer;
     color: #ffffff;
     margin-left: ${rem(40)};
     text-decoration: none;
-    font-family: "gilroybold";
+    font-family: "Satoshi-Variable";
     @media (min-width: 1920px) {
         font-size: ${rem(16, "large")};
         margin-left: ${rem(40, "large")};

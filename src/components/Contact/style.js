@@ -53,11 +53,11 @@ export const ImageBackground = styled.div`
 export const Heading = styled.div`
   color: rgba(256, 256, 256, 0.2);
   font-size: ${rem(38)};
-  font-weight: bold;
+  font-weight:900;
   letter-spacing: 0.2px;
   margin-bottom: ${rem(40)};
   position: relative;
-  font-family: "gilroybold";
+  font-family: "Satoshi-Variable";
   @media (max-width: 767px) {
     font-size: ${rem(50, "mobile")};
   }
@@ -98,7 +98,7 @@ export const Spin = styled.div`
   border-top-color: #fff;
   animation: spin 1s ease-in-out infinite;
   -webkit-animation: spin 1s ease-in-out infinite;
-  }
+  
 
   @keyframes spin {
   to { -webkit-transform: rotate(360deg); }

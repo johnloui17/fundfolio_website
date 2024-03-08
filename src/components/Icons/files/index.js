@@ -4,6 +4,8 @@ import { fundfolioOne } from "./fundfolioOne";
 import { arrow } from "./arrow";
 import { love } from "./love";
 import { check } from "./check";
+import { twitterLogo } from "./twitterLogo";
+import { rightArrow } from "./rightArrow";
 export default {
   marketfeed,
   arrow,
@@ -11,4 +13,6 @@ export default {
   fundfolioOne,
   love,
   check,
+  twitterLogo,
+  rightArrow,
 };

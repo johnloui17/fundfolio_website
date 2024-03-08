@@ -74,7 +74,7 @@ export const HoverNav = styled.div`
     margin-bottom: ${rem(20)};
     transition: all 0.3s ease;
     b {
-      font-family: "gilroybold";
+      font-family: "Satoshi-Variable";
     }
     @media (min-width: 1280px) {
       font-size: ${rem(60, "medium")};
@@ -149,7 +149,7 @@ export const HoverNav = styled.div`
   }
   li.active {
     font-size: ${rem(60)};
-    font-family: "gilroybold";
+    font-family: "Satoshi-Variable";
     b {
       background: -webkit-linear-gradient(left, #40eaf5, #504dff);
       background: -o-linear-gradient(right, #40eaf5, #504dff);
@@ -195,10 +195,10 @@ export const Row = styled.div`
 export const Heading = styled.div`
   color: rgba(256, 256, 256, 0.2);
   font-size: ${rem(38)};
-  font-weight: bold;
+  font-weight:900;
   letter-spacing: 0.2px;
   margin-bottom: ${rem(40)};
-  font-family: "gilroybold";
+  font-family: "Satoshi-Variable";
   @media (max-width: 1024px) and (min-width: 768px) {
     font-size: ${rem(52, "tablet")};
   }
@@ -280,7 +280,7 @@ export const DisplayCard = styled.div`
     font-size: ${rem(30)};
     line-height: 1.2;
     font-weight: 500;
-    font-family: "gilroyregular";
+    font-family: "Satoshi-Variable";
     @media (max-width: 1024px) and (min-width: 768px) {
       width: ${rem(460, "tablet")};
       top: ${rem(150, "tablet")};

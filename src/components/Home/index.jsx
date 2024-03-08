@@ -7,13 +7,31 @@ import {
   BottomLogoContainer,
 } from "./style";
 import Image from "next/image";
-import Button from "../Button";
-import Icons from "../Icons";
 import { gumletLoader } from "../../utils/gumletLoader";
+import { useRive, Layout, Fit, Alignment } from "@rive-app/react-canvas";
+
+function Galaxy() {
+  const { rive, RiveComponent } = useRive({
+    src: "/assets/rives/web_02.riv",
+    autoplay: true,
+    // layout: new Layout({ fit: Fit.Cover, alignment: Alignment.Center }),
+    layout: new Layout({ fit: Fit.Cover, alignment: Alignment.CenterRight }),
+  });
+
+  return (
+    <div>
+      <RiveComponent style={{ height: "100vh" }} />
+    </div>
+  );
+}
+
 const Home = (props) => {
   const [device, setDevice] = useState("");
   useEffect(() => {
-    if (window.innerWidth < 800) setDevice("mobile");
+    if (window.innerWidth < 767) setDevice("mobile");
+    if (window.innerWidth > 767 && window.innerWidth < 1024)
+      setDevice("tablet");
+
     if (window.innerWidth > 1920) setDevice("large");
   }, []);
   const handleHeaderClick = () => {
@@ -23,35 +41,22 @@ const Home = (props) => {
       props.setIsScrolling(false);
     }, 750);
   };
+
   return (
     <Container id="home">
       <ImageBackground>
-        {device === "mobile" ? (
-          <Image
-            loader={gumletLoader}
-            src="/mask-group@3x.png"
-            className="background"
-            layout={"fill"}
-            alt="fundfolio website background"
-          />
-        ) : (
-          <Image
-            loader={gumletLoader}
-            src="/hero_bg.svg"
-            className="background"
-            layout={"fill"}
-            alt="fundfolio website background"
-          />
-        )}
+        {device === "mobile" ? <Galaxy /> : <Galaxy />}
       </ImageBackground>
       <ContentWrapper>
         <Content>
-          <h1>we help you win the stock market</h1>
-          <p>join the next billion revolution</p>
-          <Button onClick={handleHeaderClick}>
-            <Icons name="arrow" fill="#fff" style={{ marginRight: 10 }} />
-            <span>join us</span>
-          </Button>
+          <h1>
+            <span className="noBold">
+              {" "}
+              we’re {device == "mobile" && <br />}
+            </span>{" "}
+            democratizing
+            <br /> capital markets
+          </h1>
         </Content>
       </ContentWrapper>
       <BottomLogoContainer>
@@ -60,8 +65,8 @@ const Home = (props) => {
           <Image
             src="/yc_logo.svg"
             loader={gumletLoader}
-            height={120}
-            width={580}
+            height={90}
+            width={480}
             alt="fundfolio y-combinator"
           />
         ) : (
