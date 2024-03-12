@@ -74,7 +74,7 @@ const About = (props) => {
           </LeftSideContent>
         </LeftSection>
         <RightSection>
-          {/* {device === "large" ? (
+          {device === "large" ? (
             <Image
               src="/SmallM.png"
               height={500}
@@ -90,7 +90,7 @@ const About = (props) => {
               alt="marketfeed Logo
               "
             />
-          )} */}
+          )}
 
         </RightSection>
       </Row>
