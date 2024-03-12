@@ -42,14 +42,18 @@ export const SocialRow = styled.div`
 
 export const Column = styled.div`
   display: ${(props) => (props.iFrame ? "none" : "flex")};
-  /* margin-right: 130px; */
+
   flex-direction: column;
   align-items: flex-start;
   .desc {
-    max-width: ${rem(323)};
     color: #fff;
-    font-size: ${rem(20)};
-    font-weight: 500;
+    font-family: inherit;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: ${rem(323)};
+
     margin: ${rem(24)} 0;
     opacity: 0.6;
 

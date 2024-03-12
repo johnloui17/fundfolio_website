@@ -5,7 +5,7 @@ export const Container = styled.div`
   font-family: inherit;
   width: 100vw;
   background: #0d0a1b;
-  padding: ${rem(137)} ${rem(150)};
+  padding: ${rem(90)} ${rem(150)};
   @media (max-width: 1024px) and (min-width: 768px) {
     padding-left: ${rem(40, "tablet")};
     padding-right: ${rem(40, "tablet")};
@@ -18,8 +18,8 @@ export const Container = styled.div`
     padding-right: ${rem(45, "mobile")};
     padding-top: ${rem(0, "mobile")};
   }
-  @media (min-width: 1280px) {
-    padding: ${rem(137, "medium")} ${rem(150, "medium")};
+  @media (min-width: 1280px) and (max-width: 1439px) {
+    padding: ${rem(100, "medium")} ${rem(150, "medium")};
   }
   @media (min-width: 1920px) {
     padding: ${rem(137, "large")} ${rem(150, "large")};
@@ -109,30 +109,31 @@ export const LeftSideHeader = styled.div`
 
   h1 {
     color: #fff;
-
-    font-size: ${rem(60)};
+    font-family: "Satoshi Variable";
+    font-size: 60px;
     font-style: normal;
     font-weight: 900;
-    letter-spacing: 0.2px;
-    color: #fff;
-    line-height: 1.17;
+    line-height: 60px; /* 116.667% */
+    letter-spacing: -2px;
+
     font-family: inherit;
 
     @media (max-width: 1024px) and (min-width: 768px) {
       font-size: 40px;
     }
     @media (max-width: 767px) {
+      line-height: 40px; /* 116.667% */
+
       text-align: center;
       font-size: ${rem(65, "mobile")};
     }
-    @media (min-width: 1280px) {
-      font-size: ${rem(60, "medium")};
-    }
+
     @media (min-width: 1920px) {
       font-size: ${rem(60, "large")};
     }
     @media (min-width: 2560px) {
       font-size: ${rem(60, "extraLarge")};
+      line-height: 110px; /* 116.667% */
     }
     @media (min-width: 3840px) {
       font-size: ${rem(60, "xxl")};
@@ -188,19 +189,23 @@ export const LeftSideContent = styled.div`
   }
 `;
 
-export const ButtonCTA = styled.div`
+export const ButtonCTA = styled.button`
+  all: unset;
+
   width: 200px;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   @media (min-width: 767px) {
-    justify-content: start;
-    align-items: start;
+    justify-content: center;
+    align-items: center;
   }
   @media (min-width: 360px) and (max-width: 767px) {
     justify-content: center;
     align-items: center;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .button {
@@ -215,16 +220,15 @@ export const ButtonCTA = styled.div`
     outline: none;
     cursor: pointer;
     position: relative;
-    background: linear-gradient(102deg, #061ccc, #5351bd, #f9c85f);
-    background-size: 5% ;
+    background: linear-gradient(150deg, #061ccc, #5351bd, #f9c85f);
 
-    animation: gradient 10s ease-in-out infinite;
+    /* background: linear-gradient(255deg, #061CCC 5.75%, #5351BD 26.28%, #F9C85F 80.39%); */
     z-index: 1;
 
     @media (min-width: 360px) and (max-width: 767px) {
       width: 150px;
-      padding: 16px 32px;
-      justify-content: center;
+      padding: 16px 24px;
+      justify-content: space-between;
       align-items: center;
     }
 
@@ -234,7 +238,7 @@ export const ButtonCTA = styled.div`
       justify-content: start;
       align-items: start;
     }
-    @media (max-width: 1024px) {
+    @media (min-width: 1024px) {
       width: 150px;
       padding: 16px 32px;
       justify-content: start;
@@ -242,24 +246,27 @@ export const ButtonCTA = styled.div`
     }
   }
 
-  @keyframes gradient {
-    0%{background-position:0% 57%}
-    50%{background-position:100% 44%}
-    100%{background-position:0% 57%}
+  .button:hover {
+    background: linear-gradient(300deg, #061ccc, #5351bd, #f9c85f);
   }
-
-  /* .button:hover {
-    background: linear-gradient(240deg, #061ccc, #5351bd, #f9c85f);
-  } */
 
   .button::before {
     content: "";
     position: absolute;
-    top: 4px;
-    right: 4px;
-    bottom: 4px;
-    left: 4px;
-    background-color: #1e1b2b;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    background: ${(props) => {
+      return props.clicked == false && "#1e1b2b";
+    }};
+    background: ${(props) => {
+      return (
+        props.clicked == true &&
+        "linear-gradient(255deg, #061CCC 5.75%, #5351BD 26.28%, #F9C85F 80.39%)"
+      );
+    }};
+
     border-radius: 34px;
     z-index: -1;
   }
@@ -275,7 +282,6 @@ export const ButtonCTA = styled.div`
   }
   h1 {
     white-space: nowrap;
-
     color: #fff;
     font-family: "Satoshi-Variable";
     font-size: 20px;

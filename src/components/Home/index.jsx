@@ -1,23 +1,37 @@
-import React, { useState, useEffect } from "react";
-import {
-  Container,
-  ImageBackground,
-  Content,
-  ContentWrapper,
-  BottomLogoContainer,
-} from "./style";
+import React, { useEffect, useLayoutEffect, useState } from "react";
+import { isBrowser, isMobile } from "react-device-detect";
+
+import { Alignment, Fit, Layout, useRive } from "@rive-app/react-canvas";
 import Image from "next/image";
 import { gumletLoader } from "../../utils/gumletLoader";
-import { useRive, Layout, Fit, Alignment } from "@rive-app/react-canvas";
+import {
+  BottomLogoContainer,
+  Container,
+  Content,
+  ContentWrapper,
+  ImageBackground,
+} from "./style";
 
-function Galaxy() {
-  const { rive, RiveComponent } = useRive({
-    src: "/assets/rives/web_02.riv",
+function GalaxyBackground({ props }) {
+  const [device, setDevice] = useState("");
+  const [path, setPath] = useState("");
+
+  useLayoutEffect(() => {
+    const handleResize = () => {
+      setDevice(window.innerWidth <= 767 ? "mobile" : "pc");
+    };
+    handleResize();
+    console.log(isMobile);
+  }, []);
+
+  const { RiveComponent } = useRive({
+    src:
+    isMobile
+        ? "assets/rives/first_fold_mobile.riv"
+        : "assets/rives/first_fold.riv",
     autoplay: true,
-    // layout: new Layout({ fit: Fit.Cover, alignment: Alignment.Center }),
     layout: new Layout({ fit: Fit.Cover, alignment: Alignment.CenterRight }),
   });
-
   return (
     <div>
       <RiveComponent style={{ height: "100vh" }} />
@@ -27,32 +41,28 @@ function Galaxy() {
 
 const Home = (props) => {
   const [device, setDevice] = useState("");
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (window.innerWidth < 767) setDevice("mobile");
     if (window.innerWidth > 767 && window.innerWidth < 1024)
       setDevice("tablet");
 
     if (window.innerWidth > 1920) setDevice("large");
+    if (window.innerWidth > 1024 && window.innerWidth < 1441) {
+      setDevice("pc");
+    }
   }, []);
-  const handleHeaderClick = () => {
-    document.getElementById("contact").scrollIntoView();
-    props.setIsScrolling(true);
-    setTimeout(() => {
-      props.setIsScrolling(false);
-    }, 750);
-  };
 
   return (
     <Container id="home">
       <ImageBackground>
-        {device === "mobile" ? <Galaxy /> : <Galaxy />}
+        <GalaxyBackground device={device} />
       </ImageBackground>
       <ContentWrapper>
         <Content>
           <h1>
             <span className="noBold">
               {" "}
-              we’re {device == "mobile" && <br />}
+              we’re {device === "mobile" && <br />}
             </span>{" "}
             democratizing
             <br /> capital markets

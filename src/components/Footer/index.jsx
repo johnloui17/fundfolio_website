@@ -43,12 +43,12 @@ const Footer = (props) => {
             />
           )}
           <p className="desc">
-            BHIVE (Honeykomb, Managed), 3/B, 19th Main Rd, Sector 3, HSR Layout,
-            Bengaluru, Karnataka 560102
+            Honeykomb by BHIVE,19th Main Road, HSR Sector 3, <br />Bengaluru, KA -
+            560102
           </p>
           <SocialRow>
             <SocialIcon
-              href={"https://www.facebook.com/fundfolio.in"}
+              href={"https://www.facebook.com/marketfeedapp"}
               target={"_blank"}
             >
               {device === "large" ? (
@@ -80,12 +80,6 @@ const Footer = (props) => {
                 // />
                 <Icons name="twitterLogo" width={55} height={55} />
               ) : (
-                // <Image
-                //   loader={gumletLoader}
-                //   src={"/twitter.svg"}
-                //   width={22}
-                //   height={22}
-                // />
                 <Icons name="twitterLogo" width={22} height={24} />
               )}
             </SocialIcon>
@@ -110,7 +104,7 @@ const Footer = (props) => {
               )}
             </SocialIcon>
             <SocialIcon
-              href={"https://www.youtube.com/channel/UC9CKy1ai9qI8p6_Oh0Qa3Rg"}
+              href={"https://www.youtube.com/@marketfeedbyShariqueSamsudheen"}
               target={"_blank"}
             >
               {device === "large" ? (

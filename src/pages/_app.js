@@ -195,10 +195,6 @@ function MyApp({ Component, pageProps }) {
           property="og:description"
           content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence."
         />
-        <meta
-          property="og:image"
-          content="https://fundfolio.gumlet.io/fundfolio/fundfolio-thumbnail.png"
-        />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@MarketfeedNews" />

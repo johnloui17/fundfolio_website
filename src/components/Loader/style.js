@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { rem } from "../../utils/remConverter";
 
 export const Container = styled.div`
-  background-image: linear-gradient(-45deg, #3f3251 2%, #261a66 100%);
+
+  background-image: linear-gradient( #1E2CA9 5.75%, #1E2CA9 26.28%, #1E2CA9 80.39%);
   width: 100vw;
   height: 100vh;
   position: fixed;

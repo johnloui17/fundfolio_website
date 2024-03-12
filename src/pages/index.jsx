@@ -24,13 +24,6 @@ export default function HomePage() {
     checkForTabletView();
   }, []);
 
-  useEffect(() => {
-    window.addEventListener("scroll", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
-  });
-
   useEffect(() => {}, []);
 
   const checkForTabletView = () => {
@@ -40,79 +33,6 @@ export default function HomePage() {
         userAgent
       );
     setIsTablet(isTabletView);
-  };
-
-  const gotoNextPage = (direction) => {
-    // setIsScrolling(true);
-
-    const aboutOffset = document.getElementById("about").offsetTop;
-
-    const contactOffset = document.getElementById("contact").offsetTop;
-
-    if (window.innerWidth > 1024 && !isTablet) {
-      if (direction === "down") {
-        let offSet;
-        if (window.scrollY < window.innerHeight) {
-          window.scrollTo(0, aboutOffset);
-        } else if (
-          window.scrollY > aboutOffset &&
-          window.scrollY < contactOffset
-        ) {
-          window.scrollTo(0, contactOffset);
-          offSet = aboutOffset;
-
-        }
-      } else {
-        if (window.scrollY < aboutOffset) {
-          // console.log("scroll2");
-          window.scrollTo(0, 0);
-        } else if (
-          window.scrollY > aboutOffset + 20 &&
-          window.scrollY < contactOffset
-        ) {
-          // console.log("scroll3");
-          window.scrollTo(0, aboutOffset);
-        } else if (
-          window.scrollY > contactOffset -20 &&
-          window.scrollY < contactOffset
-        ) {
-          window.scrollTo(0, contactOffset);
-        }
-      }
-    }
-  };
-  const onScroll = (event) => {
-    event.preventDefault();
-    const homeOffset = 0;
-    const aboutOffset = document.getElementById("about").offsetTop - 10;
-
-    const contactOffset = document.getElementById("contact").offsetTop - 10;
-    if (!isScrolling) {
-      if (document.body.getBoundingClientRect().top > scrollPos) {
-        // console.log("up");
-        gotoNextPage("up");
-      } else {
-        // console.log("down");
-        gotoNextPage("down");
-      }
-      setIsScrolling(true);
-      setTimeout(() => {
-        setIsScrolling(false);
-      }, 1000);
-    }
-    setScrollPos(document.body.getBoundingClientRect().top);
-    if (window.scrollY >= window.innerHeight / 2) {
-      setTransparent(false);
-    } else {
-      setTransparent(true);
-    }
-    if (window.scrollY < window.innerHeight) {
-      setActiveTab("home");
-    } else if (window.scrollY > aboutOffset && window.scrollY < contactOffset) {
-      setActiveTab("about");
-    } else if (window.scrollY > contactOffset) {
-      setActiveTab("contact");
-    }
   };
   return (
     <>
@@ -124,10 +44,10 @@ export default function HomePage() {
         >
           <Home setIsScrolling={setIsScrolling} />
           <About />
-
           <Location />
           <Footer />
         </App>
+
         {isLoading ? <Loader /> : null}
       </>
     </>

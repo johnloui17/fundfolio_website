@@ -1,35 +1,34 @@
 import styled from "styled-components";
 import { rem } from "../../utils/remConverter";
 export const Container = styled.div`
-    width: 100vw;
-    height: ${rem(70)};
-    background ${(props) =>
-      props.transparent ? "transparent" : "rgba(255, 255, 255, 0.05);"};
-    -webkit-backdrop-filter: blur(100px);
-    backdrop-filter: blur(100px);
-    transition: background 0.5s ease;
-    position: fixed;
-    top: 0;
-    z-index:10;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 100px;
-    @media (max-width: 1024px) and (min-width: 768px) {
-        padding: 0 50px;
-    }
-    @media (max-width: 767px){
-        padding: 0 20px;
-    }
-    @media (min-width: 1920px) {
-        height: ${rem(70, "large")};
-      };
-      @media (min-width: 2560px) {
-        height: ${rem(70, "extraLarge")};
-      }
-      @media (min-width: 3840px) {
-        height: ${rem(70, "xxl")};
-      }
+  width: 100vw;
+  height: ${rem(70)};
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(100px);
+  /* backdrop-filter: blur(100px);x */
+  transition: background 0.5s ease;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+  @media (max-width: 1024px) and (min-width: 768px) {
+    padding: 0 50px;
+  }
+  @media (max-width: 767px) {
+    padding: 0 20px;
+  }
+  @media (min-width: 1920px) {
+    height: ${rem(70, "large")};
+  }
+  @media (min-width: 2560px) {
+    height: ${rem(70, "extraLarge")};
+  }
+  @media (min-width: 3840px) {
+    height: ${rem(70, "xxl")};
+  }
 `;
 
 export const NavBar = styled.div`
@@ -37,24 +36,24 @@ export const NavBar = styled.div`
 
   a {
     font-size: ${rem(16)};
-    font-weight:900;
+    font-weight: 900;
     cursor: pointer;
     color: #ffffff;
     margin-left: ${rem(40)};
     text-decoration: none;
     font-family: "Satoshi-Variable";
     @media (min-width: 1920px) {
-        font-size: ${rem(16, "large")};
-        margin-left: ${rem(40, "large")};
-      };
-      @media (min-width: 2560px) {
-        font-size: ${rem(16, "extraLarge")};
-        margin-left: ${rem(40, "extraLarge")};
-      }
-      @media (min-width: 3840px) {
-        font-size: ${rem(16, "xxl")};
-        margin-left: ${rem(40, "xxl")};
-      }
+      font-size: ${rem(16, "large")};
+      margin-left: ${rem(40, "large")};
+    }
+    @media (min-width: 2560px) {
+      font-size: ${rem(16, "extraLarge")};
+      margin-left: ${rem(40, "extraLarge")};
+    }
+    @media (min-width: 3840px) {
+      font-size: ${rem(16, "xxl")};
+      margin-left: ${rem(40, "xxl")};
+    }
   }
   a.active {
     color: #f55240;
