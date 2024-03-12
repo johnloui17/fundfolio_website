@@ -17,29 +17,8 @@ import Image from "next/image";
 import { gumletLoader } from "../../utils/gumletLoader";
 import Link from "next/link";
 
-function GalaxyBackground({ props }) {
-  const [device, setDevice] = useState("");
-  const [path, setPath] = useState("");
 
-  useLayoutEffect(() => {
-    const handleResize = () => {
-      setDevice(window.innerWidth <= 767 ? "mobile" : "pc");
-    };
-    handleResize();
-    console.log(isMobile);
-  }, []);
 
-  const { RiveComponent } = useRive({
-    src: "https://cdn.rive.app/animations/vehicles.riv",
-    autoplay: true,
-    layout: new Layout({ fit: Fit.Cover, alignment: Alignment.CenterRight }),
-  });
-  return (
-    <div>
-      <RiveComponent style={{ height: "100vh" }} />
-    </div>
-  );
-}
 const About = (props) => {
   const [device, setDevice] = useState("");
   const [click, setClick] = useState(false);
@@ -56,7 +35,6 @@ const About = (props) => {
 
   return (
     <Container id="about">
-        <GalaxyBackground />
 
       <Row>
         <LeftSection>
