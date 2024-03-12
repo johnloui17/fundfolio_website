@@ -1,4 +1,5 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
+import { isBrowser, isMobile } from "react-device-detect";
 
 import { Alignment, Fit, Layout, useRive } from "@rive-app/react-canvas";
 import Image from "next/image";
@@ -13,23 +14,19 @@ import {
 
 function GalaxyBackground({ props }) {
   const [device, setDevice] = useState("");
+  const [path, setPath] = useState("");
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const handleResize = () => {
       setDevice(window.innerWidth <= 767 ? "mobile" : "pc");
     };
-
     handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    console.log(isMobile);
   }, []);
 
   const { RiveComponent } = useRive({
     src:
-      device == "mobile"
+    isMobile
         ? "assets/rives/first_fold_mobile.riv"
         : "assets/rives/first_fold.riv",
     autoplay: true,
@@ -58,7 +55,7 @@ const Home = (props) => {
   return (
     <Container id="home">
       <ImageBackground>
-        <GalaxyBackground />
+        <GalaxyBackground device={device} />
       </ImageBackground>
       <ContentWrapper>
         <Content>

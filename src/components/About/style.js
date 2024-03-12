@@ -191,6 +191,7 @@ export const LeftSideContent = styled.div`
 
 export const ButtonCTA = styled.button`
   all: unset;
+
   width: 200px;
   height: auto;
   display: flex;
@@ -203,6 +204,8 @@ export const ButtonCTA = styled.button`
   @media (min-width: 360px) and (max-width: 767px) {
     justify-content: center;
     align-items: center;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .button {
@@ -255,12 +258,13 @@ export const ButtonCTA = styled.button`
     bottom: 2px;
     left: 2px;
     background: ${(props) => {
-      return props.clicked == false && "#1e1b2b"
+      return props.clicked == false && "#1e1b2b";
     }};
     background: ${(props) => {
-        return props.clicked == true &&
+      return (
+        props.clicked == true &&
         "linear-gradient(255deg, #061CCC 5.75%, #5351BD 26.28%, #F9C85F 80.39%)"
-
+      );
     }};
 
     border-radius: 34px;
