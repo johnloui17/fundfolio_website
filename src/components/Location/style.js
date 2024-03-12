@@ -3,15 +3,16 @@ import { rem } from "../../utils/remConverter";
 
 export const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 70vh;
   position: relative;
   background-color: #0d0a1b;
-  padding: ${rem(90)} ${rem(150)};
+  padding: 0 ${rem(150)};
 
   @media (max-width: 1024px) and (min-width: 768px) {
     padding: 0;
   }
   @media (min-width: 360px) and (max-width: 767px) {
+    height: 100vh;
     padding: 0;
     margin-bottom: 100px;
   }
@@ -28,12 +29,19 @@ export const Container = styled.div`
 export const ImageBackground = styled.div`
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: 70vh;
   left: 0;
+  margin: 0;
+  @media (min-width: 360px) and (max-width: 767px) {
+    height: 100vh;
+  }
   img {
     object-fit: contain;
+    margin: 0;
+
     @media (min-width: 360px) and (max-width: 767px) {
       object-fit: contain;
+      height: 100vh;
     }
     @media (min-width: 767px) and (max-width: 1024px) {
       object-fit: cover;
@@ -42,6 +50,7 @@ export const ImageBackground = styled.div`
   @media (max-width: 767px) {
   }
   &.background {
+    margin: 0;
     @media (min-width: 1080px) {
       display: block;
     }
@@ -51,6 +60,8 @@ export const ImageBackground = styled.div`
     }
   }
   &.backgroundMobile {
+    margin: 0;
+
     @media (max-width: 767px) {
       display: block;
     }

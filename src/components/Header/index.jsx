@@ -36,7 +36,7 @@ const Header = (props) => {
       <Row>
         <Row>
           <SocialIcon
-            href={"https://www.youtube.com/channel/UC9CKy1ai9qI8p6_Oh0Qa3Rg"}
+            href={"https://www.youtube.com/@marketfeedbyShariqueSamsudheen"}
             target={"_blank"}
           >
             {device === "large" ? (
@@ -89,7 +89,7 @@ const Header = (props) => {
           </SocialIcon>
 
           <SocialIcon
-            href={"https://www.facebook.com/fundfolio.in"}
+            href={"https://www.facebook.com/marketfeedapp"}
             target={"_blank"}
           >
             {device === "large" ? (

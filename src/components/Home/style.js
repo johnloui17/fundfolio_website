@@ -27,9 +27,7 @@ export const ContentWrapper = styled.div`
   align-items: center;
   padding-left: ${rem(150)};
 
-
   @media (max-width: 1024px) and (min-width: 768px) {
-
     padding-left: ${rem(60, "tablet")};
     padding-top: ${rem(200, "tablet")};
     padding-right: ${rem(40, "tablet")};
@@ -37,7 +35,7 @@ export const ContentWrapper = styled.div`
     justify-content: start;
     align-items: start;
   }
-  @media (min-width: 360px) and (max-width:767px) {
+  @media (min-width: 360px) and (max-width: 767px) {
     padding-left: ${rem(80, "mobile")};
     padding-right: ${rem(80, "mobile")};
     padding-top: ${rem(150, "mobile")};
@@ -86,29 +84,33 @@ export const Content = styled.div`
     max-width: ${rem(725, "xxl")};
   }
   h1 {
-    white-space: nowrap;
-    font-size: ${rem(80)};
-    font-weight: 900;
-    line-height: ${rem(90)};
-    font-family: "Satoshi-Variable";
     color: #fff;
+    font-size: 90px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 110px;
+    letter-spacing: -4px;
+    white-space: nowrap;
+
+    font-family: "Satoshi-Variable";
+
     .noBold {
-      font-weight: 500;
+      font-weight: 900;
     }
     @media (max-width: 1024px) and (min-width: 768px) {
       font-size: ${rem(80, "tablet")};
       line-height: ${rem(90, "tablet")};
     }
-    @media (max-width: 320px) {
-      font-size: ${rem(65, "mobile")};
-      line-height: 1.15;
-    }
+
     @media (min-width: 321px) and (max-width: 767px) {
-      font-size: ${rem(75, "mobile")};
-      line-height: 1.15;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 50px;
+      letter-spacing: -0.8px;
     }
     @media (min-width: 1280px) {
-      font-size: ${rem(80, "medium")};
+      font-size: ${rem(95, "medium")};
       line-height: ${rem(90, "medium")};
     }
     @media (min-width: 1920px) {
@@ -127,7 +129,8 @@ export const Content = styled.div`
   p {
     color: #fff;
     font-size: ${rem(24)};
-    font-weight: 500;
+    font-weight: 900;
+
     margin: ${rem(20)} 0 ${rem(40)};
     font-family: "Satoshi-Variable";
     @media (max-width: 1024px) and (min-width: 768px) {

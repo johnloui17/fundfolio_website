@@ -16,21 +16,9 @@ import Image from "next/image";
 import { gumletLoader } from "../../utils/gumletLoader";
 import Link from "next/link";
 
-function SmallM() {
-  const { rive, RiveComponent } = useRive({
-    src: "/assets/rives/m_without_bg.riv",
-    autoplay: true,
-    layout: new Layout({ fit: Fit.Cover, alignment: Alignment.Center }),
-  });
-
-  return (
-    <div>
-      <RiveComponent style={{ height: "40vh", width: "35vw" }} />
-    </div>
-  );
-}
 const About = (props) => {
   const [device, setDevice] = useState("");
+  const [click, setClick] = useState(false);
   useEffect(() => {
     if (window.innerWidth > 2560) setDevice("large");
     if (window.innerWidth < 767) setDevice("mobile");
@@ -41,8 +29,8 @@ const About = (props) => {
       setDevice("pc");
     }
   }, []);
-  console.log(device);
 
+  
   return (
     <Container id="about">
       <Row>
@@ -67,8 +55,12 @@ const About = (props) => {
               strategies designed by {device == "mobile" && <br />}experts.{" "}
             </p>
             <Link href="https://www.marketfeed.com/">
-              <ButtonCTA>
-                <div className="button">
+              <ButtonCTA
+                onMouseDown={() => setClick(true)}
+                onMouseUp={() => setClick(false)}
+                clicked={click}
+              >
+                <div role="button" className="button">
                   <h1>learn more</h1>
                   <div className="iconsPlacer">
                     <Icons name="rightArrow" />
@@ -79,7 +71,6 @@ const About = (props) => {
           </LeftSideContent>
         </LeftSection>
         <RightSection>
-          {/* <SmallM/> */}
           {device === "large" ? (
             <Image
               src="/SmallM.png"
