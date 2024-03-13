@@ -14,7 +14,7 @@ export const Container = styled.div`
   @media (min-width: 360px) and (max-width: 767px) {
     height: 100vh;
     padding: 0;
-    margin-bottom: 100px;
+
   }
   @media (min-width: 1920px) {
     padding: ${rem(90, "large")} ${rem(150, "large")};
@@ -36,7 +36,7 @@ export const ImageBackground = styled.div`
     height: 100vh;
   }
   img {
-    object-fit: contain;
+    object-fit: cover;
     margin: 0;
 
     @media (min-width: 360px) and (max-width: 767px) {
@@ -44,7 +44,7 @@ export const ImageBackground = styled.div`
       height: 100vh;
     }
     @media (min-width: 767px) and (max-width: 1024px) {
-      object-fit: cover;
+      object-fit: contain;
     }
   }
   @media (max-width: 767px) {

@@ -21,6 +21,8 @@ const Footer = (props) => {
   const [iFrame, setIframe] = useState(false);
   useEffect(() => {
     if (window.innerWidth > 1920) setDevice("large");
+    if (window.innerWidth < 767) setDevice("mobile");
+
     if (window.location !== window.parent.location) setIframe(true);
   }, []);
   return (
@@ -43,8 +45,8 @@ const Footer = (props) => {
             />
           )}
           <p className="desc">
-            Honeykomb by BHIVE,19th Main Road, HSR Sector 3, <br />Bengaluru, KA -
-            560102
+            Honeykomb by BHIVE, 19th Main Road,{device=="mobile"&&<br />} HSR Sector 3,{" "} <br />
+            Bengaluru, KA - 560102
           </p>
           <SocialRow>
             <SocialIcon

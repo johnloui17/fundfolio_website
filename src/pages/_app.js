@@ -174,11 +174,14 @@ function MyApp({ Component, pageProps }) {
           name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
-        <title>fundfolio - financial freedom for all.</title>
+        <title>
+          fundfolio - Making Capital Markets Accessible for Everyone!
+        </title>
 
         <meta
           name="description"
-          content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence."
+          content="Unleash the power of investing! Start building your financial future today
+          "
         />
         <meta
           name="keywords"
@@ -189,11 +192,11 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:type" content="article" />
         <meta
           property="og:title"
-          content="Fundfolio - financial freedom for all."
+          content="  fundfolio - Making Capital Markets Accessible for Everyone!"
         />
         <meta
           property="og:description"
-          content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence."
+          content="Unleash the power of investing! Start building your financial future today"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -225,6 +228,7 @@ function MyApp({ Component, pageProps }) {
           itemprop="image"
           content="https://fundfolio.gumlet.io/fundfolio/fundfolio-thumbnail.png"
         />
+        <meta property="og:image" content="public/meta_thumbnail.png" />
         <meta
           itemprop="og:headline"
           content="Fundfolio - financial freedom for all."
