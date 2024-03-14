@@ -52,7 +52,7 @@ export const Column = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    max-width: ${rem(323)};
+    max-width: ${rem(363)};
 
     margin: ${rem(24)} 0;
     opacity: 0.6;
