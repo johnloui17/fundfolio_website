@@ -46,8 +46,8 @@ const Footer = (props) => {
           )}
           <p className="desc">
             Honeykomb by BHIVE, 19th Main Road,{device == "mobile" && <br />}{" "}
-            HSR Sector 3, <br />
-            Bengaluru, KA - 560102
+            HSR Sector 3, Bengaluru, KA - 560102 <br />
+           
           </p>
           <SocialRow>
             <SocialIcon
@@ -134,7 +134,7 @@ const Footer = (props) => {
               {device === "large" ? (
                 <Icons name="linkedin" width={55} height={55} />
               ) : (
-                <Icons name="linkedin" width={22} height={22} />
+                <Icons name="linkedin" width={22} height={24} />
               )}
             </SocialIcon>
           </SocialRow>
@@ -155,7 +155,7 @@ const Footer = (props) => {
           ) : (
             <Icons name="love" />
           )}
-          <span>by fundfolio.com</span>
+          <span>by fundfolio.</span>
         </Copyright>
       </Row>
     </Container>

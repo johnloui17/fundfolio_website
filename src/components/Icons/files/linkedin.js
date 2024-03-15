@@ -2,12 +2,12 @@ export const linkedin = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
+      width="24px"
+      height="24px"
+      viewBox={`0 0 20px 20px`} 
       fill="none"
     >
-      <circle opacity="0.1" cx="12" cy="12" r="11" fill="white" />
+      <circle opacity="0.1" cx="12" cy="12" r="10.5" fill="white" />
       <path
         opacity="0.8"
         fill-rule="evenodd"
