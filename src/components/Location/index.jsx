@@ -17,7 +17,8 @@ const Location = (props) => {
         {device === "mobile" ? (
           <Image
             style={{ margin: "0" }}
-            layout={"fill"}
+            layout="fill"
+
             src="/location_mobile.png"
             className="background"
           />

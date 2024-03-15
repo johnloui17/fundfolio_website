@@ -6,6 +6,7 @@ import { love } from "./love";
 import { check } from "./check";
 import { twitterLogo } from "./twitterLogo";
 import { rightArrow } from "./rightArrow";
+import { linkedin } from "./linkedin";
 export default {
   marketfeed,
   arrow,
@@ -15,4 +16,5 @@ export default {
   check,
   twitterLogo,
   rightArrow,
+  linkedin,
 };

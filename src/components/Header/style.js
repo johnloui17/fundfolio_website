@@ -3,9 +3,10 @@ import { rem } from "../../utils/remConverter";
 export const Container = styled.div`
   width: 100vw;
   height: ${rem(70)};
-  background: rgba(255, 255, 255, 0.05);
-  -webkit-backdrop-filter: blur(100px);
-  /* backdrop-filter: blur(100px);x */
+  background: rgba(13, 10, 27, 0.2);
+
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(40px);
   transition: background 0.5s ease;
   position: fixed;
   top: 0;

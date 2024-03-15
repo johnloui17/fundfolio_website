@@ -14,24 +14,38 @@ import {
 
 function GalaxyBackground({ props }) {
   const [device, setDevice] = useState("");
-  const [path, setPath] = useState("");
+  const [path, setPath] = useState(false);
+
+  const { rive, RiveComponent } = useRive({
+    src: isMobile
+      ? "assets/rives/first_fold_mobile.riv"
+      : "assets/rives/first_fold.riv",
+    autoplay: true,
+    layout: new Layout({ fit: Fit.Cover, alignment: Alignment.CenterRight }),
+  });
 
   useLayoutEffect(() => {
     const handleResize = () => {
       setDevice(window.innerWidth <= 767 ? "mobile" : "pc");
     };
     handleResize();
-    console.log(isMobile);
+  }, []);
+  useEffect(() => {
+    window.addEventListener("scroll", (event) => {
+      let scroll = window.scrollY;
+      scroll >= 1100 ? setPath(true) : setPath(false);
+    });
   }, []);
 
-  const { RiveComponent } = useRive({
-    src:
-    isMobile
-        ? "assets/rives/first_fold_mobile.riv"
-        : "assets/rives/first_fold.riv",
-    autoplay: true,
-    layout: new Layout({ fit: Fit.Cover, alignment: Alignment.CenterRight }),
-  });
+  if(path){
+
+    rive.reset()
+    rive.play()
+
+
+  }
+  
+
   return (
     <div>
       <RiveComponent style={{ height: "100vh" }} />
@@ -55,7 +69,7 @@ const Home = (props) => {
   return (
     <Container id="home">
       <ImageBackground>
-        <GalaxyBackground device={device} />
+        <GalaxyBackground  device={device} />
       </ImageBackground>
       <ContentWrapper>
         <Content>
@@ -81,6 +95,7 @@ const Home = (props) => {
           />
         ) : (
           <Image
+            id="yc"
             loader={gumletLoader}
             src="/yc_logo.svg"
             height={30}
