@@ -189,112 +189,6 @@ export const LeftSideContent = styled.div`
   }
 `;
 
-export const ButtonCTA = styled.button`
-  all: unset;
-
-  width: 200px;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media (min-width: 767px) {
-    justify-content: center;
-    align-items: center;
-  }
-  @media (min-width: 360px) and (max-width: 767px) {
-    justify-content: center;
-    align-items: center;
-    outline: none;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .button {
-    display: flex;
-    flex-direction: row;
-    gap: 6px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 36px;
-    padding: 15px 36px 17px 36px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    position: relative;
-    background: linear-gradient(150deg, #061ccc, #5351bd, #f9c85f);
-
-    /* background: linear-gradient(255deg, #061CCC 5.75%, #5351BD 26.28%, #F9C85F 80.39%); */
-    z-index: 1;
-
-    @media (min-width: 360px) and (max-width: 767px) {
-      width: 150px;
-      padding: 16px 24px;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    @media (min-width: 767px) and (max-width: 1024px) {
-      width: 150px;
-      padding: 16px 32px;
-      justify-content: start;
-      align-items: start;
-    }
-    @media (min-width: 1024px) {
-      width: 150px;
-      padding: 16px 32px;
-      justify-content: start;
-      align-items: start;
-    }
-  }
-
-  .button:hover {
-    background: linear-gradient(300deg, #061ccc, #5351bd, #f9c85f);
-  }
-
-  .button::before {
-    content: "";
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    bottom: 2px;
-    left: 2px;
-    background: ${(props) => {
-      return props.clicked == false && "#1e1b2b";
-    }};
-    background: ${(props) => {
-      return (
-        props.clicked == true &&
-        "linear-gradient(255deg, #061CCC 5.75%, #5351BD 26.28%, #F9C85F 80.39%)"
-      );
-    }};
-
-    border-radius: 34px;
-    z-index: -1;
-  }
-
-  .button::after {
-    /* content: attr(data); */
-  }
-  .iconsPlacer {
-    all: unset;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  h1 {
-    white-space: nowrap;
-    color: #fff;
-    font-family: "Satoshi-Variable";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 0.1px;
-    @media (min-width: 360px) {
-      font-size: 16px;
-      letter-spacing: 0.1px;
-    }
-  }
-`;
 export const RightSection = styled.div`
   display: flex;
   justify-content: center;
@@ -332,5 +226,124 @@ export const ImageWrapper = styled.div`
   position: absolute;
   @media (max-width: 767px) {
     width: ${rem(200, "mobile")};
+  }
+`;
+
+export const Btn = styled.div`
+  width: 200px;
+  height: 53px;
+  display: flex;
+  flex-direction: row;
+
+  @media (min-width: 767px) and (max-width: 1024px) {
+    justify-content: center;
+    align-items: center;
+  }
+  @media (min-width: 360px) and (max-width: 767px) {
+    width: 150px;
+  height: 58px;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 36px;
+    box-shadow: 0 1em 1em rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    @media (min-width: 360px) and (max-width: 767px) {
+      width: 150px;
+      /* padding: 16px 24px; */
+
+      /* align-items: center; */
+    }
+
+    @media (min-width: 767px) and (max-width: 1024px) {
+      width: 150px;
+      /* padding: 16px 32px; */
+      justify-content: start;
+      align-items: start;
+    }
+  }
+
+  .btn::before {
+    content: "";
+    position: absolute;
+
+    width: 100%;
+    height: 376%;
+    background: linear-gradient(
+      150deg,
+      #061ccc 5.75%,
+      #5351bd 26.28%,
+      #f9c85f 80.39%
+    );
+    transition: all 0.5s ease-in-out;
+  }
+
+  .btn::after {
+    position: absolute;
+    transform: translate(0%, 1%);
+    background: #1e1b2b;
+    left: 1px;
+    top: 1px;
+    width: 98%;
+    height: 95%;
+    border-radius: 35px;
+
+    white-space: nowrap;
+    color: #fff;
+    font-family: "Satoshi-Variable";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.1px;
+
+    content: "learn more";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: 360px) and (max-width: 767px) {
+      top: 1px;
+      left: 3px;
+      width: 97%;
+      height: 94%;
+      font-weight: 700;
+
+    }
+  }
+
+  .btn:hover::before {
+    transform: rotate(180deg);
+    transition: all 0.5s ease-in-out;
+  }
+  .btn:active::after {
+    background: linear-gradient(
+      255deg,
+      #061ccc 5.75%,
+      #5351bd 26.28%,
+      #f9c85f 80.39%
+    );
+  }
+  .btn:active::before {
+    transform: rotate(180deg);
+    transition: all 0.5s ease-in-out;
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(180deg);
+    }
   }
 `;

@@ -21,6 +21,8 @@ const Footer = (props) => {
   const [iFrame, setIframe] = useState(false);
   useEffect(() => {
     if (window.innerWidth > 1920) setDevice("large");
+    if (window.innerWidth < 767) setDevice("mobile");
+
     if (window.location !== window.parent.location) setIframe(true);
   }, []);
   return (
@@ -43,44 +45,28 @@ const Footer = (props) => {
             />
           )}
           <p className="desc">
-            Honeykomb by BHIVE,19th Main Road, HSR Sector 3, <br />Bengaluru, KA -
-            560102
+            Honeykomb by BHIVE, 19th Main Road,{device == "mobile" && <br />}{" "}
+            HSR Sector 3, Bengaluru, KA - 560102 <br />
           </p>
           <SocialRow>
             <SocialIcon
-              href={"https://www.facebook.com/marketfeedapp"}
+              href={"https://www.youtube.com/@marketfeedbyShariqueSamsudheen"}
               target={"_blank"}
             >
               {device === "large" ? (
                 <Image
                   loader={gumletLoader}
-                  src={"/facebook.svg"}
+                  src={"/you-tube.svg"}
                   width={55}
                   height={55}
                 />
               ) : (
                 <Image
                   loader={gumletLoader}
-                  src={"/facebook.svg"}
+                  src={"/you-tube.svg"}
                   width={22}
                   height={22}
                 />
-              )}
-            </SocialIcon>
-            <SocialIcon
-              href={"https://twitter.com/marketfeedapp"}
-              target={"_blank"}
-            >
-              {device === "large" ? (
-                // <Image
-                //   loader={gumletLoader}
-                //   src={"/twitter.svg"}
-                //   width={55}
-                //   height={55}
-                // />
-                <Icons name="twitterLogo" width={55} height={55} />
-              ) : (
-                <Icons name="twitterLogo" width={22} height={24} />
               )}
             </SocialIcon>
             <SocialIcon
@@ -103,30 +89,62 @@ const Footer = (props) => {
                 />
               )}
             </SocialIcon>
+
             <SocialIcon
-              href={"https://www.youtube.com/@marketfeedbyShariqueSamsudheen"}
+              href={"https://twitter.com/marketfeedapp"}
+              target={"_blank"}
+            >
+              {device === "large" ? (
+                // <Image
+                //   loader={gumletLoader}
+                //   src={"/twitter.svg"}
+                //   width={55}
+                //   height={55}
+                // />
+                <Icons name="twitterLogo" width={55} height={55} />
+              ) : (
+                <Icons name="twitterLogo" width={22} height={24} />
+              )}
+            </SocialIcon>
+            <SocialIcon
+              href={"https://www.facebook.com/marketfeedapp"}
               target={"_blank"}
             >
               {device === "large" ? (
                 <Image
                   loader={gumletLoader}
-                  src={"/you-tube.svg"}
+                  src={"/facebook.svg"}
                   width={55}
                   height={55}
                 />
               ) : (
                 <Image
                   loader={gumletLoader}
-                  src={"/you-tube.svg"}
+                  src={"/facebook.svg"}
                   width={22}
                   height={22}
                 />
               )}
             </SocialIcon>
+            <SocialIcon
+              href={"https://in.linkedin.com/company/marketfeedapp"}
+              target={"_blank"}
+            >
+              {device === "large" ? (
+
+                <Image src={"/containerlinkedin.png"} width={55} height={55} />
+
+
+              ) : (
+
+              <Image src={"/containerlinkedin.png"} width={22} height={22} />
+
+              )}
+            </SocialIcon>
           </SocialRow>
         </Column>
         <Column iFrame={iFrame}>
-          <SubHeading>products</SubHeading>
+          <SubHeading>product</SubHeading>
 
           <Link href="https://marketfeed.com" passHref={true}>
             <FooterLink target={"_blank"}>marketfeed.com</FooterLink>
@@ -141,7 +159,7 @@ const Footer = (props) => {
           ) : (
             <Icons name="love" />
           )}
-          <span>by fundfolio.com.</span>
+          <span>by fundfolio.</span>
         </Copyright>
       </Row>
     </Container>

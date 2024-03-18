@@ -6,9 +6,9 @@ const GlobalStyle = createGlobalStyle`
 
 @font-face {
     font-family: "Satoshi-Variable";
-    src: url("../../public/fonts/Satoshi-Variable.woff2") format("woff2"),
-      url("../../public/fonts/Satoshi-Variable.woff") format("woff"),
-      url("../../public/fonts/Satoshi-Variable.ttf") format("truetype");
+    src: url("fonts/Satoshi-Variable.woff2") format("woff2"),
+      url("fonts/Satoshi-Variable.woff") format("woff"),
+      url("fonts/Satoshi-Variable.ttf") format("truetype");
     font-weight: 300 900;
     font-display: swap;
     font-style: normal;
@@ -27,10 +27,10 @@ const GlobalStyle = createGlobalStyle`
   
   @font-face {
     font-family: "Satoshi-VariableItalic";
-    src: url("../../public/fonts/Satoshi-VariableItalic.woff2")
+    src: url("fonts/Satoshi-VariableItalic.woff2")
         format("woff2"),
-      url("../../public/fonts/Satoshi-VariableItalic.woff") format("woff"),
-      url("../../public/fonts/Satoshi-VariableItalic.ttf")
+      url("fonts/Satoshi-VariableItalic.woff") format("woff"),
+      url("fonts/Satoshi-VariableItalic.ttf")
         format("truetype");
     font-weight: 300 900;
     font-display: swap;
@@ -39,9 +39,9 @@ const GlobalStyle = createGlobalStyle`
   
   @font-face {
     font-family: "Satoshi-Light";
-    src: url("../../public/fonts/Satoshi-Light.woff2") format("woff2"),
-      url("../../public/fonts/Satoshi-Light.woff") format("woff"),
-      url("../../public/fonts/Satoshi-Light.ttf") format("truetype");
+    src: url("fonts/Satoshi-Light.woff2") format("woff2"),
+      url("fonts/Satoshi-Light.woff") format("woff"),
+      url("fonts/Satoshi-Light.ttf") format("truetype");
     font-weight: 300;
     font-display: swap;
     font-style: normal;
@@ -49,10 +49,10 @@ const GlobalStyle = createGlobalStyle`
   
   @font-face {
     font-family: "Satoshi-LightItalic";
-    src: url("../../public/fonts/Satoshi-LightItalic.woff2")
+    src: url("fonts/Satoshi-LightItalic.woff2")
         format("woff2"),
-      url("../../public/fonts/Satoshi-LightItalic.woff") format("woff"),
-      url("../../public/fonts/Satoshi-LightItalic.ttf") format("truetype");
+      url("fonts/Satoshi-LightItalic.woff") format("woff"),
+      url("fonts/Satoshi-LightItalic.ttf") format("truetype");
     font-weight: 300;
     font-display: swap;
     font-style: italic;
@@ -60,9 +60,9 @@ const GlobalStyle = createGlobalStyle`
   
   @font-face {
     font-family: "Satoshi-Regular";
-    src: url("../../public/fonts/Satoshi-Regular.woff2") format("woff2"),
-      url("../../public/fonts/Satoshi-Regular.woff") format("woff"),
-      url("../../public/fonts/Satoshi-Regular.ttf") format("truetype");
+    src: url("fonts/Satoshi-Regular.woff2") format("woff2"),
+      url("fonts/Satoshi-Regular.woff") format("woff"),
+      url("fonts/Satoshi-Regular.ttf") format("truetype");
     font-weight: 400;
     font-display: swap;
     font-style: normal;
@@ -71,9 +71,9 @@ const GlobalStyle = createGlobalStyle`
   
   @font-face {
     font-family: "Satoshi-Italic";
-    src: url("../../public/fonts/Satoshi-Italic.woff2") format("woff2"),
-      url("../../public/fonts/Satoshi-Italic.woff") format("woff"),
-      url("../../public/fonts/Satoshi-Italic.ttf") format("truetype");
+    src: url("fonts/Satoshi-Italic.woff2") format("woff2"),
+      url("fonts/Satoshi-Italic.woff") format("woff"),
+      url("fonts/Satoshi-Italic.ttf") format("truetype");
     font-weight: 400;
     font-display: swap;
     font-style: italic;
@@ -81,9 +81,9 @@ const GlobalStyle = createGlobalStyle`
   
   @font-face {
     font-family: "Satoshi-Medium";
-    src: url("../../public/fonts/Satoshi-Medium.woff2") format("woff2"),
-      url("../../public/fonts/Satoshi-Medium.woff") format("woff"),
-      url("../../public/fonts/Satoshi-Medium.ttf") format("truetype");
+    src: url("fonts/Satoshi-Medium.woff2") format("woff2"),
+      url("fonts/Satoshi-Medium.woff") format("woff"),
+      url("fonts/Satoshi-Medium.ttf") format("truetype");
     font-weight: 500;
     font-display: swap;
     font-style: normal;
@@ -92,10 +92,10 @@ const GlobalStyle = createGlobalStyle`
   
   @font-face {
     font-family: "Satoshi-MediumItalic";
-    src: url("../../public/fonts/Satoshi-MediumItalic.woff2")
+    src: url("fonts/Satoshi-MediumItalic.woff2")
         format("woff2"),
-      url("../../public/fonts/Satoshi-MediumItalic.woff") format("woff"),
-      url("../../public/fonts/Satoshi-MediumItalic.ttf") format("truetype");
+      url("fonts/Satoshi-MediumItalic.woff") format("woff"),
+      url("fonts/Satoshi-MediumItalic.ttf") format("truetype");
     font-weight: 500;
     font-display: swap;
     font-style: italic;
@@ -103,9 +103,9 @@ const GlobalStyle = createGlobalStyle`
   
   @font-face {
     font-family: "Satoshi-Bold";
-    src: url("../../public/fonts/Satoshi-Bold.woff2") format("woff2"),
-      url("../../public/fonts/Satoshi-Bold.woff") format("woff"),
-      url("../../public/fonts/Satoshi-Bold.ttf") format("truetype");
+    src: url("fonts/Satoshi-Bold.woff2") format("woff2"),
+      url("fonts/Satoshi-Bold.woff") format("woff"),
+      url("fonts/Satoshi-Bold.ttf") format("truetype");
     font-weight: 700;
     font-display: swap;
     font-style: normal;
@@ -113,9 +113,9 @@ const GlobalStyle = createGlobalStyle`
   
   @font-face {
     font-family: "Satoshi-BoldItalic";
-    src: url("../../public/fonts/Satoshi-BoldItalic.woff2") format("woff2"),
-      url("../../public/fonts/Satoshi-BoldItalic.woff") format("woff"),
-      url("../../public/fonts/Satoshi-BoldItalic.ttf") format("truetype");
+    src: url("fonts/Satoshi-BoldItalic.woff2") format("woff2"),
+      url("fonts/Satoshi-BoldItalic.woff") format("woff"),
+      url("fonts/Satoshi-BoldItalic.ttf") format("truetype");
     font-weight: 700;
     font-display: swap;
     font-style: italic;
@@ -123,9 +123,9 @@ const GlobalStyle = createGlobalStyle`
   
   @font-face {
     font-family: "Satoshi-Black";
-    src: url("../../public/fonts/Satoshi-Black.woff2") format("woff2"),
-      url("../../public/fonts/Satoshi-Black.woff") format("woff"),
-      url("../../public/fonts/Satoshi-Black.ttf") format("truetype");
+    src: url("fonts/Satoshi-Black.woff2") format("woff2"),
+      url("fonts/Satoshi-Black.woff") format("woff"),
+      url("fonts/Satoshi-Black.ttf") format("truetype");
     font-weight: 900;
     font-display: swap;
     font-style: normal;
@@ -133,10 +133,10 @@ const GlobalStyle = createGlobalStyle`
   
   @font-face {
     font-family: "Satoshi-BlackItalic";
-    src: url("../../public/fonts/Satoshi-BlackItalic.woff2")
+    src: url("fonts/Satoshi-BlackItalic.woff2")
         format("woff2"),
-      url("../../public/fonts/Satoshi-BlackItalic.woff") format("woff"),
-      url("../../public/fonts/Satoshi-BlackItalic.ttf") format("truetype");
+      url("fonts/Satoshi-BlackItalic.woff") format("woff"),
+      url("fonts/Satoshi-BlackItalic.ttf") format("truetype");
     font-weight: 900;
     font-display: swap;
     font-style: italic;
@@ -174,11 +174,14 @@ function MyApp({ Component, pageProps }) {
           name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
-        <title>fundfolio - financial freedom for all.</title>
+        <title>
+          fundfolio - Making Capital Markets Accessible for Everyone!
+        </title>
 
         <meta
           name="description"
-          content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence."
+          content="Unleash the power of investing! Start building your financial future today
+          "
         />
         <meta
           name="keywords"
@@ -189,11 +192,11 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:type" content="article" />
         <meta
           property="og:title"
-          content="Fundfolio - financial freedom for all."
+          content="  fundfolio - Making Capital Markets Accessible for Everyone!"
         />
         <meta
           property="og:description"
-          content="We offer products for Stock markets, Mutual Funds, ITR, Insurance and help you achieve financial freedom and financial independence."
+          content="Unleash the power of investing! Start building your financial future today"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -225,6 +228,7 @@ function MyApp({ Component, pageProps }) {
           itemprop="image"
           content="https://fundfolio.gumlet.io/fundfolio/fundfolio-thumbnail.png"
         />
+        <meta property="og:image" content="public/meta_thumbnail.png" />
         <meta
           itemprop="og:headline"
           content="Fundfolio - financial freedom for all."

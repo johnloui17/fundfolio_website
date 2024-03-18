@@ -8,7 +8,7 @@ import {
   RightSection,
   LeftSideHeader,
   LeftSideContent,
-  ButtonCTA,
+  Btn,
 } from "./style";
 import Icons from "../Icons";
 
@@ -16,8 +16,6 @@ import { useRive, Layout, Fit, Alignment } from "@rive-app/react-canvas";
 import Image from "next/image";
 import { gumletLoader } from "../../utils/gumletLoader";
 import Link from "next/link";
-
-
 
 const About = (props) => {
   const [device, setDevice] = useState("");
@@ -35,7 +33,6 @@ const About = (props) => {
 
   return (
     <Container id="about">
-
       <Row>
         <LeftSection>
           <LeftSideHeader>
@@ -57,20 +54,18 @@ const About = (props) => {
                 (device == "pc" && <br />)}{" "}
               strategies designed by {device == "mobile" && <br />}experts.{" "}
             </p>
-            <Link href="https://www.marketfeed.com/">
-              <ButtonCTA
-                onMouseDown={() => setClick(true)}
-                onMouseUp={() => setClick(false)}
-                clicked={click}
-              >
-                <div role="button" className="button">
-                  <h1>learn more</h1>
-                  <div className="iconsPlacer">
-                    <Icons name="rightArrow" />
-                  </div>
-                </div>
-              </ButtonCTA>
-            </Link>
+            <Btn
+              onMouseDown={() => setClick(true)}
+              onMouseUp={() => setClick(false)}
+              clicked={click}
+            >
+              <a
+                target="_blank"
+                href="https://www.marketfeed.com"
+                className="btn"
+                
+              ></a>
+            </Btn>
           </LeftSideContent>
         </LeftSection>
         <RightSection>
@@ -91,7 +86,6 @@ const About = (props) => {
               "
             />
           )}
-
         </RightSection>
       </Row>
     </Container>

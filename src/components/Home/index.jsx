@@ -14,24 +14,38 @@ import {
 
 function GalaxyBackground({ props }) {
   const [device, setDevice] = useState("");
-  const [path, setPath] = useState("");
+  const [path, setPath] = useState(false);
+
+  const { rive, RiveComponent } = useRive({
+    src: isMobile
+      ? "assets/rives/first_fold_mobile.riv"
+      : "assets/rives/first_fold.riv",
+    autoplay: true,
+    layout: new Layout({ fit: Fit.Cover, alignment: Alignment.CenterRight }),
+  });
 
   useLayoutEffect(() => {
     const handleResize = () => {
       setDevice(window.innerWidth <= 767 ? "mobile" : "pc");
     };
     handleResize();
-    console.log(isMobile);
   }, []);
+  useEffect(() => {
+    window.addEventListener("scroll", (event) => {
+      let scroll = window.scrollY;
+      scroll >= 1100 ? setPath(true) : setPath(false);
+    });
+  }, []);
+  useEffect(() => {
 
-  const { RiveComponent } = useRive({
-    src:
-    isMobile
-        ? "assets/rives/first_fold_mobile.riv"
-        : "assets/rives/first_fold.riv",
-    autoplay: true,
-    layout: new Layout({ fit: Fit.Cover, alignment: Alignment.CenterRight }),
-  });
+
+      if (path && rive!= null) {
+        rive.reset();
+        rive.play();
+      }
+
+  }, [path]);
+
   return (
     <div>
       <RiveComponent style={{ height: "100vh" }} />
@@ -69,25 +83,35 @@ const Home = (props) => {
           </h1>
         </Content>
       </ContentWrapper>
+
       <BottomLogoContainer>
         <p>backed by</p>
-        {device === "large" ? (
-          <Image
-            src="/yc_logo.svg"
-            loader={gumletLoader}
-            height={90}
-            width={480}
-            alt="fundfolio y-combinator"
-          />
-        ) : (
-          <Image
-            loader={gumletLoader}
-            src="/yc_logo.svg"
-            height={30}
-            width={138}
-            alt="fundfolio y-combinator"
-          />
-        )}
+        <a
+          target="_blank"
+          href={"https://www.ycombinator.com/companies/marketfeed"}
+        >
+          {" "}
+          <>
+            {device === "large" ? (
+              <Image
+                src="/yc_logo.svg"
+                loader={gumletLoader}
+                height={90}
+                width={480}
+                alt="fundfolio y-combinator"
+              />
+            ) : (
+              <Image
+                id="yc"
+                loader={gumletLoader}
+                src="/yc_logo.svg"
+                height={30}
+                width={138}
+                alt="fundfolio y-combinator"
+              />
+            )}
+          </>
+        </a>
       </BottomLogoContainer>
     </Container>
   );

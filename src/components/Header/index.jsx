@@ -82,7 +82,6 @@ const Header = (props) => {
           >
             {device === "large" ? (
               <Icons name="twitterLogo" width={44} height={44} />
-
             ) : (
               <Icons name="twitterLogo" width={22} height={22} />
             )}
@@ -106,6 +105,18 @@ const Header = (props) => {
                 width={22}
                 height={22}
               />
+            )}
+          </SocialIcon>
+          <SocialIcon
+            href={"https://in.linkedin.com/company/marketfeedapp"}
+            target={"_blank"}
+          >
+            {device === "large" ? (
+              <Image src={"/containerlinkedin.png"} width={44} height={44} />
+            ) : (
+
+              <Image src={"/containerlinkedin.png"} width={22} height={22} />
+
             )}
           </SocialIcon>
         </Row>
