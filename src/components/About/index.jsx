@@ -63,6 +63,7 @@ const About = (props) => {
                 target="_blank"
                 href="https://www.marketfeed.com"
                 className="btn"
+                
               ></a>
             </Btn>
           </LeftSideContent>

@@ -9,13 +9,15 @@ export default function HomePage() {
   const [transparent, setTransparent] = useState(true);
   const [activeTab, setActiveTab] = useState("home");
   const [isLoading, setLoading] = useState(true);
-  const [scrollPos, setScrollPos] = useState(0);
+
   const [isScrolling, setIsScrolling] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
 
   let ourWayOffset;
 
   useEffect(() => {
+
+  
     document.body.style.overflow = "hidden";
     setTimeout(() => {
       setLoading(false);
