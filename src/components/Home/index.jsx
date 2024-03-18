@@ -38,8 +38,8 @@ function GalaxyBackground({ props }) {
   }, []);
 
   if (path) {
-    rive.reset();
-    rive.play();
+    if (rive) {rive.reset();
+    rive.play();}
   }
 
   return (

@@ -112,9 +112,11 @@ const Header = (props) => {
             target={"_blank"}
           >
             {device === "large" ? (
-              <Image src={"/Linkedin-Logo.png"} width={44} height={44} />
+              <Image src={"/containerlinkedin.png"} width={44} height={44} />
             ) : (
-              <Icons name="linkedin" width={22} height={22} />
+
+              <Image src={"/containerlinkedin.png"} width={22} height={22} />
+
             )}
           </SocialIcon>
         </Row>
