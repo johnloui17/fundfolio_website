@@ -234,6 +234,7 @@ export const Btn = styled.div`
   height: 53px;
   display: flex;
   flex-direction: row;
+
   @media (min-width: 767px) and (max-width: 1024px) {
     justify-content: center;
     align-items: center;
@@ -294,6 +295,7 @@ export const Btn = styled.div`
     position: absolute;
     transform: translate(0%, 1%);
     background: #1e1b2b;
+    left: 1px;
     top: 1px;
     width: 98%;
     height: 95%;
@@ -327,13 +329,17 @@ export const Btn = styled.div`
     transform: rotate(180deg);
     transition: all 0.5s ease-in-out;
   }
-  .btn::after:active {
+  .btn:active::after {
     background: linear-gradient(
       255deg,
       #061ccc 5.75%,
       #5351bd 26.28%,
       #f9c85f 80.39%
     );
+  }
+  .btn:active::before {
+    transform: rotate(180deg);
+    transition: all 0.5s ease-in-out;
   }
   @keyframes spin {
     to {

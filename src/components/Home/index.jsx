@@ -37,14 +37,10 @@ function GalaxyBackground({ props }) {
     });
   }, []);
 
-  if(path){
-
-    rive.reset()
-    rive.play()
-
-
+  if (path) {
+    rive.reset();
+    rive.play();
   }
-  
 
   return (
     <div>
@@ -69,7 +65,7 @@ const Home = (props) => {
   return (
     <Container id="home">
       <ImageBackground>
-        <GalaxyBackground  device={device} />
+        <GalaxyBackground device={device} />
       </ImageBackground>
       <ContentWrapper>
         <Content>
@@ -83,26 +79,35 @@ const Home = (props) => {
           </h1>
         </Content>
       </ContentWrapper>
+
       <BottomLogoContainer>
         <p>backed by</p>
-        {device === "large" ? (
-          <Image
-            src="/yc_logo.svg"
-            loader={gumletLoader}
-            height={90}
-            width={480}
-            alt="fundfolio y-combinator"
-          />
-        ) : (
-          <Image
-            id="yc"
-            loader={gumletLoader}
-            src="/yc_logo.svg"
-            height={30}
-            width={138}
-            alt="fundfolio y-combinator"
-          />
-        )}
+        <a
+          target="_blank"
+          href={"https://www.ycombinator.com/companies/marketfeed"}
+        >
+          {" "}
+          <>
+            {device === "large" ? (
+              <Image
+                src="/yc_logo.svg"
+                loader={gumletLoader}
+                height={90}
+                width={480}
+                alt="fundfolio y-combinator"
+              />
+            ) : (
+              <Image
+                id="yc"
+                loader={gumletLoader}
+                src="/yc_logo.svg"
+                height={30}
+                width={138}
+                alt="fundfolio y-combinator"
+              />
+            )}
+          </>
+        </a>
       </BottomLogoContainer>
     </Container>
   );

@@ -112,7 +112,7 @@ const Header = (props) => {
             target={"_blank"}
           >
             {device === "large" ? (
-              <Icons name="linkedin" width={44} height={44} />
+              <Image src={"/Linkedin-Logo.png"} width={44} height={44} />
             ) : (
               <Icons name="linkedin" width={22} height={22} />
             )}

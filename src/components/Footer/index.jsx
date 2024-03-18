@@ -132,7 +132,12 @@ const Footer = (props) => {
               target={"_blank"}
             >
               {device === "large" ? (
-                <Icons name="linkedin" width={55} height={55} />
+ <Image
+
+ src={"/Linkedin-Logo.png"}
+ width={55}
+ height={55}
+/>
               ) : (
                 <Icons name="linkedin" width={22} height={24} />
               )}
