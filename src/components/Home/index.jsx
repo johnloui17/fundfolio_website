@@ -36,15 +36,15 @@ function GalaxyBackground({ props }) {
       scroll >= 1100 ? setPath(true) : setPath(false);
     });
   }, []);
+  useEffect(() => {
 
-  if (path) {
-    if (rive) {
-      setTimeout(() => {
+
+      if (path && rive!= null) {
         rive.reset();
         rive.play();
-      }, 2500);
-    }
-  }
+      }
+
+  }, [path]);
 
   return (
     <div>
