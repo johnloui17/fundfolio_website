@@ -38,8 +38,12 @@ function GalaxyBackground({ props }) {
   }, []);
 
   if (path) {
-    if (rive) {rive.reset();
-    rive.play();}
+    if (rive) {
+      setTimeout(() => {
+        rive.reset();
+        rive.play();
+      }, 2500);
+    }
   }
 
   return (
