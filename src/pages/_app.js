@@ -228,7 +228,7 @@ function MyApp({ Component, pageProps }) {
           itemprop="image"
           content="https://fundfolio.gumlet.io/fundfolio/fundfolio-thumbnail.png"
         />
-        <meta property="og:image" content="public/meta_thumbnail.png" />
+        <meta property="og:image" content="/public/meta_thumbnail.png" />
         <meta
           itemprop="og:headline"
           content="Fundfolio - financial freedom for all."
